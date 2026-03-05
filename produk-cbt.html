@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BizExam - Platform CBT | BizMate Digital</title>
+    <meta name="description"
+        content="BizExam adalah platform ujian berbasis komputer (CBT) yang aman dan skalabel untuk institusi pendidikan dan perusahaan.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'] }, colors: { primary: { 50: '#eef2ff', 100: '#e0e7ff', 200: '#c7d2fe', 300: '#a5b4fc', 400: '#818cf8', 500: '#6366f1', 600: '#4f46e5', 700: '#4338ca', 800: '#3730a3', 900: '#312e81' } } } } }</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+
+<body class="font-sans antialiased bg-white text-slate-700">
+    <div class="scroll-progress"></div>
+    <nav class="navbar fixed w-full top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="index.html" class="flex items-center space-x-3">
+                    <div
+                        class="w-10 h-10 bg-gradient-to-br from-primary-600 to-primary-800 rounded-xl flex items-center justify-center shadow-lg shadow-primary-500/20">
+                        <i class="fas fa-code text-white text-lg"></i></div><span
+                        class="text-xl font-bold text-slate-800">Biz<span class="text-primary-600">Mate</span></span>
+                </a>
+                <div class="hidden lg:flex items-center space-x-1">
+                    <a href="index.html"
+                        class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-primary-600 hover:bg-primary-50 transition-all">Beranda</a>
+                    <a href="tentang-kami.html"
+                        class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-primary-600 hover:bg-primary-50 transition-all">Tentang
+                        Kami</a>
+                    <div class="dropdown relative"><button
+                            class="nav-link active px-4 py-2 rounded-lg text-sm font-medium transition-all flex items-center">Produk
+                            <i class="fas fa-chevron-down ml-1.5 text-[10px]"></i></button>
+                        <div
+                            class="dropdown-menu absolute top-full left-0 mt-1 w-72 bg-white rounded-2xl shadow-2xl border border-slate-100 p-2">
+                            <a href="produk.html"
+                                class="flex items-center space-x-3 px-4 py-3 rounded-xl hover:bg-primary-50">
+                                <div class="w-9 h-9 bg-primary-100 rounded-lg flex items-center justify-center"><i
+                                        class="fas fa-th-large text-primary-600 text-sm"></i></div>
+                                <div>
+                                    <div class="text-sm font-semibold text-slate-800">Semua Produk</div>
+                                </div>
+                            </a>
+                            <hr class="my-1.5 border-slate-100"><a href="produk-hr.html"
+                                class="flex items-center space-x-3 px-4 py-2.5 rounded-xl hover:bg-primary-50"><i
+                                    class="fas fa-users text-primary-500 w-5 text-center"></i><span
+                                    class="text-sm text-slate-600">BizHR</span></a><a href="produk-fnb.html"
+                                class="flex items-center space-x-3 px-4 py-2.5 rounded-xl hover:bg-primary-50"><i
+                                    class="fas fa-utensils text-primary-500 w-5 text-center"></i><span
+                                    class="text-sm text-slate-600">BizResto</span></a><a href="produk-ecommerce.html"
+                                class="flex items-center space-x-3 px-4 py-2.5 rounded-xl hover:bg-primary-50"><i
+                                    class="fas fa-shopping-cart text-primary-500 w-5 text-center"></i><span
+                                    class="text-sm text-slate-600">BizStore</span></a><a href="produk-cbt.html"
+                                class="flex items-center space-x-3 px-4 py-2.5 rounded-xl bg-primary-50"><i
+                                    class="fas fa-laptop-code text-primary-600 w-5 text-center"></i><span
+                                    class="text-sm font-medium text-primary-700">BizExam</span></a><a
+                                href="produk-pos.html"
+                                class="flex items-center space-x-3 px-4 py-2.5 rounded-xl hover:bg-primary-50"><i
+                                    class="fas fa-cash-register text-primary-500 w-5 text-center"></i><span
+                                    class="text-sm text-slate-600">BizPOS</span></a>
+                        </div>
+                    </div>
+                    <a href="layanan.html"
+                        class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-primary-600 hover:bg-primary-50 transition-all">Layanan</a>
+                    <a href="portofolio.html"
+                        class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-primary-600 hover:bg-primary-50 transition-all">Portofolio</a>
+                    <a href="kontak.html"
+                        class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-primary-600 hover:bg-primary-50 transition-all">Kontak</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="https://wa.me/6281234567890?text=Halo%20BizMate%2C%20saya%20tertarik%20dengan%20BizExam"
+                        target="_blank"
+                        class="hidden lg:inline-flex items-center px-5 py-2.5 btn-primary text-sm font-semibold rounded-xl"><i
+                            class="fab fa-whatsapp mr-2 text-lg"></i> Hubungi Kami</a>
+                    <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg hover:bg-slate-100"><i
+                            class="fas fa-bars text-slate-600 text-xl"></i></button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-100 px-4 pb-6">
+            <div class="py-3 space-y-1"><a href="index.html"
+                    class="block px-4 py-3 rounded-xl text-sm font-medium text-slate-600 hover:bg-slate-50">Beranda</a><a
+                    href="produk.html"
+                    class="block px-4 py-3 rounded-xl text-sm font-medium text-slate-600 hover:bg-slate-50">Produk</a><a
+                    href="produk-cbt.html"
+                    class="block px-4 py-3 rounded-xl text-sm text-primary-600 bg-primary-50 pl-8">BizExam</a><a
+                    href="kontak.html"
+                    class="block px-4 py-3 rounded-xl text-sm font-medium text-slate-600 hover:bg-slate-50">Kontak</a>
+            </div><a href="https://wa.me/6281234567890?text=Halo%20BizMate%2C%20saya%20tertarik%20dengan%20BizExam"
+                target="_blank" class="block text-center px-5 py-3 btn-primary text-sm font-semibold rounded-xl mt-2"><i
+                    class="fab fa-whatsapp mr-2"></i> Hubungi Kami</a>
+        </div>
+    </nav>
+
+    <section class="pt-32 pb-20 bg-gradient-to-br from-purple-50 via-violet-50 to-white relative overflow-hidden">
+        <div class="absolute top-20 right-0 w-96 h-96 bg-purple-200/20 rounded-full blur-3xl"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="animate-on-scroll">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-12 h-12 bg-purple-100 rounded-2xl flex items-center justify-center"><i
+                                class="fas fa-laptop-code text-purple-600 text-xl"></i></div>
+                        <span class="text-sm font-semibold text-purple-600 uppercase tracking-wider">Computer Based
+                            Test</span>
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 mb-6">Biz<span
+                            class="text-purple-600">Exam</span></h1>
+                    <p class="text-lg text-slate-500 leading-relaxed mb-8">Platform ujian berbasis komputer yang aman,
+                        andal, dan skalabel. Ideal untuk institusi pendidikan, pelatihan profesional, dan proses seleksi
+                        karyawan dengan fitur anti-kecurangan canggih.</p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="https://wa.me/6281234567890?text=Halo%20BizMate%2C%20saya%20ingin%20demo%20BizExam"
+                            target="_blank"
+                            class="inline-flex items-center justify-center px-8 py-4 btn-primary text-base font-semibold rounded-2xl"><i
+                                class="fab fa-whatsapp mr-2 text-lg"></i> Minta Demo Gratis</a>
+                        <a href="https://wa.me/6281234567890?text=Halo%20BizMate%2C%20saya%20ingin%20info%20harga%20BizExam"
+                            target="_blank"
+                            class="inline-flex items-center justify-center px-8 py-4 btn-outline text-base font-semibold rounded-2xl">Info
+                            Harga</a>
+                    </div>
+                </div>
+                <div class="animate-on-scroll stagger-2">
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=700&h=500&fit=crop"
+                        alt="BizExam CBT Platform" class="rounded-3xl shadow-2xl w-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 animate-on-scroll"><span
+                    class="inline-block px-4 py-1.5 bg-purple-100 text-purple-700 text-sm font-semibold rounded-full mb-4">Fitur
+                    Utama</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4">Ujian Digital yang Aman dan Mudah
+                </h2>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="animate-on-scroll stagger-1 p-6 rounded-2xl border border-slate-200 card-hover">
+                    <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-4"><i
+                            class="fas fa-database text-purple-600"></i></div>
+                    <h3 class="font-bold text-slate-800 mb-2">Bank Soal Terstruktur</h3>
+                    <p class="text-sm text-slate-500">Kelola ribuan soal berdasarkan mata pelajaran, tingkat kesulitan,
+                        dan tipe soal. Mendukung pilihan ganda, esai, dan matching.</p>
+                </div>
+                <div class="animate-on-scroll stagger-2 p-6 rounded-2xl border border-slate-200 card-hover">
+                    <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mb-4"><i
+                            class="fas fa-robot text-green-600"></i></div>
+                    <h3 class="font-bold text-slate-800 mb-2">Auto-Grading</h3>
+                    <p class="text-sm text-slate-500">Koreksi otomatis untuk soal objektif. Skor langsung tersedia
+                        setelah ujian selesai dengan detail analisis per soal.</p>
+                </div>
+                <div class="animate-on-scroll stagger-3 p-6 rounded-2xl border border-slate-200 card-hover">
+                    <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-4"><i
+                            class="fas fa-shield-halved text-red-600"></i></div>
+                    <h3 class="font-bold text-slate-800 mb-2">Anti-Cheating</h3>
+                    <p class="text-sm text-slate-500">Lockdown browser, deteksi tab switching, randomisasi soal dan
+                        jawaban, webcam proctoring, dan screenshot berkala.</p>
+                </div>
+                <div class="animate-on-scroll stagger-4 p-6 rounded-2xl border border-slate-200 card-hover">
+                    <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4"><i
+                            class="fas fa-chart-column text-blue-600"></i></div>
+                    <h3 class="font-bold text-slate-800 mb-2">Analitik Hasil</h3>
+                    <p class="text-sm text-slate-500">Dashboard hasil ujian lengkap: distribusi nilai, analisis butir
+                        soal, perbandingan kelas, dan tren performa peserta.</p>
+                </div>
+                <div class="animate-on-scroll stagger-5 p-6 rounded-2xl border border-slate-200 card-hover">
+                    <div class="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center mb-4"><i
+                            class="fas fa-clock text-amber-600"></i></div>
+                    <h3 class="font-bold text-slate-800 mb-2">Multi-Sesi Ujian</h3>
+                    <p class="text-sm text-slate-500">Atur beberapa sesi ujian dengan waktu berbeda. Dukungan ujian
+                        terjadwal, fleksibel, dan take-home assignment.</p>
+                </div>
+                <div class="animate-on-scroll stagger-6 p-6 rounded-2xl border border-slate-200 card-hover">
+                    <div class="w-12 h-12 bg-teal-100 rounded-xl flex items-center justify-center mb-4"><i
+                            class="fas fa-certificate text-teal-600"></i></div>
+                    <h3 class="font-bold text-slate-800 mb-2">Sertifikat Digital</h3>
+                    <p class="text-sm text-slate-500">Generate sertifikat digital otomatis dengan template kustom, QR
+                        code verifikasi, dan integrasi tanda tangan digital.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-slate-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 animate-on-scroll"><span
+                    class="inline-block px-4 py-1.5 bg-purple-100 text-purple-700 text-sm font-semibold rounded-full mb-4">Spesifikasi</span>
+                <h2 class="text-3xl font-extrabold text-slate-900">Spesifikasi Teknis</h2>
+            </div>
+            <div class="animate-on-scroll bg-white rounded-2xl border border-slate-200 overflow-hidden">
+                <table class="spec-table w-full text-sm">
+                    <tbody>
+                        <tr class="border-b border-slate-100">
+                            <td class="px-6 py-4 font-medium text-slate-800 bg-slate-50 w-1/3">Platform</td>
+                            <td class="px-6 py-4 text-slate-600">Web-based + Lockdown Browser App</td>
+                        </tr>
+                        <tr class="border-b border-slate-100">
+                            <td class="px-6 py-4 font-medium text-slate-800 bg-slate-50">Teknologi</td>
+                            <td class="px-6 py-4 text-slate-600">React.js, Python/Django, PostgreSQL</td>
+                        </tr>
+                        <tr class="border-b border-slate-100">
+                            <td class="px-6 py-4 font-medium text-slate-800 bg-slate-50">Peserta Serentak</td>
+                            <td class="px-6 py-4 text-slate-600">Hingga 50.000 peserta bersamaan</td>
+                        </tr>
+                        <tr class="border-b border-slate-100">
+                            <td class="px-6 py-4 font-medium text-slate-800 bg-slate-50">Tipe Soal</td>
+                            <td class="px-6 py-4 text-slate-600">PG, Esai, Matching, True/False, Fill in Blank</td>
+                        </tr>
+                        <tr class="border-b border-slate-100">
+                            <td class="px-6 py-4 font-medium text-slate-800 bg-slate-50">Anti-Cheat</td>
+                            <td class="px-6 py-4 text-slate-600">Browser lock, tab detection, webcam, randomisasi</td>
+                        </tr>
+                        <tr class="border-b border-slate-100">
+                            <td class="px-6 py-4 font-medium text-slate-800 bg-slate-50">Integrasi</td>
+                            <td class="px-6 py-4 text-slate-600">SSO, LMS, API, Google Classroom</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 font-medium text-slate-800 bg-slate-50">Support</td>
+                            <td class="px-6 py-4 text-slate-600">24/7 dengan tim dedicated saat ujian</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div
+                class="animate-on-scroll bg-gradient-to-br from-purple-600 via-purple-700 to-violet-900 rounded-3xl p-12 sm:p-16 relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2">
+                </div>
+                <div class="relative z-10">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-4">Beralih ke Ujian Digital Sekarang
+                    </h2>
+                    <p class="text-purple-100 text-lg mb-8 max-w-xl mx-auto">Tingkatkan efisiensi evaluasi dengan
+                        BizExam. Dapatkan demo gratis dan lihat bagaimana platform kami bekerja.</p>
+                    <a href="https://wa.me/6281234567890?text=Halo%20BizMate%2C%20saya%20ingin%20demo%20BizExam%20untuk%20institusi%20kami"
+                        target="_blank"
+                        class="inline-flex items-center justify-center px-8 py-4 bg-white text-purple-700 font-bold rounded-2xl hover:bg-purple-50 transition-all text-base shadow-xl"><i
+                            class="fab fa-whatsapp mr-2 text-xl"></i> Minta Demo Gratis</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 class="text-xl font-bold text-slate-900 mb-8 text-center">Produk Lainnya</h3>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <a href="produk-hr.html"
+                    class="p-5 bg-white rounded-xl border border-slate-200 hover:border-primary-200 transition-all card-hover flex items-center space-x-4">
+                    <div class="w-11 h-11 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0"><i
+                            class="fas fa-users text-blue-600"></i></div>
+                    <div>
+                        <div class="font-semibold text-slate-800 text-sm">BizHR</div>
+                        <div class="text-xs text-slate-400">HR Management</div>
+                    </div>
+                </a>
+                <a href="produk-fnb.html"
+                    class="p-5 bg-white rounded-xl border border-slate-200 hover:border-primary-200 transition-all card-hover flex items-center space-x-4">
+                    <div class="w-11 h-11 bg-orange-100 rounded-xl flex items-center justify-center flex-shrink-0"><i
+                            class="fas fa-utensils text-orange-600"></i></div>
+                    <div>
+                        <div class="font-semibold text-slate-800 text-sm">BizResto</div>
+                        <div class="text-xs text-slate-400">F&B Management</div>
+                    </div>
+                </a>
+                <a href="produk-ecommerce.html"
+                    class="p-5 bg-white rounded-xl border border-slate-200 hover:border-primary-200 transition-all card-hover flex items-center space-x-4">
+                    <div class="w-11 h-11 bg-emerald-100 rounded-xl flex items-center justify-center flex-shrink-0"><i
+                            class="fas fa-shopping-cart text-emerald-600"></i></div>
+                    <div>
+                        <div class="font-semibold text-slate-800 text-sm">BizStore</div>
+                        <div class="text-xs text-slate-400">eCommerce</div>
+                    </div>
+                </a>
+                <a href="produk-pos.html"
+                    class="p-5 bg-white rounded-xl border border-slate-200 hover:border-primary-200 transition-all card-hover flex items-center space-x-4">
+                    <div class="w-11 h-11 bg-rose-100 rounded-xl flex items-center justify-center flex-shrink-0"><i
+                            class="fas fa-cash-register text-rose-600"></i></div>
+                    <div>
+                        <div class="font-semibold text-slate-800 text-sm">BizPOS</div>
+                        <div class="text-xs text-slate-400">Point of Sale</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-900 text-slate-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <div>
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div
+                            class="w-10 h-10 bg-gradient-to-br from-primary-500 to-primary-700 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-code text-white"></i></div><span
+                            class="text-xl font-bold text-white">Biz<span class="text-primary-400">Mate</span></span>
+                    </div>
+                    <p class="text-sm leading-relaxed mb-6 text-slate-400">Mitra teknologi terpercaya untuk transformasi
+                        digital bisnis Anda.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-6">Produk</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="produk-hr.html" class="text-slate-400 hover:text-primary-400">BizHR</a></li>
+                        <li><a href="produk-fnb.html" class="text-slate-400 hover:text-primary-400">BizResto</a></li>
+                        <li><a href="produk-ecommerce.html" class="text-slate-400 hover:text-primary-400">BizStore</a>
+                        </li>
+                        <li><a href="produk-cbt.html" class="text-slate-400 hover:text-primary-400">BizExam</a></li>
+                        <li><a href="produk-pos.html" class="text-slate-400 hover:text-primary-400">BizPOS</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-6">Tautan</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="tentang-kami.html" class="text-slate-400 hover:text-primary-400">Tentang Kami</a>
+                        </li>
+                        <li><a href="layanan.html" class="text-slate-400 hover:text-primary-400">Layanan</a></li>
+                        <li><a href="portofolio.html" class="text-slate-400 hover:text-primary-400">Portofolio</a></li>
+                        <li><a href="kontak.html" class="text-slate-400 hover:text-primary-400">Kontak</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-6">Kontak</h4>
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex items-start space-x-3"><i
+                                class="fas fa-map-marker-alt text-primary-400 mt-1"></i><span class="text-slate-400">Jl.
+                                Inovasi Digital No. 42, Jakarta Selatan 12345</span></li>
+                        <li class="flex items-center space-x-3"><i class="fas fa-phone text-primary-400"></i><span
+                                class="text-slate-400">+62 21 1234 5678</span></li>
+                        <li class="flex items-center space-x-3"><i class="fas fa-envelope text-primary-400"></i><span
+                                class="text-slate-400">info@bizmate.id</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-slate-800">
+            <div
+                class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row items-center justify-between text-sm text-slate-500">
+                <p>&copy; 2026 BizMate Digital.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0"><a href="#" class="hover:text-primary-400">Kebijakan
+                        Privasi</a><a href="#" class="hover:text-primary-400">Syarat & Ketentuan</a></div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="wa-float">
+        <div class="wa-pulse"></div><a
+            href="https://wa.me/6281234567890?text=Halo%20BizMate%2C%20saya%20tertarik%20dengan%20BizExam"
+            target="_blank" rel="noopener" aria-label="Chat WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

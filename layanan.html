@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layanan Kami | BizMate Digital</title>
+    <meta name="description"
+        content="Layanan konsultasi, pengembangan custom, integrasi sistem, pelatihan, dan maintenance dari BizMate Digital untuk mendukung transformasi digital bisnis Anda.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'] }, colors: { primary: { 50: '#eef2ff', 100: '#e0e7ff', 200: '#c7d2fe', 300: '#a5b4fc', 400: '#818cf8', 500: '#6366f1', 600: '#4f46e5', 700: '#4338ca', 800: '#3730a3', 900: '#312e81' } } } } }</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+
+<body class="font-sans antialiased bg-white text-slate-700">
+    <div class="scroll-progress"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar fixed w-full top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="index.html" class="flex items-center space-x-3">
+                    <div
+                        class="w-10 h-10 bg-gradient-to-br from-primary-600 to-primary-800 rounded-xl flex items-center justify-center shadow-lg shadow-primary-500/20">
+                        <i class="fas fa-code text-white text-lg"></i></div><span
+                        class="text-xl font-bold text-slate-800">Biz<span class="text-primary-600">Mate</span></span>
+                </a>
+                <div class="hidden lg:flex items-center space-x-1">
+                    <a href="index.html"
+                        class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-primary-600 hover:bg-primary-50 transition-all">Beranda</a>
+                    <a href="tentang-kami.html"
+                        class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-primary-600 hover:bg-primary-50 transition-all">Tentang
+                        Kami</a>
+                    <div class="dropdown relative">
+                        <button
+                            class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-primary-600 hover:bg-primary-50 transition-all flex items-center">Produk
+                            <i class="fas fa-chevron-down ml-1.5 text-[10px]"></i></button>
+                        <div
+                            class="dropdown-menu absolute top-full left-0 mt-1 w-72 bg-white rounded-2xl shadow-2xl border border-slate-100 p-2">
+                            <a href="produk.html"
+                                class="flex items-center space-x-3 px-4 py-3 rounded-xl hover:bg-primary-50 transition-all group">
+                                <div
+                                    class="w-9 h-9 bg-primary-100 rounded-lg flex items-center justify-center group-hover:bg-primary-200">
+                                    <i class="fas fa-th-large text-primary-600 text-sm"></i></div>
+                                <div>
+                                    <div class="text-sm font-semibold text-slate-800">Semua Produk</div>
+                                    <div class="text-xs text-slate-400">Lihat semua solusi kami</div>
+                                </div>
+                            </a>
+                            <hr class="my-1.5 border-slate-100">
+                            <a href="produk-hr.html"
+                                class="flex items-center space-x-3 px-4 py-2.5 rounded-xl hover:bg-primary-50 transition-all"><i
+                                    class="fas fa-users text-primary-500 w-5 text-center"></i><span
+                                    class="text-sm text-slate-600">BizHR</span></a>
+                            <a href="produk-fnb.html"
+                                class="flex items-center space-x-3 px-4 py-2.5 rounded-xl hover:bg-primary-50 transition-all"><i
+                                    class="fas fa-utensils text-primary-500 w-5 text-center"></i><span
+                                    class="text-sm text-slate-600">BizResto</span></a>
+                            <a href="produk-ecommerce.html"
+                                class="flex items-center space-x-3 px-4 py-2.5 rounded-xl hover:bg-primary-50 transition-all"><i
+                                    class="fas fa-shopping-cart text-primary-500 w-5 text-center"></i><span
+                                    class="text-sm text-slate-600">BizStore</span></a>
+                            <a href="produk-cbt.html"
+                                class="flex items-center space-x-3 px-4 py-2.5 rounded-xl hover:bg-primary-50 transition-all"><i
+                                    class="fas fa-laptop-code text-primary-500 w-5 text-center"></i><span
+                                    class="text-sm text-slate-600">BizExam</span></a>
+                            <a href="produk-pos.html"
+                                class="flex items-center space-x-3 px-4 py-2.5 rounded-xl hover:bg-primary-50 transition-all"><i
+                                    class="fas fa-cash-register text-primary-500 w-5 text-center"></i><span
+                                    class="text-sm text-slate-600">BizPOS</span></a>
+                        </div>
+                    </div>
+                    <a href="layanan.html"
+                        class="nav-link active px-4 py-2 rounded-lg text-sm font-medium transition-all">Layanan</a>
+                    <a href="portofolio.html"
+                        class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-primary-600 hover:bg-primary-50 transition-all">Portofolio</a>
+                    <a href="kontak.html"
+                        class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-primary-600 hover:bg-primary-50 transition-all">Kontak</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="https://wa.me/6281234567890" target="_blank"
+                        class="hidden lg:inline-flex items-center px-5 py-2.5 btn-primary text-sm font-semibold rounded-xl"><i
+                            class="fab fa-whatsapp mr-2 text-lg"></i> Hubungi Kami</a>
+                    <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg hover:bg-slate-100"><i
+                            class="fas fa-bars text-slate-600 text-xl"></i></button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-100 px-4 pb-6">
+            <div class="py-3 space-y-1"><a href="index.html"
+                    class="block px-4 py-3 rounded-xl text-sm font-medium text-slate-600 hover:bg-slate-50">Beranda</a><a
+                    href="tentang-kami.html"
+                    class="block px-4 py-3 rounded-xl text-sm font-medium text-slate-600 hover:bg-slate-50">Tentang
+                    Kami</a><a href="produk.html"
+                    class="block px-4 py-3 rounded-xl text-sm font-medium text-slate-600 hover:bg-slate-50">Produk</a><a
+                    href="layanan.html"
+                    class="block px-4 py-3 rounded-xl text-sm font-medium text-primary-600 bg-primary-50">Layanan</a><a
+                    href="portofolio.html"
+                    class="block px-4 py-3 rounded-xl text-sm font-medium text-slate-600 hover:bg-slate-50">Portofolio</a><a
+                    href="kontak.html"
+                    class="block px-4 py-3 rounded-xl text-sm font-medium text-slate-600 hover:bg-slate-50">Kontak</a>
+            </div><a href="https://wa.me/6281234567890" target="_blank"
+                class="block text-center px-5 py-3 btn-primary text-sm font-semibold rounded-xl mt-2"><i
+                    class="fab fa-whatsapp mr-2"></i> Hubungi Kami</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="pt-32 pb-20 hero-gradient hero-pattern relative overflow-hidden">
+        <div class="absolute bottom-0 left-0 w-80 h-80 bg-purple-200/30 rounded-full blur-3xl"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto animate-on-scroll">
+                <span
+                    class="inline-block px-4 py-1.5 bg-primary-100 text-primary-700 text-sm font-semibold rounded-full mb-4">Layanan
+                    Kami</span>
+                <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 mb-6">Layanan Profesional untuk <span
+                        class="gradient-text">Keberhasilan Proyek</span> Anda</h1>
+                <p class="text-lg text-slate-500 leading-relaxed">Dari konsultasi awal hingga maintenance berkelanjutan,
+                    kami menyediakan dukungan menyeluruh untuk memastikan solusi digital Anda berjalan optimal.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="animate-on-scroll stagger-1 bg-white rounded-2xl border border-slate-200 p-8 card-hover">
+                    <div class="w-14 h-14 bg-primary-100 rounded-2xl flex items-center justify-center mb-6"><i
+                            class="fas fa-comments text-primary-600 text-xl"></i></div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Konsultasi IT</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed mb-4">Analisis mendalam terhadap kebutuhan bisnis
+                        Anda dan rekomendasi solusi teknologi yang paling tepat. Tim konsultan berpengalaman kami akan
+                        membantu merancang strategi digital yang efektif.</p>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li class="flex items-center space-x-2"><i
+                                class="fas fa-check text-primary-500 text-xs"></i><span>Analisis kebutuhan bisnis</span>
+                        </li>
+                        <li class="flex items-center space-x-2"><i
+                                class="fas fa-check text-primary-500 text-xs"></i><span>Pemetaan proses bisnis</span>
+                        </li>
+                        <li class="flex items-center space-x-2"><i
+                                class="fas fa-check text-primary-500 text-xs"></i><span>Rekomendasi teknologi</span>
+                        </li>
+                        <li class="flex items-center space-x-2"><i
+                                class="fas fa-check text-primary-500 text-xs"></i><span>ROI projection</span></li>
+                    </ul>
+                </div>
+
+                <div class="animate-on-scroll stagger-2 bg-white rounded-2xl border border-slate-200 p-8 card-hover">
+                    <div class="w-14 h-14 bg-emerald-100 rounded-2xl flex items-center justify-center mb-6"><i
+                            class="fas fa-code text-emerald-600 text-xl"></i></div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Pengembangan Custom</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed mb-4">Pengembangan perangkat lunak yang dirancang
+                        khusus sesuai kebutuhan unik bisnis Anda. Kami menggunakan metodologi Agile untuk memastikan
+                        hasil yang sesuai ekspektasi.</p>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li class="flex items-center space-x-2"><i
+                                class="fas fa-check text-emerald-500 text-xs"></i><span>Web & mobile development</span>
+                        </li>
+                        <li class="flex items-center space-x-2"><i
+                                class="fas fa-check text-emerald-500 text-xs"></i><span>API development</span></li>
+                        <li class="flex items-center space-x-2"><i
+                                class="fas fa-check text-emerald-500 text-xs"></i><span>Database design</span></li>
+                        <li class="flex items-center space-x-2"><i
+                                class="fas fa-check text-emerald-500 text-xs"></i><span>Cloud architecture</span></li>
+                    </ul>
+                </div>
+
+                <div class="animate-on-scroll stagger-3 bg-white rounded-2xl border border-slate-200 p-8 card-hover">
+                    <div class="w-14 h-14 bg-amber-100 rounded-2xl flex items-center justify-center mb-6"><i
+                            class="fas fa-plug text-amber-600 text-xl"></i></div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Integrasi Sistem</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed mb-4">Menghubungkan berbagai sistem yang sudah ada
+                        dalam bisnis Anda menjadi satu ekosistem terintegrasi untuk efisiensi operasional yang maksimal.
+                    </p>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li class="flex items-center space-x-2"><i
+                                class="fas fa-check text-amber-500 text-xs"></i><span>API integration</span></li>
+                        <li class="flex items-center space-x-2"><i
+                                class="fas fa-check text-amber-500 text-xs"></i><span>Data migration</span></li>
+                        <li class="flex items-center space-x-2"><i
+                                class="fas fa-check text-amber-500 text-xs"></i><span>Third-party connectivity</span>
+                        </li>
+                        <li class="flex items-center space-x-2"><i
+                                class="fas fa-check text-amber-500 text-xs"></i><span>Legacy system bridging</span></li>
+                    </ul>
+                </div>
+
+                <div class="animate-on-scroll stagger-4 bg-white rounded-2xl border border-slate-200 p-8 card-hover">
+                    <div class="w-14 h-14 bg-rose-100 rounded-2xl flex items-center justify-center mb-6"><i
+                            class="fas fa-wrench text-rose-600 text-xl"></i></div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Maintenance & Support</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed mb-4">Dukungan teknis berkelanjutan untuk
+                        memastikan sistem Anda selalu berjalan optimal. Termasuk monitoring, bug fixing, dan pembaruan
+                        berkala.</p>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li class="flex items-center space-x-2"><i
+                                class="fas fa-check text-rose-500 text-xs"></i><span>24/7 monitoring</span></li>
+                        <li class="flex items-center space-x-2"><i
+                                class="fas fa-check text-rose-500 text-xs"></i><span>Bug fixing & patching</span></li>
+                        <li class="flex items-center space-x-2"><i
+                                class="fas fa-check text-rose-500 text-xs"></i><span>Performance tuning</span></li>
+                        <li class="flex items-center space-x-2"><i
+                                class="fas fa-check text-rose-500 text-xs"></i><span>Regular updates</span></li>
+                    </ul>
+                </div>
+
+                <div class="animate-on-scroll stagger-5 bg-white rounded-2xl border border-slate-200 p-8 card-hover">
+                    <div class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center mb-6"><i
+                            class="fas fa-graduation-cap text-blue-600 text-xl"></i></div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Pelatihan & Workshop</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed mb-4">Program pelatihan terstruktur untuk tim Anda
+                        agar dapat mengoperasikan dan mengelola sistem dengan optimal serta mandiri.</p>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li class="flex items-center space-x-2"><i
+                                class="fas fa-check text-blue-500 text-xs"></i><span>User training</span></li>
+                        <li class="flex items-center space-x-2"><i
+                                class="fas fa-check text-blue-500 text-xs"></i><span>Admin training</span></li>
+                        <li class="flex items-center space-x-2"><i
+                                class="fas fa-check text-blue-500 text-xs"></i><span>Dokumentasi lengkap</span></li>
+                        <li class="flex items-center space-x-2"><i
+                                class="fas fa-check text-blue-500 text-xs"></i><span>Video tutorial</span></li>
+                    </ul>
+                </div>
+
+                <div class="animate-on-scroll stagger-6 bg-white rounded-2xl border border-slate-200 p-8 card-hover">
+                    <div class="w-14 h-14 bg-purple-100 rounded-2xl flex items-center justify-center mb-6"><i
+                            class="fas fa-server text-purple-600 text-xl"></i></div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Managed Hosting</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed mb-4">Layanan hosting terkelola dengan
+                        infrastruktur cloud terpercaya. Kami mengurus semua aspek teknis server agar Anda fokus pada
+                        bisnis.</p>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li class="flex items-center space-x-2"><i
+                                class="fas fa-check text-purple-500 text-xs"></i><span>Cloud infrastructure</span></li>
+                        <li class="flex items-center space-x-2"><i
+                                class="fas fa-check text-purple-500 text-xs"></i><span>Auto-scaling</span></li>
+                        <li class="flex items-center space-x-2"><i
+                                class="fas fa-check text-purple-500 text-xs"></i><span>Daily backup</span></li>
+                        <li class="flex items-center space-x-2"><i
+                                class="fas fa-check text-purple-500 text-xs"></i><span>SSL & security</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process -->
+    <section class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 animate-on-scroll">
+                <span
+                    class="inline-block px-4 py-1.5 bg-primary-100 text-primary-700 text-sm font-semibold rounded-full mb-4">Proses
+                    Kerja</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4">Bagaimana Kami Bekerja</h2>
+                <p class="text-lg text-slate-500 max-w-2xl mx-auto">Metodologi kerja terstruktur untuk memastikan setiap
+                    proyek berjalan tepat waktu dan sesuai ekspektasi.</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div
+                    class="animate-on-scroll stagger-1 process-step text-center p-6 bg-white rounded-2xl border border-slate-200">
+                    <div
+                        class="step-number w-14 h-14 bg-primary-100 text-primary-700 rounded-full flex items-center justify-center mx-auto mb-5 text-xl font-bold">
+                        1</div>
+                    <h4 class="font-bold text-slate-800 mb-2">Konsultasi & Analisis</h4>
+                    <p class="text-sm text-slate-500">Memahami kebutuhan bisnis Anda secara mendalam melalui sesi
+                        konsultasi dan analisis.</p>
+                </div>
+                <div
+                    class="animate-on-scroll stagger-2 process-step text-center p-6 bg-white rounded-2xl border border-slate-200">
+                    <div
+                        class="step-number w-14 h-14 bg-primary-100 text-primary-700 rounded-full flex items-center justify-center mx-auto mb-5 text-xl font-bold">
+                        2</div>
+                    <h4 class="font-bold text-slate-800 mb-2">Desain & Perencanaan</h4>
+                    <p class="text-sm text-slate-500">Merancang arsitektur sistem, desain UI/UX, dan roadmap
+                        pengembangan yang jelas.</p>
+                </div>
+                <div
+                    class="animate-on-scroll stagger-3 process-step text-center p-6 bg-white rounded-2xl border border-slate-200">
+                    <div
+                        class="step-number w-14 h-14 bg-primary-100 text-primary-700 rounded-full flex items-center justify-center mx-auto mb-5 text-xl font-bold">
+                        3</div>
+                    <h4 class="font-bold text-slate-800 mb-2">Pengembangan & Testing</h4>
+                    <p class="text-sm text-slate-500">Membangun solusi dengan metodologi Agile, disertai pengujian
+                        menyeluruh di setiap tahap.</p>
+                </div>
+                <div
+                    class="animate-on-scroll stagger-4 process-step text-center p-6 bg-white rounded-2xl border border-slate-200">
+                    <div
+                        class="step-number w-14 h-14 bg-primary-100 text-primary-700 rounded-full flex items-center justify-center mx-auto mb-5 text-xl font-bold">
+                        4</div>
+                    <h4 class="font-bold text-slate-800 mb-2">Deploy & Support</h4>
+                    <p class="text-sm text-slate-500">Deployment yang lancar dengan pelatihan dan dukungan teknis
+                        berkelanjutan setelahnya.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-24 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div
+                class="animate-on-scroll bg-gradient-to-br from-primary-600 via-primary-700 to-primary-900 rounded-3xl p-12 sm:p-16 relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2">
+                </div>
+                <div class="relative z-10">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-4">Siap Memulai Proyek Anda?</h2>
+                    <p class="text-primary-100 text-lg mb-8 max-w-xl mx-auto">Diskusikan kebutuhan proyek Anda bersama
+                        tim ahli kami. Konsultasi pertama gratis dan tanpa komitmen.</p>
+                    <a href="https://wa.me/6281234567890?text=Halo%20BizMate%2C%20saya%20ingin%20konsultasi%20mengenai%20layanan%20pengembangan%20software"
+                        target="_blank"
+                        class="inline-flex items-center justify-center px-8 py-4 bg-white text-primary-700 font-bold rounded-2xl hover:bg-primary-50 transition-all text-base shadow-xl">
+                        <i class="fab fa-whatsapp mr-2 text-xl"></i> Konsultasi Gratis
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <div>
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div
+                            class="w-10 h-10 bg-gradient-to-br from-primary-500 to-primary-700 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-code text-white"></i></div><span
+                            class="text-xl font-bold text-white">Biz<span class="text-primary-400">Mate</span></span>
+                    </div>
+                    <p class="text-sm leading-relaxed mb-6 text-slate-400">Mitra teknologi terpercaya untuk transformasi
+                        digital bisnis Anda.</p>
+                    <div class="flex space-x-3"><a href="#"
+                            class="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-all text-slate-400 hover:text-white"><i
+                                class="fab fa-instagram"></i></a><a href="#"
+                            class="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-all text-slate-400 hover:text-white"><i
+                                class="fab fa-linkedin-in"></i></a><a href="#"
+                            class="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-all text-slate-400 hover:text-white"><i
+                                class="fab fa-youtube"></i></a></div>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-6">Produk</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="produk-hr.html"
+                                class="text-slate-400 hover:text-primary-400 transition-colors">BizHR</a></li>
+                        <li><a href="produk-fnb.html"
+                                class="text-slate-400 hover:text-primary-400 transition-colors">BizResto</a></li>
+                        <li><a href="produk-ecommerce.html"
+                                class="text-slate-400 hover:text-primary-400 transition-colors">BizStore</a></li>
+                        <li><a href="produk-cbt.html"
+                                class="text-slate-400 hover:text-primary-400 transition-colors">BizExam</a></li>
+                        <li><a href="produk-pos.html"
+                                class="text-slate-400 hover:text-primary-400 transition-colors">BizPOS</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-6">Tautan</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="tentang-kami.html"
+                                class="text-slate-400 hover:text-primary-400 transition-colors">Tentang Kami</a></li>
+                        <li><a href="layanan.html"
+                                class="text-slate-400 hover:text-primary-400 transition-colors">Layanan</a></li>
+                        <li><a href="portofolio.html"
+                                class="text-slate-400 hover:text-primary-400 transition-colors">Portofolio</a></li>
+                        <li><a href="kontak.html"
+                                class="text-slate-400 hover:text-primary-400 transition-colors">Kontak</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-6">Kontak</h4>
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex items-start space-x-3"><i
+                                class="fas fa-map-marker-alt text-primary-400 mt-1"></i><span class="text-slate-400">Jl.
+                                Inovasi Digital No. 42, Jakarta Selatan 12345</span></li>
+                        <li class="flex items-center space-x-3"><i class="fas fa-phone text-primary-400"></i><span
+                                class="text-slate-400">+62 21 1234 5678</span></li>
+                        <li class="flex items-center space-x-3"><i class="fas fa-envelope text-primary-400"></i><span
+                                class="text-slate-400">info@bizmate.id</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-slate-800">
+            <div
+                class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row items-center justify-between text-sm text-slate-500">
+                <p>&copy; 2026 BizMate Digital. Seluruh hak cipta dilindungi.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0"><a href="#"
+                        class="hover:text-primary-400 transition-colors">Kebijakan Privasi</a><a href="#"
+                        class="hover:text-primary-400 transition-colors">Syarat & Ketentuan</a></div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="wa-float">
+        <div class="wa-pulse"></div><a href="https://wa.me/6281234567890" target="_blank" rel="noopener"
+            aria-label="Chat WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
