@@ -6,15 +6,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BizHR - Sistem Manajemen SDM | BizMate Digital</title>
     <meta name="description"
-        content="BizHR adalah sistem manajemen SDM terintegrasi untuk penggajian, absensi, cuti, rekrutmen, dan evaluasi kinerja karyawan.">
+        content="BizHR adalah sistem manajemen SDM terintegrasi untuk penggajian, absensi, cuti, rekrutmen, dan evaluasi kinerja karyawan. Kelola seluruh siklus hidup karyawan dalam satu platform.">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'] }, colors: { primary: { 50: '#eef2ff', 100: '#e0e7ff', 200: '#c7d2fe', 300: '#a5b4fc', 400: '#818cf8', 500: '#6366f1', 600: '#4f46e5', 700: '#4338ca', 800: '#3730a3', 900: '#312e81' } } } } }</script>
+    <script>tailwind.config = { theme: { extend: { fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'] }, colors: { primary: { 50: '#eef2ff', 100: '#e0e7ff', 200: '#c7d2fe', 300: '#a5b4fc', 400: '#818cf8', 500: '#6366f1', 600: '#4f46e5', 700: '#4338ca', 800: '#3730a3', 900: '#312e81' } } } } }</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/custom.css">
+    <style>
+        .feature-tab {
+            transition: all 0.3s;
+        }
+
+        .feature-tab.active {
+            background: #4f46e5;
+            color: white;
+        }
+
+        .feature-panel {
+            display: none;
+        }
+
+        .feature-panel.active {
+            display: block;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 300px;
+        }
+
+        .faq-item.open .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-icon {
+            transition: transform 0.3s;
+        }
+
+        .stat-number {
+            background: linear-gradient(135deg, #4f46e5, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .module-card:hover .module-icon {
+            transform: scale(1.1) rotate(-5deg);
+        }
+
+        .module-icon {
+            transition: transform 0.3s;
+        }
+
+        .gradient-hr {
+            background: linear-gradient(135deg, #1e3a8a 0%, #4f46e5 50%, #7c3aed 100%);
+        }
+    </style>
 </head>
 
 <body class="font-sans antialiased bg-white text-slate-700">
@@ -25,9 +79,8 @@
                 <a href="/" class="flex items-center space-x-3">
                     <div
                         class="w-10 h-10 bg-gradient-to-br from-primary-600 to-primary-800 rounded-xl flex items-center justify-center shadow-lg shadow-primary-500/20">
-                        <i class="fas fa-code text-white text-lg"></i>
-                    </div><span class="text-xl font-bold text-slate-800">Biz<span
-                            class="text-primary-600">Mate</span></span>
+                        <i class="fas fa-code text-white text-lg"></i></div><span
+                        class="text-xl font-bold text-slate-800">Biz<span class="text-primary-600">Mate</span></span>
                 </a>
                 <div class="hidden lg:flex items-center space-x-1">
                     <a href="/"
@@ -86,41 +139,54 @@
         <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-100 px-4 pb-6">
             <div class="py-3 space-y-1"><a href="/"
                     class="block px-4 py-3 rounded-xl text-sm font-medium text-slate-600 hover:bg-slate-50">Beranda</a><a
-                    href="/tentang-kami"
-                    class="block px-4 py-3 rounded-xl text-sm font-medium text-slate-600 hover:bg-slate-50">Tentang
-                    Kami</a><a href="/produk"
+                    href="/produk"
                     class="block px-4 py-3 rounded-xl text-sm font-medium text-slate-600 hover:bg-slate-50">Produk</a><a
                     href="/produk-hr"
                     class="block px-4 py-3 rounded-xl text-sm text-primary-600 bg-primary-50 pl-8">BizHR</a><a
-                    href="/layanan"
-                    class="block px-4 py-3 rounded-xl text-sm font-medium text-slate-600 hover:bg-slate-50">Layanan</a><a
-                    href="/portofolio"
-                    class="block px-4 py-3 rounded-xl text-sm font-medium text-slate-600 hover:bg-slate-50">Portofolio</a><a
                     href="/kontak"
                     class="block px-4 py-3 rounded-xl text-sm font-medium text-slate-600 hover:bg-slate-50">Kontak</a>
-            </div><a href="https://wa.me/6281234567890?text=Halo%20BizMate%2C%20saya%20tertarik%20dengan%20BizHR"
+            </div>
+            <a href="https://wa.me/6281234567890?text=Halo%20BizMate%2C%20saya%20tertarik%20dengan%20BizHR"
                 target="_blank" class="block text-center px-5 py-3 btn-primary text-sm font-semibold rounded-xl mt-2"><i
                     class="fab fa-whatsapp mr-2"></i> Hubungi Kami</a>
         </div>
     </nav>
 
-    <!-- Hero -->
-    <section class="pt-28 pb-14 bg-gradient-to-br from-blue-50 via-primary-50 to-white relative overflow-hidden">
-        <div class="absolute top-20 right-0 w-96 h-96 bg-blue-200/20 rounded-full blur-3xl"></div>
+    <!-- HERO -->
+    <section class="pt-28 pb-16 bg-gradient-to-br from-blue-50 via-indigo-50 to-white relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+            <div class="absolute top-10 right-10 w-96 h-96 bg-blue-200/25 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 left-20 w-72 h-72 bg-primary-200/20 rounded-full blur-3xl"></div>
+        </div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div class="grid lg:grid-cols-2 gap-14 items-center">
                 <div class="animate-on-scroll">
-                    <div class="flex items-center space-x-3 mb-4">
-                        <div class="w-12 h-12 bg-blue-100 rounded-2xl flex items-center justify-center"><i
-                                class="fas fa-users text-blue-600 text-xl"></i></div>
+                    <div class="flex items-center space-x-2 mb-5">
+                        <div class="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center"><i
+                                class="fas fa-users text-blue-600"></i></div>
                         <span class="text-sm font-semibold text-blue-600 uppercase tracking-wider">HR Management
                             System</span>
                     </div>
-                    <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 mb-6">Biz<span
+                    <h1 class="text-5xl sm:text-6xl font-extrabold text-slate-900 mb-5 leading-tight">Biz<span
                             class="text-blue-600">HR</span></h1>
-                    <p class="text-lg text-slate-500 leading-relaxed mb-8">Sistem manajemen sumber daya manusia
-                        terintegrasi yang menyederhanakan seluruh proses HR Anda. Dari rekrutmen hingga pensiun, semua
-                        dalam satu platform yang mudah digunakan.</p>
+                    <p class="text-xl text-slate-500 leading-relaxed mb-6">Sistem manajemen SDM terintegrasi yang
+                        mengotomasi seluruh siklus hidup karyawan — dari rekrutmen, penggajian, absensi, hingga evaluasi
+                        kinerja — dalam satu platform yang mudah digunakan.</p>
+                    <!-- Hero stats chips -->
+                    <div class="flex flex-wrap gap-3 mb-8">
+                        <span
+                            class="inline-flex items-center px-3 py-1.5 bg-blue-100 text-blue-700 text-sm font-medium rounded-full"><i
+                                class="fas fa-check-circle mr-1.5 text-blue-500"></i>Payroll Otomatis</span>
+                        <span
+                            class="inline-flex items-center px-3 py-1.5 bg-green-100 text-green-700 text-sm font-medium rounded-full"><i
+                                class="fas fa-check-circle mr-1.5 text-green-500"></i>Absensi Digital</span>
+                        <span
+                            class="inline-flex items-center px-3 py-1.5 bg-purple-100 text-purple-700 text-sm font-medium rounded-full"><i
+                                class="fas fa-check-circle mr-1.5 text-purple-500"></i>KPI & Evaluasi</span>
+                        <span
+                            class="inline-flex items-center px-3 py-1.5 bg-amber-100 text-amber-700 text-sm font-medium rounded-full"><i
+                                class="fas fa-check-circle mr-1.5 text-amber-500"></i>Mobile App</span>
+                    </div>
                     <div class="flex flex-col sm:flex-row gap-4">
                         <a href="https://wa.me/6281234567890?text=Halo%20BizMate%2C%20saya%20ingin%20demo%20BizHR"
                             target="_blank"
@@ -129,220 +195,486 @@
                         <a href="https://wa.me/6281234567890?text=Halo%20BizMate%2C%20saya%20ingin%20informasi%20harga%20BizHR"
                             target="_blank"
                             class="inline-flex items-center justify-center px-8 py-4 btn-outline text-base font-semibold rounded-2xl">Info
-                            Harga</a>
+                            Harga <i class="fas fa-arrow-right ml-2"></i></a>
+                    </div>
+                    <!-- Social proof -->
+                    <div class="mt-8 flex items-center space-x-4">
+                        <div class="flex -space-x-2">
+                            <div
+                                class="w-8 h-8 rounded-full bg-blue-400 border-2 border-white flex items-center justify-center text-white text-xs font-bold">
+                                A</div>
+                            <div
+                                class="w-8 h-8 rounded-full bg-indigo-400 border-2 border-white flex items-center justify-center text-white text-xs font-bold">
+                                B</div>
+                            <div
+                                class="w-8 h-8 rounded-full bg-purple-400 border-2 border-white flex items-center justify-center text-white text-xs font-bold">
+                                C</div>
+                        </div>
+                        <p class="text-sm text-slate-500"><span class="font-semibold text-slate-700">100+
+                                perusahaan</span> telah mempercayai BizHR</p>
                     </div>
                 </div>
+                <div class="animate-on-scroll stagger-2 relative">
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=700&h=500&fit=crop"
+                            alt="BizHR Dashboard" class="w-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-blue-900/30 to-transparent"></div>
+                    </div>
+                    <!-- Floating stat card -->
+                    <div
+                        class="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl p-4 flex items-center space-x-3 border border-slate-100">
+                        <div class="w-10 h-10 bg-green-100 rounded-xl flex items-center justify-center"><i
+                                class="fas fa-check-double text-green-600"></i></div>
+                        <div>
+                            <div class="text-xs text-slate-500">Akurasi Payroll</div>
+                            <div class="text-lg font-extrabold text-slate-800">99.5%</div>
+                        </div>
+                    </div>
+                    <div class="absolute -top-4 -right-4 bg-white rounded-2xl shadow-xl p-4 border border-slate-100">
+                        <div class="text-xs text-slate-500 mb-1">Hemat Waktu HR</div>
+                        <div class="text-2xl font-extrabold text-blue-600">70%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS STRIP -->
+    <section class="py-10 bg-white border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="animate-on-scroll stagger-1">
+                    <div class="text-4xl font-extrabold stat-number mb-1">70%</div>
+                    <div class="text-sm text-slate-500 font-medium">Efisiensi Waktu Administrasi</div>
+                </div>
                 <div class="animate-on-scroll stagger-2">
-                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=700&h=500&fit=crop"
-                        alt="BizHR Dashboard" class="rounded-3xl shadow-2xl w-full object-cover">
+                    <div class="text-4xl font-extrabold stat-number mb-1">99.5%</div>
+                    <div class="text-sm text-slate-500 font-medium">Akurasi Perhitungan Gaji</div>
+                </div>
+                <div class="animate-on-scroll stagger-3">
+                    <div class="text-4xl font-extrabold stat-number mb-1">50%</div>
+                    <div class="text-sm text-slate-500 font-medium">Penghematan Biaya Operasional</div>
+                </div>
+                <div class="animate-on-scroll stagger-4">
+                    <div class="text-4xl font-extrabold stat-number mb-1">100+</div>
+                    <div class="text-sm text-slate-500 font-medium">Perusahaan Aktif Pengguna</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Features -->
-    <section class="py-16 bg-white">
+    <!-- MODUL FEATURES -->
+    <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-10 animate-on-scroll">
+            <div class="text-center mb-14 animate-on-scroll">
                 <span
-                    class="inline-block px-4 py-1.5 bg-blue-100 text-blue-700 text-sm font-semibold rounded-full mb-4">Fitur
-                    Utama</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4">Kelola SDM dengan Lebih Efisien</h2>
-                <p class="text-lg text-slate-500 max-w-2xl mx-auto">Modul-modul lengkap yang dirancang untuk
-                    mengotomatisasi dan menyederhanakan seluruh proses manajemen SDM.</p>
+                    class="inline-block px-4 py-1.5 bg-blue-100 text-blue-700 text-sm font-semibold rounded-full mb-4">Modul
+                    Lengkap</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4">Semua yang Anda Butuhkan untuk
+                    Kelola SDM</h2>
+                <p class="text-lg text-slate-500 max-w-2xl mx-auto">Dari rekrutmen hingga pensiun, BizHR menyediakan
+                    modul-modul terintegrasi yang saling terhubung untuk pengalaman manajemen SDM yang mulus.</p>
             </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="animate-on-scroll stagger-1 p-6 rounded-2xl border border-slate-200 card-hover">
-                    <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4"><i
-                            class="fas fa-money-bill-wave text-blue-600"></i></div>
-                    <h3 class="font-bold text-slate-800 mb-2">Payroll Otomatis</h3>
-                    <p class="text-sm text-slate-500">Perhitungan gaji otomatis dengan komponen lengkap: gaji pokok,
-                        tunjangan, lembur, potongan BPJS, PPh 21, dan slip gaji digital.</p>
-                </div>
-                <div class="animate-on-scroll stagger-2 p-6 rounded-2xl border border-slate-200 card-hover">
-                    <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mb-4"><i
-                            class="fas fa-fingerprint text-green-600"></i></div>
-                    <h3 class="font-bold text-slate-800 mb-2">Absensi Digital</h3>
-                    <p class="text-sm text-slate-500">Terintegrasi dengan perangkat fingerprint, face recognition, dan
-                        GPS mobile. Rekap absensi otomatis dan laporan keterlambatan.</p>
-                </div>
-                <div class="animate-on-scroll stagger-3 p-6 rounded-2xl border border-slate-200 card-hover">
-                    <div class="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center mb-4"><i
-                            class="fas fa-calendar-check text-amber-600"></i></div>
-                    <h3 class="font-bold text-slate-800 mb-2">Manajemen Cuti</h3>
-                    <p class="text-sm text-slate-500">Pengajuan cuti online dengan workflow approval bertingkat. Saldo
-                        cuti otomatis dan kalender cuti tim terintegrasi.</p>
-                </div>
-                <div class="animate-on-scroll stagger-4 p-6 rounded-2xl border border-slate-200 card-hover">
-                    <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-4"><i
-                            class="fas fa-user-plus text-purple-600"></i></div>
-                    <h3 class="font-bold text-slate-800 mb-2">Rekrutmen Online</h3>
-                    <p class="text-sm text-slate-500">Portal karir, tracking lamaran, penjadwalan interview otomatis,
-                        scoring kandidat, dan onboarding digital.</p>
-                </div>
-                <div class="animate-on-scroll stagger-5 p-6 rounded-2xl border border-slate-200 card-hover">
-                    <div class="w-12 h-12 bg-rose-100 rounded-xl flex items-center justify-center mb-4"><i
-                            class="fas fa-chart-bar text-rose-600"></i></div>
-                    <h3 class="font-bold text-slate-800 mb-2">Evaluasi Kinerja</h3>
-                    <p class="text-sm text-slate-500">KPI setting, review 360-degree, self-assessment, goal tracking,
-                        dan laporan kinerja komprehensif per periode.</p>
-                </div>
-                <div class="animate-on-scroll stagger-6 p-6 rounded-2xl border border-slate-200 card-hover">
-                    <div class="w-12 h-12 bg-cyan-100 rounded-xl flex items-center justify-center mb-4"><i
-                            class="fas fa-graduation-cap text-cyan-600"></i></div>
-                    <h3 class="font-bold text-slate-800 mb-2">Training & LMS</h3>
-                    <p class="text-sm text-slate-500">Learning management system terintegrasi dengan jadwal pelatihan,
-                        materi online, sertifikasi, dan tracking kompetensi.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Screenshot / Product View -->
-    <section class="py-16 bg-slate-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div class="animate-on-scroll">
-                    <span
-                        class="inline-block px-4 py-1.5 bg-blue-100 text-blue-700 text-sm font-semibold rounded-full mb-4">Tampilan
-                        Sistem</span>
-                    <h2 class="text-3xl font-extrabold text-slate-900 mb-6">Dashboard Intuitif dan Modern</h2>
-                    <p class="text-slate-500 leading-relaxed mb-8">Antarmuka yang dirancang dengan prinsip UX terbaik.
-                        Semua informasi penting tersedia di ujung jari Anda dengan navigasi yang mudah dan visualisasi
-                        data yang jelas.</p>
-                    <ul class="space-y-4">
-                        <li class="flex items-start space-x-3">
-                            <div
-                                class="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                                <i class="fas fa-check text-blue-600 text-xs"></i>
-                            </div><span class="text-sm text-slate-600">Dashboard ringkasan dengan grafik
-                                interaktif</span>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Payroll -->
+                <div
+                    class="module-card animate-on-scroll stagger-1 p-6 rounded-2xl border border-slate-200 card-hover bg-gradient-to-br from-blue-50/50 to-white">
+                    <div class="module-icon w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center mb-5"><i
+                            class="fas fa-money-bill-wave text-blue-600 text-xl"></i></div>
+                    <h3 class="font-bold text-slate-800 text-lg mb-2">Payroll & Penggajian</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed mb-4">Perhitungan gaji otomatis dengan komponen
+                        lengkap: gaji pokok, tunjangan tetap/tidak tetap, lembur, potongan BPJS Kesehatan &
+                        Ketenagakerjaan, PPh 21, dan slip gaji digital yang bisa diunduh.</p>
+                    <ul class="space-y-1.5">
+                        <li class="flex items-center text-xs text-slate-500"><i
+                                class="fas fa-circle-check text-blue-400 mr-2"></i>Kalkulasi PPh 21 otomatis sesuai
+                            regulasi terbaru</li>
+                        <li class="flex items-center text-xs text-slate-500"><i
+                                class="fas fa-circle-check text-blue-400 mr-2"></i>Transfer gaji massal ke semua bank
                         </li>
-                        <li class="flex items-start space-x-3">
-                            <div
-                                class="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                                <i class="fas fa-check text-blue-600 text-xs"></i>
-                            </div><span class="text-sm text-slate-600">Notifikasi real-time untuk approval dan
-                                pengingat</span>
+                        <li class="flex items-center text-xs text-slate-500"><i
+                                class="fas fa-circle-check text-blue-400 mr-2"></i>Slip gaji digital dengan QR
+                            verifikasi</li>
+                    </ul>
+                </div>
+                <!-- Absensi -->
+                <div
+                    class="module-card animate-on-scroll stagger-2 p-6 rounded-2xl border border-slate-200 card-hover bg-gradient-to-br from-green-50/50 to-white">
+                    <div class="module-icon w-14 h-14 bg-green-100 rounded-2xl flex items-center justify-center mb-5"><i
+                            class="fas fa-fingerprint text-green-600 text-xl"></i></div>
+                    <h3 class="font-bold text-slate-800 text-lg mb-2">Absensi & Jam Kerja</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed mb-4">Integrasi multi-perangkat: fingerprint, face
+                        recognition, GPS check-in, dan kartu RFID. Rekap absensi otomatis, laporan keterlambatan, dan
+                        manajemen shift yang fleksibel.</p>
+                    <ul class="space-y-1.5">
+                        <li class="flex items-center text-xs text-slate-500"><i
+                                class="fas fa-circle-check text-green-400 mr-2"></i>Dukungan shift rooster & jadwal
+                            liburan</li>
+                        <li class="flex items-center text-xs text-slate-500"><i
+                                class="fas fa-circle-check text-green-400 mr-2"></i>GPS geofencing untuk remote worker
                         </li>
-                        <li class="flex items-start space-x-3">
-                            <div
-                                class="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                                <i class="fas fa-check text-blue-600 text-xs"></i>
-                            </div><span class="text-sm text-slate-600">Akses mobile untuk karyawan dan manajer</span>
-                        </li>
-                        <li class="flex items-start space-x-3">
-                            <div
-                                class="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                                <i class="fas fa-check text-blue-600 text-xs"></i>
-                            </div><span class="text-sm text-slate-600">Role-based access control untuk keamanan
-                                data</span>
+                        <li class="flex items-center text-xs text-slate-500"><i
+                                class="fas fa-circle-check text-green-400 mr-2"></i>Ekspor laporan ke Excel/PDF</li>
+                    </ul>
+                </div>
+                <!-- Cuti -->
+                <div
+                    class="module-card animate-on-scroll stagger-3 p-6 rounded-2xl border border-slate-200 card-hover bg-gradient-to-br from-amber-50/50 to-white">
+                    <div class="module-icon w-14 h-14 bg-amber-100 rounded-2xl flex items-center justify-center mb-5"><i
+                            class="fas fa-calendar-check text-amber-600 text-xl"></i></div>
+                    <h3 class="font-bold text-slate-800 text-lg mb-2">Manajemen Cuti & Izin</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed mb-4">Pengajuan cuti online dengan workflow
+                        approval multi-level yang dapat dikustomisasi. Saldo cuti dikalkulasi otomatis, kalender cuti
+                        tim, dan notifikasi real-time untuk semua pihak.</p>
+                    <ul class="space-y-1.5">
+                        <li class="flex items-center text-xs text-slate-500"><i
+                                class="fas fa-circle-check text-amber-400 mr-2"></i>Berbagai jenis cuti (tahunan, sakit,
+                            melahirkan, dll.)</li>
+                        <li class="flex items-center text-xs text-slate-500"><i
+                                class="fas fa-circle-check text-amber-400 mr-2"></i>Approval melalui WhatsApp/email</li>
+                        <li class="flex items-center text-xs text-slate-500"><i
+                                class="fas fa-circle-check text-amber-400 mr-2"></i>Integrasi kalender Google & Outlook
                         </li>
                     </ul>
                 </div>
-                <div class="animate-on-scroll stagger-2">
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=700&h=500&fit=crop"
-                        alt="BizHR Dashboard View" class="rounded-2xl shadow-xl w-full object-cover">
+                <!-- Rekrutmen -->
+                <div
+                    class="module-card animate-on-scroll stagger-4 p-6 rounded-2xl border border-slate-200 card-hover bg-gradient-to-br from-purple-50/50 to-white">
+                    <div class="module-icon w-14 h-14 bg-purple-100 rounded-2xl flex items-center justify-center mb-5">
+                        <i class="fas fa-user-plus text-purple-600 text-xl"></i></div>
+                    <h3 class="font-bold text-slate-800 text-lg mb-2">Rekrutmen & Onboarding</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed mb-4">Portal karir perusahaan yang branded, ATS
+                        (Applicant Tracking System) lengkap, penjadwalan interview otomatis, scoring kandidat berbasis
+                        kriteria, dan onboarding digital terstruktur.</p>
+                    <ul class="space-y-1.5">
+                        <li class="flex items-center text-xs text-slate-500"><i
+                                class="fas fa-circle-check text-purple-400 mr-2"></i>Posting lowongan ke JobStreet,
+                            LinkedIn, dll.</li>
+                        <li class="flex items-center text-xs text-slate-500"><i
+                                class="fas fa-circle-check text-purple-400 mr-2"></i>Checklist onboarding digital
+                            interaktif</li>
+                        <li class="flex items-center text-xs text-slate-500"><i
+                                class="fas fa-circle-check text-purple-400 mr-2"></i>Database kandidat untuk rekrutmen
+                            masa depan</li>
+                    </ul>
+                </div>
+                <!-- KPI -->
+                <div
+                    class="module-card animate-on-scroll stagger-5 p-6 rounded-2xl border border-slate-200 card-hover bg-gradient-to-br from-rose-50/50 to-white">
+                    <div class="module-icon w-14 h-14 bg-rose-100 rounded-2xl flex items-center justify-center mb-5"><i
+                            class="fas fa-chart-bar text-rose-600 text-xl"></i></div>
+                    <h3 class="font-bold text-slate-800 text-lg mb-2">Evaluasi Kinerja (KPI)</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed mb-4">KPI setting berbasis OKR/BSC, review
+                        360-degree, self-assessment, goal tracking real-time, dan laporan kinerja komprehensif.
+                        Identifikasi top performer dan mapping kebutuhan pengembangan.</p>
+                    <ul class="space-y-1.5">
+                        <li class="flex items-center text-xs text-slate-500"><i
+                                class="fas fa-circle-check text-rose-400 mr-2"></i>Template KPI per departemen & jabatan
+                        </li>
+                        <li class="flex items-center text-xs text-slate-500"><i
+                                class="fas fa-circle-check text-rose-400 mr-2"></i>Siklus review fleksibel
+                            (monthly/quarterly)</li>
+                        <li class="flex items-center text-xs text-slate-500"><i
+                                class="fas fa-circle-check text-rose-400 mr-2"></i>Rekomendasi kenaikan gaji/promosi
+                        </li>
+                    </ul>
+                </div>
+                <!-- Training -->
+                <div
+                    class="module-card animate-on-scroll stagger-6 p-6 rounded-2xl border border-slate-200 card-hover bg-gradient-to-br from-cyan-50/50 to-white">
+                    <div class="module-icon w-14 h-14 bg-cyan-100 rounded-2xl flex items-center justify-center mb-5"><i
+                            class="fas fa-graduation-cap text-cyan-600 text-xl"></i></div>
+                    <h3 class="font-bold text-slate-800 text-lg mb-2">Training & Pengembangan</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed mb-4">LMS terintegrasi dengan jadwal pelatihan,
+                        materi e-learning, sertifikasi, dan tracking kompetensi karyawan. Kelola anggaran training dan
+                        ukur efektivitas program pelatihan.</p>
+                    <ul class="space-y-1.5">
+                        <li class="flex items-center text-xs text-slate-500"><i
+                                class="fas fa-circle-check text-cyan-400 mr-2"></i>Katalog kursus internal & eksternal
+                        </li>
+                        <li class="flex items-center text-xs text-slate-500"><i
+                                class="fas fa-circle-check text-cyan-400 mr-2"></i>Sertifikat digital otomatis</li>
+                        <li class="flex items-center text-xs text-slate-500"><i
+                                class="fas fa-circle-check text-cyan-400 mr-2"></i>Tracking TNA (Training Need Analysis)
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Specs Table -->
-    <section class="py-16 bg-white">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-10 animate-on-scroll">
-                <span
-                    class="inline-block px-4 py-1.5 bg-blue-100 text-blue-700 text-sm font-semibold rounded-full mb-4">Spesifikasi</span>
-                <h2 class="text-3xl font-extrabold text-slate-900">Spesifikasi Teknis</h2>
-            </div>
-            <div class="animate-on-scroll bg-white rounded-2xl border border-slate-200 overflow-hidden">
-                <table class="spec-table w-full text-sm">
-                    <tbody>
-                        <tr class="border-b border-slate-100">
-                            <td class="px-6 py-4 font-medium text-slate-800 bg-slate-50 w-1/3">Platform</td>
-                            <td class="px-6 py-4 text-slate-600">Web-based (Cloud & On-Premise)</td>
-                        </tr>
-                        <tr class="border-b border-slate-100">
-                            <td class="px-6 py-4 font-medium text-slate-800 bg-slate-50">Teknologi</td>
-                            <td class="px-6 py-4 text-slate-600">React.js, Node.js, PostgreSQL</td>
-                        </tr>
-                        <tr class="border-b border-slate-100">
-                            <td class="px-6 py-4 font-medium text-slate-800 bg-slate-50">Mobile App</td>
-                            <td class="px-6 py-4 text-slate-600">Android & iOS (Native + PWA)</td>
-                        </tr>
-                        <tr class="border-b border-slate-100">
-                            <td class="px-6 py-4 font-medium text-slate-800 bg-slate-50">Kapasitas User</td>
-                            <td class="px-6 py-4 text-slate-600">Unlimited (skalabel)</td>
-                        </tr>
-                        <tr class="border-b border-slate-100">
-                            <td class="px-6 py-4 font-medium text-slate-800 bg-slate-50">Integrasi</td>
-                            <td class="px-6 py-4 text-slate-600">REST API, Fingerprint, Face Recognition, BPJS, Bank
-                            </td>
-                        </tr>
-                        <tr class="border-b border-slate-100">
-                            <td class="px-6 py-4 font-medium text-slate-800 bg-slate-50">Keamanan</td>
-                            <td class="px-6 py-4 text-slate-600">SSL/TLS, Enkripsi AES-256, 2FA, Role-based Access</td>
-                        </tr>
-                        <tr class="border-b border-slate-100">
-                            <td class="px-6 py-4 font-medium text-slate-800 bg-slate-50">Bahasa</td>
-                            <td class="px-6 py-4 text-slate-600">Bahasa Indonesia, English</td>
-                        </tr>
-                        <tr>
-                            <td class="px-6 py-4 font-medium text-slate-800 bg-slate-50">Support</td>
-                            <td class="px-6 py-4 text-slate-600">24/7 via WhatsApp, Email, Phone</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </section>
-
-    <!-- Benefits -->
-    <section class="py-16 bg-slate-50">
+    <!-- HOW IT WORKS -->
+    <section class="py-20 bg-slate-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-10 animate-on-scroll">
+            <div class="text-center mb-14 animate-on-scroll">
                 <span
-                    class="inline-block px-4 py-1.5 bg-blue-100 text-blue-700 text-sm font-semibold rounded-full mb-4">Keuntungan</span>
-                <h2 class="text-3xl font-extrabold text-slate-900">Mengapa Memilih BizHR?</h2>
+                    class="inline-block px-4 py-1.5 bg-blue-100 text-blue-700 text-sm font-semibold rounded-full mb-4">Cara
+                    Kerja</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4">Implementasi Mudah, Hasil Nyata</h2>
+                <p class="text-lg text-slate-500 max-w-xl mx-auto">Mulai gunakan BizHR dalam 3 langkah mudah tanpa
+                    kerumitan teknis.</p>
             </div>
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="animate-on-scroll stagger-1 text-center p-6 bg-white rounded-2xl border border-slate-200">
-                    <div class="text-3xl font-extrabold text-blue-600 mb-2">70%</div>
-                    <h4 class="font-bold text-slate-800 text-sm mb-1">Efisiensi Waktu</h4>
-                    <p class="text-xs text-slate-500">Pengurangan waktu proses administrasi HR</p>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="animate-on-scroll stagger-1 relative">
+                    <div class="bg-white rounded-2xl p-8 border border-slate-200 h-full">
+                        <div
+                            class="w-12 h-12 gradient-hr rounded-2xl flex items-center justify-center text-white font-extrabold text-lg mb-6">
+                            1</div>
+                        <h3 class="font-bold text-slate-800 text-lg mb-3">Setup & Konfigurasi</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed">Tim kami membantu migrasi data, konfigurasi
+                            struktur organisasi, jabatan, komponen gaji, dan kebijakan perusahaan Anda. Selesai dalam
+                            1-2 minggu.</p>
+                    </div>
+                    <div class="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2 z-10">
+                        <i class="fas fa-chevron-right text-primary-400 text-2xl"></i>
+                    </div>
                 </div>
-                <div class="animate-on-scroll stagger-2 text-center p-6 bg-white rounded-2xl border border-slate-200">
-                    <div class="text-3xl font-extrabold text-blue-600 mb-2">99.5%</div>
-                    <h4 class="font-bold text-slate-800 text-sm mb-1">Akurasi Payroll</h4>
-                    <p class="text-xs text-slate-500">Tingkat akurasi perhitungan gaji</p>
+                <div class="animate-on-scroll stagger-2 relative">
+                    <div class="bg-white rounded-2xl p-8 border border-slate-200 h-full">
+                        <div
+                            class="w-12 h-12 gradient-hr rounded-2xl flex items-center justify-center text-white font-extrabold text-lg mb-6">
+                            2</div>
+                        <h3 class="font-bold text-slate-800 text-lg mb-3">Training & Go Live</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed">Training intensif untuk admin HR dan karyawan.
+                            Akses modul learning mandiri, panduan video, dan live support dari tim BizMate selama masa
+                            go-live.</p>
+                    </div>
+                    <div class="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2 z-10">
+                        <i class="fas fa-chevron-right text-primary-400 text-2xl"></i>
+                    </div>
                 </div>
-                <div class="animate-on-scroll stagger-3 text-center p-6 bg-white rounded-2xl border border-slate-200">
-                    <div class="text-3xl font-extrabold text-blue-600 mb-2">50%</div>
-                    <h4 class="font-bold text-slate-800 text-sm mb-1">Hemat Biaya</h4>
-                    <p class="text-xs text-slate-500">Pengurangan biaya operasional HR</p>
+                <div class="animate-on-scroll stagger-3">
+                    <div class="bg-white rounded-2xl p-8 border border-slate-200 h-full">
+                        <div
+                            class="w-12 h-12 gradient-hr rounded-2xl flex items-center justify-center text-white font-extrabold text-lg mb-6">
+                            3</div>
+                        <h3 class="font-bold text-slate-800 text-lg mb-3">Operasional & Optimasi</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed">Otomasi proses HR berjalan penuh. Dapatkan
+                            laporan analytics mendalam, dukungan dedicated, dan update fitur berkala tanpa biaya
+                            tambahan.</p>
+                    </div>
                 </div>
-                <div class="animate-on-scroll stagger-4 text-center p-6 bg-white rounded-2xl border border-slate-200">
-                    <div class="text-3xl font-extrabold text-blue-600 mb-2">24/7</div>
-                    <h4 class="font-bold text-slate-800 text-sm mb-1">Self-Service</h4>
-                    <p class="text-xs text-slate-500">Akses mandiri karyawan kapan saja</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TECH SPECS -->
+    <section class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 animate-on-scroll">
+                <span
+                    class="inline-block px-4 py-1.5 bg-blue-100 text-blue-700 text-sm font-semibold rounded-full mb-4">Spesifikasi
+                    Teknis</span>
+                <h2 class="text-3xl font-extrabold text-slate-900">Dibangun dengan Teknologi Terdepan</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="animate-on-scroll stagger-1 space-y-4">
+                    <div class="flex items-start space-x-4 p-4 rounded-xl border border-slate-100 bg-slate-50/60">
+                        <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0"><i
+                                class="fas fa-server text-blue-600 text-sm"></i></div>
+                        <div>
+                            <div class="font-semibold text-slate-800 text-sm">Platform</div>
+                            <div class="text-slate-500 text-sm">Web-based (Cloud & On-Premise) + Mobile App Android/iOS
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4 p-4 rounded-xl border border-slate-100 bg-slate-50/60">
+                        <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-code text-purple-600 text-sm"></i></div>
+                        <div>
+                            <div class="font-semibold text-slate-800 text-sm">Teknologi</div>
+                            <div class="text-slate-500 text-sm">React.js, Node.js, PostgreSQL, Redis Cache</div>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4 p-4 rounded-xl border border-slate-100 bg-slate-50/60">
+                        <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0"><i
+                                class="fas fa-users text-green-600 text-sm"></i></div>
+                        <div>
+                            <div class="font-semibold text-slate-800 text-sm">Kapasitas Pengguna</div>
+                            <div class="text-slate-500 text-sm">Unlimited karyawan, skalabel untuk enterprise besar
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4 p-4 rounded-xl border border-slate-100 bg-slate-50/60">
+                        <div class="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center flex-shrink-0"><i
+                                class="fas fa-plug text-amber-600 text-sm"></i></div>
+                        <div>
+                            <div class="font-semibold text-slate-800 text-sm">Integrasi</div>
+                            <div class="text-slate-500 text-sm">REST API, Fingerprint/Face Recognition, BPJS, Multi-bank
+                                Transfer, Google Workspace</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="animate-on-scroll stagger-2 space-y-4">
+                    <div class="flex items-start space-x-4 p-4 rounded-xl border border-slate-100 bg-slate-50/60">
+                        <div class="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center flex-shrink-0"><i
+                                class="fas fa-shield-halved text-red-600 text-sm"></i></div>
+                        <div>
+                            <div class="font-semibold text-slate-800 text-sm">Keamanan</div>
+                            <div class="text-slate-500 text-sm">SSL/TLS, Enkripsi AES-256, 2FA, Role-based Access
+                                Control, Audit Log</div>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4 p-4 rounded-xl border border-slate-100 bg-slate-50/60">
+                        <div class="w-10 h-10 bg-teal-100 rounded-lg flex items-center justify-center flex-shrink-0"><i
+                                class="fas fa-cloud text-teal-600 text-sm"></i></div>
+                        <div>
+                            <div class="font-semibold text-slate-800 text-sm">Uptime & Backup</div>
+                            <div class="text-slate-500 text-sm">99.9% SLA Uptime, backup otomatis harian, disaster
+                                recovery</div>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4 p-4 rounded-xl border border-slate-100 bg-slate-50/60">
+                        <div class="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-language text-indigo-600 text-sm"></i></div>
+                        <div>
+                            <div class="font-semibold text-slate-800 text-sm">Bahasa & Lokalisasi</div>
+                            <div class="text-slate-500 text-sm">Bahasa Indonesia & English, format mata uang IDR, zona
+                                waktu WIB/WITA/WIT</div>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4 p-4 rounded-xl border border-slate-100 bg-slate-50/60">
+                        <div class="w-10 h-10 bg-rose-100 rounded-lg flex items-center justify-center flex-shrink-0"><i
+                                class="fas fa-headset text-rose-600 text-sm"></i></div>
+                        <div>
+                            <div class="font-semibold text-slate-800 text-sm">Dukungan</div>
+                            <div class="text-slate-500 text-sm">24/7 via WhatsApp, Email, Phone. Dedicated account
+                                manager untuk enterprise</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIAL -->
+    <section class="py-20 bg-slate-50">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 animate-on-scroll">
+                <span
+                    class="inline-block px-4 py-1.5 bg-blue-100 text-blue-700 text-sm font-semibold rounded-full mb-4">Testimonial</span>
+                <h2 class="text-3xl font-extrabold text-slate-900">Apa Kata Pengguna Kami?</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="animate-on-scroll stagger-1 bg-white rounded-2xl p-8 border border-slate-200 shadow-sm">
+                    <div class="flex text-yellow-400 mb-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-slate-600 leading-relaxed mb-6">"BizHR menghemat waktu tim HR kami hingga 70%. Proses
+                        penggajian yang dulu butuh 3 hari kini selesai dalam 2 jam. Integrasi dengan mesin fingerprint
+                        juga sangat mulus."</p>
+                    <div class="flex items-center space-x-3">
+                        <div
+                            class="w-10 h-10 bg-blue-200 rounded-full flex items-center justify-center font-bold text-blue-800">
+                            RW</div>
+                        <div>
+                            <div class="font-semibold text-slate-800 text-sm">Rizky Wahyudi</div>
+                            <div class="text-xs text-slate-400">HR Manager, PT Maju Bersama</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="animate-on-scroll stagger-2 bg-white rounded-2xl p-8 border border-slate-200 shadow-sm">
+                    <div class="flex text-yellow-400 mb-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-slate-600 leading-relaxed mb-6">"Fitur self-service karyawan sangat membantu.
+                        Sekarang karyawan bisa cek slip gaji, ajukan cuti, dan lihat jadwal shift sendiri lewat HP.
+                        Beban tim HR berkurang drastis."</p>
+                    <div class="flex items-center space-x-3">
+                        <div
+                            class="w-10 h-10 bg-purple-200 rounded-full flex items-center justify-center font-bold text-purple-800">
+                            SA</div>
+                        <div>
+                            <div class="font-semibold text-slate-800 text-sm">Siti Aisyah</div>
+                            <div class="text-xs text-slate-400">Direktur Operasional, CV Nusantara Jaya</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-20 bg-white">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 animate-on-scroll">
+                <span
+                    class="inline-block px-4 py-1.5 bg-blue-100 text-blue-700 text-sm font-semibold rounded-full mb-4">FAQ</span>
+                <h2 class="text-3xl font-extrabold text-slate-900">Pertanyaan yang Sering Diajukan</h2>
+            </div>
+            <div class="space-y-4 animate-on-scroll">
+                <div class="faq-item border border-slate-200 rounded-2xl overflow-hidden">
+                    <button
+                        class="faq-trigger w-full flex items-center justify-between px-6 py-5 text-left font-semibold text-slate-800 hover:bg-slate-50 transition-colors">
+                        <span>Apakah BizHR bisa digunakan untuk perusahaan dengan banyak cabang?</span>
+                        <i class="faq-icon fas fa-plus text-primary-500 flex-shrink-0 ml-4"></i>
+                    </button>
+                    <div class="faq-answer px-6">
+                        <p class="text-slate-500 text-sm leading-relaxed pb-5">Ya, BizHR mendukung struktur
+                            multi-entitas dan multi-cabang. Anda dapat mengelola seluruh cabang dari satu dashboard
+                            terpusat dengan kemampuan segmentasi laporan per cabang, per departemen, atau secara
+                            konsolidasi.</p>
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-2xl overflow-hidden">
+                    <button
+                        class="faq-trigger w-full flex items-center justify-between px-6 py-5 text-left font-semibold text-slate-800 hover:bg-slate-50 transition-colors">
+                        <span>Berapa lama proses implementasi BizHR?</span>
+                        <i class="faq-icon fas fa-plus text-primary-500 flex-shrink-0 ml-4"></i>
+                    </button>
+                    <div class="faq-answer px-6">
+                        <p class="text-slate-500 text-sm leading-relaxed pb-5">Rata-rata implementasi membutuhkan 2-4
+                            minggu, tergantung kompleksitas kebutuhan. Proses meliputi: setup sistem, migrasi data,
+                            konfigurasi aturan bisnis, training, dan go-live support. Kami menyediakan project manager
+                            dedicated selama proses implementasi.</p>
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-2xl overflow-hidden">
+                    <button
+                        class="faq-trigger w-full flex items-center justify-between px-6 py-5 text-left font-semibold text-slate-800 hover:bg-slate-50 transition-colors">
+                        <span>Apakah data perusahaan kami aman?</span>
+                        <i class="faq-icon fas fa-plus text-primary-500 flex-shrink-0 ml-4"></i>
+                    </button>
+                    <div class="faq-answer px-6">
+                        <p class="text-slate-500 text-sm leading-relaxed pb-5">Keamanan data adalah prioritas utama
+                            kami. BizHR menggunakan enkripsi AES-256, SSL/TLS, autentikasi dua faktor, dan role-based
+                            access control. Data di-backup otomatis setiap hari ke lokasi terpisah. Tersedia opsi
+                            on-premise untuk perusahaan dengan regulasi ketat.</p>
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-2xl overflow-hidden">
+                    <button
+                        class="faq-trigger w-full flex items-center justify-between px-6 py-5 text-left font-semibold text-slate-800 hover:bg-slate-50 transition-colors">
+                        <span>Apakah BizHR sudah sesuai dengan regulasi ketenagakerjaan Indonesia?</span>
+                        <i class="faq-icon fas fa-plus text-primary-500 flex-shrink-0 ml-4"></i>
+                    </button>
+                    <div class="faq-answer px-6">
+                        <p class="text-slate-500 text-sm leading-relaxed pb-5">Ya, BizHR selalu diperbarui mengikuti
+                            regulasi terbaru termasuk UU Cipta Kerja, perhitungan BPJS Kesehatan & Ketenagakerjaan
+                            terkini, perhitungan PPh 21 sesuai PMK terbaru, dan ketentuan pesangon/uang jasa. Tim kami
+                            memastikan compliance secara berkala.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CTA -->
-    <section class="py-16 bg-white">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <section class="py-20 bg-slate-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div
-                class="animate-on-scroll bg-gradient-to-br from-blue-600 via-blue-700 to-primary-900 rounded-3xl p-12 sm:p-16 relative overflow-hidden">
-                <div class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2">
+                class="animate-on-scroll bg-gradient-to-br from-blue-600 via-primary-700 to-violet-800 rounded-3xl p-12 sm:p-16 relative overflow-hidden text-center">
+                <div class="absolute top-0 right-0 w-80 h-80 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2">
+                </div>
+                <div
+                    class="absolute bottom-0 left-0 w-64 h-64 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2">
                 </div>
                 <div class="relative z-10">
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-4">Siap Modernisasi Manajemen SDM Anda?
-                    </h2>
-                    <p class="text-blue-100 text-lg mb-8 max-w-xl mx-auto">Dapatkan demo BizHR gratis dan rasakan
-                        kemudahan mengelola SDM secara digital.</p>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-4">Siap Modernisasi SDM Anda?</h2>
+                    <p class="text-blue-100 text-lg mb-8 max-w-xl mx-auto">Bergabunglah dengan 100+ perusahaan yang
+                        telah merasakan kemudahan BizHR. Demo gratis, tanpa komitmen.</p>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center">
                         <a href="https://wa.me/6281234567890?text=Halo%20BizMate%2C%20saya%20ingin%20demo%20BizHR%20untuk%20perusahaan%20saya"
                             target="_blank"
@@ -358,12 +690,12 @@
     </section>
 
     <!-- Related Products -->
-    <section class="py-16 bg-slate-50">
+    <section class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h3 class="text-xl font-bold text-slate-900 mb-8 text-center">Produk Lainnya</h3>
+            <h3 class="text-xl font-bold text-slate-900 mb-8 text-center">Produk Lainnya dari BizMate</h3>
             <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 <a href="/produk-fnb"
-                    class="p-5 bg-white rounded-xl border border-slate-200 hover:border-primary-200 transition-all card-hover flex items-center space-x-4">
+                    class="p-5 bg-white rounded-xl border border-slate-200 hover:border-orange-300 hover:shadow-md transition-all card-hover flex items-center space-x-4">
                     <div class="w-11 h-11 bg-orange-100 rounded-xl flex items-center justify-center flex-shrink-0"><i
                             class="fas fa-utensils text-orange-600"></i></div>
                     <div>
@@ -372,7 +704,7 @@
                     </div>
                 </a>
                 <a href="/produk-ecommerce"
-                    class="p-5 bg-white rounded-xl border border-slate-200 hover:border-primary-200 transition-all card-hover flex items-center space-x-4">
+                    class="p-5 bg-white rounded-xl border border-slate-200 hover:border-emerald-300 hover:shadow-md transition-all card-hover flex items-center space-x-4">
                     <div class="w-11 h-11 bg-emerald-100 rounded-xl flex items-center justify-center flex-shrink-0"><i
                             class="fas fa-shopping-cart text-emerald-600"></i></div>
                     <div>
@@ -381,7 +713,7 @@
                     </div>
                 </a>
                 <a href="/produk-cbt"
-                    class="p-5 bg-white rounded-xl border border-slate-200 hover:border-primary-200 transition-all card-hover flex items-center space-x-4">
+                    class="p-5 bg-white rounded-xl border border-slate-200 hover:border-purple-300 hover:shadow-md transition-all card-hover flex items-center space-x-4">
                     <div class="w-11 h-11 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0"><i
                             class="fas fa-laptop-code text-purple-600"></i></div>
                     <div>
@@ -390,7 +722,7 @@
                     </div>
                 </a>
                 <a href="/produk-pos"
-                    class="p-5 bg-white rounded-xl border border-slate-200 hover:border-primary-200 transition-all card-hover flex items-center space-x-4">
+                    class="p-5 bg-white rounded-xl border border-slate-200 hover:border-rose-300 hover:shadow-md transition-all card-hover flex items-center space-x-4">
                     <div class="w-11 h-11 bg-rose-100 rounded-xl flex items-center justify-center flex-shrink-0"><i
                             class="fas fa-cash-register text-rose-600"></i></div>
                     <div>
@@ -410,9 +742,8 @@
                     <div class="flex items-center space-x-3 mb-6">
                         <div
                             class="w-10 h-10 bg-gradient-to-br from-primary-500 to-primary-700 rounded-xl flex items-center justify-center">
-                            <i class="fas fa-code text-white"></i>
-                        </div><span class="text-xl font-bold text-white">Biz<span
-                                class="text-primary-400">Mate</span></span>
+                            <i class="fas fa-code text-white"></i></div><span
+                            class="text-xl font-bold text-white">Biz<span class="text-primary-400">Mate</span></span>
                     </div>
                     <p class="text-sm leading-relaxed mb-6 text-slate-400">Mitra teknologi terpercaya untuk transformasi
                         digital bisnis Anda.</p>
@@ -422,8 +753,7 @@
                     <ul class="space-y-3 text-sm">
                         <li><a href="/produk-hr" class="text-slate-400 hover:text-primary-400">BizHR</a></li>
                         <li><a href="/produk-fnb" class="text-slate-400 hover:text-primary-400">BizResto</a></li>
-                        <li><a href="/produk-ecommerce" class="text-slate-400 hover:text-primary-400">BizStore</a>
-                        </li>
+                        <li><a href="/produk-ecommerce" class="text-slate-400 hover:text-primary-400">BizStore</a></li>
                         <li><a href="/produk-cbt" class="text-slate-400 hover:text-primary-400">BizExam</a></li>
                         <li><a href="/produk-pos" class="text-slate-400 hover:text-primary-400">BizPOS</a></li>
                     </ul>
@@ -431,8 +761,7 @@
                 <div>
                     <h4 class="text-white font-semibold mb-6">Tautan</h4>
                     <ul class="space-y-3 text-sm">
-                        <li><a href="/tentang-kami" class="text-slate-400 hover:text-primary-400">Tentang Kami</a>
-                        </li>
+                        <li><a href="/tentang-kami" class="text-slate-400 hover:text-primary-400">Tentang Kami</a></li>
                         <li><a href="/layanan" class="text-slate-400 hover:text-primary-400">Layanan</a></li>
                         <li><a href="/portofolio" class="text-slate-400 hover:text-primary-400">Portofolio</a></li>
                         <li><a href="/kontak" class="text-slate-400 hover:text-primary-400">Kontak</a></li>
@@ -443,8 +772,8 @@
                     <ul class="space-y-4 text-sm">
                         <li class="flex items-start space-x-3"><i
                                 class="fas fa-map-marker-alt text-primary-400 mt-1"></i><span class="text-slate-400">Jl.
-                                Nginden Semolo No.42 Blok B-23, Nginden Jangkungan, Kec.
-                                Sukolilo, Surabaya, Jawa Timur 60118</span></li>
+                                Nginden Semolo No.42 Blok B-23, Nginden Jangkungan, Kec. Sukolilo, Surabaya, Jawa Timur
+                                60118</span></li>
                         <li class="flex items-center space-x-3"><i class="fas fa-phone text-primary-400"></i><span
                                 class="text-slate-400">+62 21 1234 5678</span></li>
                         <li class="flex items-center space-x-3"><i class="fas fa-envelope text-primary-400"></i><span
@@ -458,7 +787,7 @@
                 class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row items-center justify-between text-sm text-slate-500">
                 <p>&copy; 2026 BizMate Digital.</p>
                 <div class="flex space-x-6 mt-4 md:mt-0"><a href="#" class="hover:text-primary-400">Kebijakan
-                        Privasi</a><a href="#" class="hover:text-primary-400">Syarat & Ketentuan</a></div>
+                        Privasi</a><a href="#" class="hover:text-primary-400">Syarat &amp; Ketentuan</a></div>
             </div>
         </div>
     </footer>
@@ -469,6 +798,17 @@
             rel="noopener" aria-label="Chat WhatsApp"><i class="fab fa-whatsapp"></i></a>
     </div>
     <script src="js/main.js"></script>
+    <script>
+        // FAQ accordion
+        document.querySelectorAll('.faq-trigger').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.parentElement;
+                const isOpen = item.classList.contains('open');
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+                if (!isOpen) item.classList.add('open');
+            });
+        });
+    </script>
 </body>
 
 </html>

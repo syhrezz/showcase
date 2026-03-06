@@ -6,15 +6,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BizStore - Platform eCommerce | BizMate Digital</title>
     <meta name="description"
-        content="BizStore adalah platform eCommerce lengkap untuk membangun toko online dan marketplace multi-vendor dengan fitur katalog, tracking, dan analitik.">
+        content="BizStore adalah platform eCommerce lengkap untuk membangun toko online dan marketplace multi-vendor dengan fitur katalog, tracking, analitik penjualan, dan integrasi payment gateway.">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'] }, colors: { primary: { 50: '#eef2ff', 100: '#e0e7ff', 200: '#c7d2fe', 300: '#a5b4fc', 400: '#818cf8', 500: '#6366f1', 600: '#4f46e5', 700: '#4338ca', 800: '#3730a3', 900: '#312e81' } } } } }</script>
+    <script>tailwind.config = { theme: { extend: { fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'] }, colors: { primary: { 50: '#eef2ff', 100: '#e0e7ff', 200: '#c7d2fe', 300: '#a5b4fc', 400: '#818cf8', 500: '#6366f1', 600: '#4f46e5', 700: '#4338ca', 800: '#3730a3', 900: '#312e81' } } } } }</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/custom.css">
+    <style>
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 300px;
+        }
+
+        .faq-item.open .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-icon {
+            transition: transform 0.3s;
+        }
+
+        .stat-number {
+            background: linear-gradient(135deg, #059669, #10b981);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .module-card:hover .module-icon {
+            transform: scale(1.1) rotate(-5deg);
+        }
+
+        .module-icon {
+            transition: transform 0.3s;
+        }
+
+        .gradient-ec {
+            background: linear-gradient(135deg, #065f46 0%, #059669 50%, #10b981 100%);
+        }
+    </style>
 </head>
 
 <body class="font-sans antialiased bg-white text-slate-700">
@@ -25,9 +62,8 @@
                 <a href="/" class="flex items-center space-x-3">
                     <div
                         class="w-10 h-10 bg-gradient-to-br from-primary-600 to-primary-800 rounded-xl flex items-center justify-center shadow-lg shadow-primary-500/20">
-                        <i class="fas fa-code text-white text-lg"></i>
-                    </div><span class="text-xl font-bold text-slate-800">Biz<span
-                            class="text-primary-600">Mate</span></span>
+                        <i class="fas fa-code text-white text-lg"></i></div><span
+                        class="text-xl font-bold text-slate-800">Biz<span class="text-primary-600">Mate</span></span>
                 </a>
                 <div class="hidden lg:flex items-center space-x-1">
                     <a href="/"
@@ -93,28 +129,45 @@
                     class="block px-4 py-3 rounded-xl text-sm text-primary-600 bg-primary-50 pl-8">BizStore</a><a
                     href="/kontak"
                     class="block px-4 py-3 rounded-xl text-sm font-medium text-slate-600 hover:bg-slate-50">Kontak</a>
-            </div><a href="https://wa.me/6281234567890?text=Halo%20BizMate%2C%20saya%20tertarik%20dengan%20BizStore"
+            </div>
+            <a href="https://wa.me/6281234567890?text=Halo%20BizMate%2C%20saya%20tertarik%20dengan%20BizStore"
                 target="_blank" class="block text-center px-5 py-3 btn-primary text-sm font-semibold rounded-xl mt-2"><i
                     class="fab fa-whatsapp mr-2"></i> Hubungi Kami</a>
         </div>
     </nav>
 
-    <section class="pt-28 pb-14 bg-gradient-to-br from-emerald-50 via-green-50 to-white relative overflow-hidden">
-        <div class="absolute top-20 right-0 w-96 h-96 bg-emerald-200/20 rounded-full blur-3xl"></div>
+    <!-- HERO -->
+    <section class="pt-28 pb-16 bg-gradient-to-br from-emerald-50 via-green-50 to-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-emerald-200/25 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-10 w-72 h-72 bg-green-200/20 rounded-full blur-3xl"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div class="grid lg:grid-cols-2 gap-14 items-center">
                 <div class="animate-on-scroll">
-                    <div class="flex items-center space-x-3 mb-4">
-                        <div class="w-12 h-12 bg-emerald-100 rounded-2xl flex items-center justify-center"><i
-                                class="fas fa-shopping-cart text-emerald-600 text-xl"></i></div>
-                        <span class="text-sm font-semibold text-emerald-600 uppercase tracking-wider">eCommerce
+                    <div class="flex items-center space-x-2 mb-5">
+                        <div class="w-10 h-10 bg-emerald-100 rounded-xl flex items-center justify-center"><i
+                                class="fas fa-shopping-cart text-emerald-600"></i></div><span
+                            class="text-sm font-semibold text-emerald-600 uppercase tracking-wider">eCommerce
                             Platform</span>
                     </div>
-                    <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 mb-6">Biz<span
+                    <h1 class="text-5xl sm:text-6xl font-extrabold text-slate-900 mb-5 leading-tight">Biz<span
                             class="text-emerald-600">Store</span></h1>
-                    <p class="text-lg text-slate-500 leading-relaxed mb-8">Platform e-commerce yang kuat dan fleksibel
-                        untuk membangun toko online atau marketplace multi-vendor. Lengkap dengan manajemen produk,
-                        pelacakan pesanan, dan dashboard analitik penjualan.</p>
+                    <p class="text-xl text-slate-500 leading-relaxed mb-6">Platform e-commerce yang kuat dan fleksibel
+                        untuk toko online single-seller maupun marketplace multi-vendor. Dari manajemen produk, payment
+                        gateway, pengiriman, hingga analitik penjualan mendalam — semua dalam satu ekosistem.</p>
+                    <div class="flex flex-wrap gap-3 mb-8">
+                        <span
+                            class="inline-flex items-center px-3 py-1.5 bg-emerald-100 text-emerald-700 text-sm font-medium rounded-full"><i
+                                class="fas fa-check-circle mr-1.5 text-emerald-500"></i>Multi-Vendor Marketplace</span>
+                        <span
+                            class="inline-flex items-center px-3 py-1.5 bg-blue-100 text-blue-700 text-sm font-medium rounded-full"><i
+                                class="fas fa-check-circle mr-1.5 text-blue-500"></i>5+ Payment Gateway</span>
+                        <span
+                            class="inline-flex items-center px-3 py-1.5 bg-amber-100 text-amber-700 text-sm font-medium rounded-full"><i
+                                class="fas fa-check-circle mr-1.5 text-amber-500"></i>Integrasi Kurir</span>
+                        <span
+                            class="inline-flex items-center px-3 py-1.5 bg-purple-100 text-purple-700 text-sm font-medium rounded-full"><i
+                                class="fas fa-check-circle mr-1.5 text-purple-500"></i>SEO Built-in</span>
+                    </div>
                     <div class="flex flex-col sm:flex-row gap-4">
                         <a href="https://wa.me/6281234567890?text=Halo%20BizMate%2C%20saya%20ingin%20demo%20BizStore"
                             target="_blank"
@@ -123,141 +176,521 @@
                         <a href="https://wa.me/6281234567890?text=Halo%20BizMate%2C%20saya%20ingin%20info%20harga%20BizStore"
                             target="_blank"
                             class="inline-flex items-center justify-center px-8 py-4 btn-outline text-base font-semibold rounded-2xl">Info
-                            Harga</a>
+                            Harga <i class="fas fa-arrow-right ml-2"></i></a>
+                    </div>
+                    <div class="mt-8 flex items-center space-x-4">
+                        <div class="flex -space-x-2">
+                            <div
+                                class="w-8 h-8 rounded-full bg-emerald-400 border-2 border-white flex items-center justify-center text-white text-xs font-bold">
+                                T</div>
+                            <div
+                                class="w-8 h-8 rounded-full bg-green-400 border-2 border-white flex items-center justify-center text-white text-xs font-bold">
+                                M</div>
+                            <div
+                                class="w-8 h-8 rounded-full bg-teal-400 border-2 border-white flex items-center justify-center text-white text-xs font-bold">
+                                S</div>
+                        </div>
+                        <p class="text-sm text-slate-500"><span class="font-semibold text-slate-700">150+ toko
+                                online</span> aktif menggunakan BizStore</p>
                     </div>
                 </div>
-                <div class="animate-on-scroll stagger-2">
-                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=700&h=500&fit=crop"
-                        alt="BizStore eCommerce" class="rounded-3xl shadow-2xl w-full object-cover">
+                <div class="animate-on-scroll stagger-2 relative">
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=700&h=500&fit=crop"
+                            alt="BizStore eCommerce" class="w-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-emerald-900/30 to-transparent"></div>
+                    </div>
+                    <div
+                        class="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl p-4 flex items-center space-x-3 border border-slate-100">
+                        <div class="w-10 h-10 bg-emerald-100 rounded-xl flex items-center justify-center"><i
+                                class="fas fa-arrow-trend-up text-emerald-600"></i></div>
+                        <div>
+                            <div class="text-xs text-slate-500">Rata-rata Kenaikan</div>
+                            <div class="text-lg font-extrabold text-slate-800">Omzet +35%</div>
+                        </div>
+                    </div>
+                    <div class="absolute -top-4 -right-4 bg-white rounded-2xl shadow-xl p-4 border border-slate-100">
+                        <div class="text-xs text-slate-500 mb-1">Produk Ditampung</div>
+                        <div class="text-2xl font-extrabold text-emerald-600">Unlimited</div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-16 bg-white">
+    <!-- STATS -->
+    <section class="py-10 bg-white border-b border-slate-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-10 animate-on-scroll">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="animate-on-scroll stagger-1">
+                    <div class="text-4xl font-extrabold stat-number mb-1">150+</div>
+                    <div class="text-sm text-slate-500 font-medium">Toko Online Aktif</div>
+                </div>
+                <div class="animate-on-scroll stagger-2">
+                    <div class="text-4xl font-extrabold stat-number mb-1">+35%</div>
+                    <div class="text-sm text-slate-500 font-medium">Rata-rata Kenaikan Omzet</div>
+                </div>
+                <div class="animate-on-scroll stagger-3">
+                    <div class="text-4xl font-extrabold stat-number mb-1">99.9%</div>
+                    <div class="text-sm text-slate-500 font-medium">Uptime Platform</div>
+                </div>
+                <div class="animate-on-scroll stagger-4">
+                    <div class="text-4xl font-extrabold stat-number mb-1">5+</div>
+                    <div class="text-sm text-slate-500 font-medium">Integrasi Payment Gateway</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-14 animate-on-scroll">
                 <span
                     class="inline-block px-4 py-1.5 bg-emerald-100 text-emerald-700 text-sm font-semibold rounded-full mb-4">Fitur
-                    Utama</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4">Bangun Toko Online Impian Anda</h2>
+                    Lengkap</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4">Semua yang Anda Butuhkan untuk
+                    Sukses Berjualan Online</h2>
+                <p class="text-lg text-slate-500 max-w-2xl mx-auto">Dari setup toko hingga skalabilitas enterprise,
+                    BizStore hadir sebagai platform yang tumbuh bersama bisnis Anda.</p>
             </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="animate-on-scroll stagger-1 p-6 rounded-2xl border border-slate-200 card-hover">
-                    <div class="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center mb-4"><i
-                            class="fas fa-store text-emerald-600"></i></div>
-                    <h3 class="font-bold text-slate-800 mb-2">Multi-Vendor Marketplace</h3>
-                    <p class="text-sm text-slate-500">Dukung banyak penjual dalam satu platform. Dashboard terpisah
-                        untuk setiap vendor dengan komisi otomatis.</p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div
+                    class="module-card animate-on-scroll stagger-1 p-6 rounded-2xl border border-slate-200 card-hover bg-gradient-to-br from-emerald-50/50 to-white">
+                    <div class="module-icon w-14 h-14 bg-emerald-100 rounded-2xl flex items-center justify-center mb-5">
+                        <i class="fas fa-store text-emerald-600 text-xl"></i></div>
+                    <h3 class="font-bold text-slate-800 text-lg mb-2">Multi-Vendor Marketplace</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed mb-4">Buat ekosistem marketplace dengan banyak
+                        penjual dalam satu platform. Setiap vendor mendapat dashboard terpisah untuk mengelola produk,
+                        pesanan, dan pendapatan. Komisi otomatis dihitung dan didistribusikan.</p>
+                    <ul class="space-y-1.5">
+                        <li class="flex items-center text-xs text-slate-500"><i
+                                class="fas fa-circle-check text-emerald-400 mr-2"></i>Onboarding vendor mandiri dengan
+                            verifikasi</li>
+                        <li class="flex items-center text-xs text-slate-500"><i
+                                class="fas fa-circle-check text-emerald-400 mr-2"></i>Sistem komisi & fee fleksibel per
+                            kategori</li>
+                        <li class="flex items-center text-xs text-slate-500"><i
+                                class="fas fa-circle-check text-emerald-400 mr-2"></i>Disbursement pendapatan vendor
+                            otomatis</li>
+                    </ul>
                 </div>
-                <div class="animate-on-scroll stagger-2 p-6 rounded-2xl border border-slate-200 card-hover">
-                    <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4"><i
-                            class="fas fa-boxes-stacked text-blue-600"></i></div>
-                    <h3 class="font-bold text-slate-800 mb-2">Katalog Produk Dinamis</h3>
-                    <p class="text-sm text-slate-500">Manajemen produk lengkap dengan varian, kategori, filter,
-                        pencarian canggih, dan galeri gambar produk.</p>
+                <div
+                    class="module-card animate-on-scroll stagger-2 p-6 rounded-2xl border border-slate-200 card-hover bg-gradient-to-br from-blue-50/50 to-white">
+                    <div class="module-icon w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center mb-5"><i
+                            class="fas fa-boxes-stacked text-blue-600 text-xl"></i></div>
+                    <h3 class="font-bold text-slate-800 text-lg mb-2">Katalog Produk Dinamis</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed mb-4">Manajemen produk lengkap dengan varian
+                        (ukuran, warna, dll.), bundling, pre-order, dan produk digital. Kategori bertingkat, filter
+                        pencarian canggih, dan galeri foto produk dengan zoom interaktif.</p>
+                    <ul class="space-y-1.5">
+                        <li class="flex items-center text-xs text-slate-500"><i
+                                class="fas fa-circle-check text-blue-400 mr-2"></i>Import produk massal via CSV/Excel
+                        </li>
+                        <li class="flex items-center text-xs text-slate-500"><i
+                                class="fas fa-circle-check text-blue-400 mr-2"></i>Manajemen stok per varian & gudang
+                        </li>
+                        <li class="flex items-center text-xs text-slate-500"><i
+                                class="fas fa-circle-check text-blue-400 mr-2"></i>Produk digital & berlangganan
+                            (subscription)</li>
+                    </ul>
                 </div>
-                <div class="animate-on-scroll stagger-3 p-6 rounded-2xl border border-slate-200 card-hover">
-                    <div class="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center mb-4"><i
-                            class="fas fa-truck-fast text-amber-600"></i></div>
-                    <h3 class="font-bold text-slate-800 mb-2">Pelacakan Pesanan</h3>
-                    <p class="text-sm text-slate-500">Tracking pesanan real-time dari pemesanan hingga pengiriman.
-                        Integrasi dengan kurir JNE, J&T, SiCepat, dll.</p>
+                <div
+                    class="module-card animate-on-scroll stagger-3 p-6 rounded-2xl border border-slate-200 card-hover bg-gradient-to-br from-amber-50/50 to-white">
+                    <div class="module-icon w-14 h-14 bg-amber-100 rounded-2xl flex items-center justify-center mb-5"><i
+                            class="fas fa-truck-fast text-amber-600 text-xl"></i></div>
+                    <h3 class="font-bold text-slate-800 text-lg mb-2">Manajemen Pengiriman</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed mb-4">Integrasi RajaOngkir untuk kalkulasi ongkir
+                        real-time dari semua kurir populer. Tracking pengiriman end-to-end, dropshipper support, dan
+                        manajemen retur/pengembalian barang yang mudah.</p>
+                    <ul class="space-y-1.5">
+                        <li class="flex items-center text-xs text-slate-500"><i
+                                class="fas fa-circle-check text-amber-400 mr-2"></i>JNE, J&T, SiCepat, AnterAja, Pos
+                            Indonesia, dll.</li>
+                        <li class="flex items-center text-xs text-slate-500"><i
+                                class="fas fa-circle-check text-amber-400 mr-2"></i>Label pengiriman otomatis & print
+                            massal</li>
+                        <li class="flex items-center text-xs text-slate-500"><i
+                                class="fas fa-circle-check text-amber-400 mr-2"></i>Notifikasi status pengiriman ke
+                            pelanggan</li>
+                    </ul>
                 </div>
-                <div class="animate-on-scroll stagger-4 p-6 rounded-2xl border border-slate-200 card-hover">
-                    <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-4"><i
-                            class="fas fa-chart-line text-purple-600"></i></div>
-                    <h3 class="font-bold text-slate-800 mb-2">Analitik Penjualan</h3>
-                    <p class="text-sm text-slate-500">Dashboard lengkap dengan laporan penjualan, konversi, produk
-                        terlaris, demografi pelanggan, dan tren.</p>
+                <div
+                    class="module-card animate-on-scroll stagger-4 p-6 rounded-2xl border border-slate-200 card-hover bg-gradient-to-br from-purple-50/50 to-white">
+                    <div class="module-icon w-14 h-14 bg-purple-100 rounded-2xl flex items-center justify-center mb-5">
+                        <i class="fas fa-chart-line text-purple-600 text-xl"></i></div>
+                    <h3 class="font-bold text-slate-800 text-lg mb-2">Analitik Penjualan Mendalam</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed mb-4">Dashboard analitik komprehensif: total
+                        revenue, conversion rate, average order value, produk terlaris, sumber traffic, demografi
+                        pelanggan, dan funnel penjualan. Semua data dalam satu tampilan real-time.</p>
+                    <ul class="space-y-1.5">
+                        <li class="flex items-center text-xs text-slate-500"><i
+                                class="fas fa-circle-check text-purple-400 mr-2"></i>Heat map klik & scroll behavior
+                            pelanggan</li>
+                        <li class="flex items-center text-xs text-slate-500"><i
+                                class="fas fa-circle-check text-purple-400 mr-2"></i>Laporan penjualan custom per
+                            periode</li>
+                        <li class="flex items-center text-xs text-slate-500"><i
+                                class="fas fa-circle-check text-purple-400 mr-2"></i>Integrasi Google Analytics & Meta
+                            Pixel</li>
+                    </ul>
                 </div>
-                <div class="animate-on-scroll stagger-5 p-6 rounded-2xl border border-slate-200 card-hover">
-                    <div class="w-12 h-12 bg-rose-100 rounded-xl flex items-center justify-center mb-4"><i
-                            class="fas fa-tags text-rose-600"></i></div>
-                    <h3 class="font-bold text-slate-800 mb-2">Promo & Diskon</h3>
-                    <p class="text-sm text-slate-500">Kupon, flash sale, bundling, loyalty program, dan kampanye
-                        marketing otomatis untuk meningkatkan penjualan.</p>
+                <div
+                    class="module-card animate-on-scroll stagger-5 p-6 rounded-2xl border border-slate-200 card-hover bg-gradient-to-br from-rose-50/50 to-white">
+                    <div class="module-icon w-14 h-14 bg-rose-100 rounded-2xl flex items-center justify-center mb-5"><i
+                            class="fas fa-tags text-rose-600 text-xl"></i></div>
+                    <h3 class="font-bold text-slate-800 text-lg mb-2">Promo & Marketing Tools</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed mb-4">Senjata lengkap untuk meningkatkan penjualan:
+                        kupon diskon, flash sale terjadwal, bundling penawaran, program referral, loyalty points, dan
+                        blast email/WhatsApp marketing ke segmen pelanggan spesifik.</p>
+                    <ul class="space-y-1.5">
+                        <li class="flex items-center text-xs text-slate-500"><i
+                                class="fas fa-circle-check text-rose-400 mr-2"></i>Flash sale dengan countdown timer
+                            menarik</li>
+                        <li class="flex items-center text-xs text-slate-500"><i
+                                class="fas fa-circle-check text-rose-400 mr-2"></i>Abandoned cart recovery otomatis via
+                            email</li>
+                        <li class="flex items-center text-xs text-slate-500"><i
+                                class="fas fa-circle-check text-rose-400 mr-2"></i>Affiliate & referral program
+                            management</li>
+                    </ul>
                 </div>
-                <div class="animate-on-scroll stagger-6 p-6 rounded-2xl border border-slate-200 card-hover">
-                    <div class="w-12 h-12 bg-teal-100 rounded-xl flex items-center justify-center mb-4"><i
-                            class="fas fa-magnifying-glass text-teal-600"></i></div>
-                    <h3 class="font-bold text-slate-800 mb-2">SEO Friendly</h3>
-                    <p class="text-sm text-slate-500">Optimasi mesin pencari bawaan: meta tags, URL slug, sitemap,
-                        structured data, dan page speed optimization.</p>
+                <div
+                    class="module-card animate-on-scroll stagger-6 p-6 rounded-2xl border border-slate-200 card-hover bg-gradient-to-br from-teal-50/50 to-white">
+                    <div class="module-icon w-14 h-14 bg-teal-100 rounded-2xl flex items-center justify-center mb-5"><i
+                            class="fas fa-magnifying-glass text-teal-600 text-xl"></i></div>
+                    <h3 class="font-bold text-slate-800 text-lg mb-2">SEO & Performa Web</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed mb-4">Built-in SEO tools: meta tags otomatis, URL
+                        slug yang SEO-friendly, XML sitemap, structured data (Schema.org), Open Graph untuk media
+                        sosial. Performa loading super cepat dengan CDN dan optimasi gambar otomatis.</p>
+                    <ul class="space-y-1.5">
+                        <li class="flex items-center text-xs text-slate-500"><i
+                                class="fas fa-circle-check text-teal-400 mr-2"></i>Google PageSpeed Score 90+
+                            out-of-the-box</li>
+                        <li class="flex items-center text-xs text-slate-500"><i
+                                class="fas fa-circle-check text-teal-400 mr-2"></i>Kompresi gambar otomatis (WebP)</li>
+                        <li class="flex items-center text-xs text-slate-500"><i
+                                class="fas fa-circle-check text-teal-400 mr-2"></i>Mobile-first responsive design</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-16 bg-slate-50">
+    <!-- PAYMENT & SHIPPING INTEGRATIONS -->
+    <section class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 animate-on-scroll">
+                <span
+                    class="inline-block px-4 py-1.5 bg-emerald-100 text-emerald-700 text-sm font-semibold rounded-full mb-4">Ekosistem
+                    Integrasi</span>
+                <h2 class="text-3xl font-extrabold text-slate-900 mb-4">Terhubung dengan Semua yang Anda Butuhkan</h2>
+                <p class="text-slate-500 max-w-xl mx-auto">BizStore terintegrasi dengan payment gateway, kurir, dan
+                    tools marketing terpopuler di Indonesia.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="animate-on-scroll stagger-1 bg-white rounded-2xl p-8 border border-slate-200">
+                    <h4 class="font-bold text-slate-800 mb-5 flex items-center"><i
+                            class="fas fa-credit-card text-emerald-500 mr-2"></i>Payment Gateway</h4>
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-3 p-3 bg-slate-50 rounded-xl">
+                            <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center"><i
+                                    class="fas fa-money-bill text-blue-600 text-xs"></i></div><span
+                                class="text-sm text-slate-700 font-medium">Midtrans (Semua Metode)</span>
+                        </div>
+                        <div class="flex items-center space-x-3 p-3 bg-slate-50 rounded-xl">
+                            <div class="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center"><i
+                                    class="fas fa-money-bill text-purple-600 text-xs"></i></div><span
+                                class="text-sm text-slate-700 font-medium">Xendit</span>
+                        </div>
+                        <div class="flex items-center space-x-3 p-3 bg-slate-50 rounded-xl">
+                            <div class="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center"><i
+                                    class="fas fa-qrcode text-green-600 text-xs"></i></div><span
+                                class="text-sm text-slate-700 font-medium">QRIS (GoPay, OVO, Dana, dll.)</span>
+                        </div>
+                        <div class="flex items-center space-x-3 p-3 bg-slate-50 rounded-xl">
+                            <div class="w-8 h-8 bg-slate-100 rounded-lg flex items-center justify-center"><i
+                                    class="fas fa-building-columns text-slate-600 text-xs"></i></div><span
+                                class="text-sm text-slate-700 font-medium">Transfer Bank & VA</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="animate-on-scroll stagger-2 bg-white rounded-2xl p-8 border border-slate-200">
+                    <h4 class="font-bold text-slate-800 mb-5 flex items-center"><i
+                            class="fas fa-truck text-emerald-500 mr-2"></i>Kurir Pengiriman</h4>
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-3 p-3 bg-slate-50 rounded-xl">
+                            <div class="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center"><i
+                                    class="fas fa-truck text-red-600 text-xs"></i></div><span
+                                class="text-sm text-slate-700 font-medium">JNE, J&T Express</span>
+                        </div>
+                        <div class="flex items-center space-x-3 p-3 bg-slate-50 rounded-xl">
+                            <div class="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center"><i
+                                    class="fas fa-truck text-orange-600 text-xs"></i></div><span
+                                class="text-sm text-slate-700 font-medium">SiCepat, AnterAja</span>
+                        </div>
+                        <div class="flex items-center space-x-3 p-3 bg-slate-50 rounded-xl">
+                            <div class="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center"><i
+                                    class="fas fa-truck text-green-600 text-xs"></i></div><span
+                                class="text-sm text-slate-700 font-medium">GoSend, GrabExpress (Same Day)</span>
+                        </div>
+                        <div class="flex items-center space-x-3 p-3 bg-slate-50 rounded-xl">
+                            <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center"><i
+                                    class="fas fa-truck text-blue-600 text-xs"></i></div><span
+                                class="text-sm text-slate-700 font-medium">Pos Indonesia & 20+ kurir lainnya</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="animate-on-scroll stagger-3 bg-white rounded-2xl p-8 border border-slate-200">
+                    <h4 class="font-bold text-slate-800 mb-5 flex items-center"><i
+                            class="fas fa-bullhorn text-emerald-500 mr-2"></i>Marketing & Lainnya</h4>
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-3 p-3 bg-slate-50 rounded-xl">
+                            <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center"><i
+                                    class="fab fa-facebook text-blue-600 text-xs"></i></div><span
+                                class="text-sm text-slate-700 font-medium">Meta Pixel & Ads</span>
+                        </div>
+                        <div class="flex items-center space-x-3 p-3 bg-slate-50 rounded-xl">
+                            <div class="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center"><i
+                                    class="fab fa-google text-red-600 text-xs"></i></div><span
+                                class="text-sm text-slate-700 font-medium">Google Analytics & Ads</span>
+                        </div>
+                        <div class="flex items-center space-x-3 p-3 bg-slate-50 rounded-xl">
+                            <div class="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center"><i
+                                    class="fab fa-whatsapp text-green-600 text-xs"></i></div><span
+                                class="text-sm text-slate-700 font-medium">WhatsApp Business API</span>
+                        </div>
+                        <div class="flex items-center space-x-3 p-3 bg-slate-50 rounded-xl">
+                            <div class="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center"><i
+                                    class="fas fa-plug text-purple-600 text-xs"></i></div><span
+                                class="text-sm text-slate-700 font-medium">REST API & Webhook</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TECH SPECS -->
+    <section class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 animate-on-scroll"><span
+                    class="inline-block px-4 py-1.5 bg-emerald-100 text-emerald-700 text-sm font-semibold rounded-full mb-4">Spesifikasi
+                    Teknis</span>
+                <h2 class="text-3xl font-extrabold text-slate-900">Infrastruktur Andal untuk Skala Apapun</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="animate-on-scroll stagger-1 space-y-4">
+                    <div class="flex items-start space-x-4 p-4 rounded-xl border border-slate-100 bg-slate-50/60">
+                        <div class="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-server text-emerald-600 text-sm"></i></div>
+                        <div>
+                            <div class="font-semibold text-slate-800 text-sm">Platform</div>
+                            <div class="text-slate-500 text-sm">Web-based Responsive + Mobile App Android/iOS (PWA &
+                                Native)</div>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4 p-4 rounded-xl border border-slate-100 bg-slate-50/60">
+                        <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0"><i
+                                class="fas fa-code text-blue-600 text-sm"></i></div>
+                        <div>
+                            <div class="font-semibold text-slate-800 text-sm">Teknologi</div>
+                            <div class="text-slate-500 text-sm">Next.js, Node.js, MongoDB, Redis, Elasticsearch, AWS/GCP
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4 p-4 rounded-xl border border-slate-100 bg-slate-50/60">
+                        <div class="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center flex-shrink-0"><i
+                                class="fas fa-database text-amber-600 text-sm"></i></div>
+                        <div>
+                            <div class="font-semibold text-slate-800 text-sm">Kapasitas</div>
+                            <div class="text-slate-500 text-sm">Unlimited produk, kategori, vendor, dan transaksi</div>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4 p-4 rounded-xl border border-slate-100 bg-slate-50/60">
+                        <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-cloud text-purple-600 text-sm"></i></div>
+                        <div>
+                            <div class="font-semibold text-slate-800 text-sm">CDN & Hosting</div>
+                            <div class="text-slate-500 text-sm">Cloudflare CDN global, auto-scaling di AWS/GCP</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="animate-on-scroll stagger-2 space-y-4">
+                    <div class="flex items-start space-x-4 p-4 rounded-xl border border-slate-100 bg-slate-50/60">
+                        <div class="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center flex-shrink-0"><i
+                                class="fas fa-shield-halved text-red-600 text-sm"></i></div>
+                        <div>
+                            <div class="font-semibold text-slate-800 text-sm">Keamanan</div>
+                            <div class="text-slate-500 text-sm">SSL, PCI DSS Compliant, DDoS Protection, WAF, Anti-fraud
+                                system</div>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4 p-4 rounded-xl border border-slate-100 bg-slate-50/60">
+                        <div class="w-10 h-10 bg-teal-100 rounded-lg flex items-center justify-center flex-shrink-0"><i
+                                class="fas fa-headset text-teal-600 text-sm"></i></div>
+                        <div>
+                            <div class="font-semibold text-slate-800 text-sm">Dukungan</div>
+                            <div class="text-slate-500 text-sm">24/7 via WhatsApp, Email, dedicated account manager
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4 p-4 rounded-xl border border-slate-100 bg-slate-50/60">
+                        <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0"><i
+                                class="fas fa-clock text-green-600 text-sm"></i></div>
+                        <div>
+                            <div class="font-semibold text-slate-800 text-sm">Uptime</div>
+                            <div class="text-slate-500 text-sm">99.95% SLA Uptime, monitoring 24/7, backup harian
+                                otomatis</div>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4 p-4 rounded-xl border border-slate-100 bg-slate-50/60">
+                        <div class="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-paintbrush text-indigo-600 text-sm"></i></div>
+                        <div>
+                            <div class="font-semibold text-slate-800 text-sm">Kustomisasi</div>
+                            <div class="text-slate-500 text-sm">Template toko yang dapat dikustomisasi penuh, custom
+                                domain, white-label</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIAL -->
+    <section class="py-20 bg-slate-50">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 animate-on-scroll"><span
+                    class="inline-block px-4 py-1.5 bg-emerald-100 text-emerald-700 text-sm font-semibold rounded-full mb-4">Testimoni</span>
+                <h2 class="text-3xl font-extrabold text-slate-900">Bisnis Online yang Tumbuh bersama BizStore</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="animate-on-scroll stagger-1 bg-white rounded-2xl p-8 border border-slate-200 shadow-sm">
+                    <div class="flex text-yellow-400 mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="text-slate-600 leading-relaxed mb-6">"Dengan BizStore, kami berhasil membangun marketplace
+                        lokal dengan 50+ vendor dalam 2 bulan. Sistem komisi otomatis dan dashboard vendor yang terpisah
+                        membuat pengelolaan sangat mudah."</p>
+                    <div class="flex items-center space-x-3">
+                        <div
+                            class="w-10 h-10 bg-emerald-200 rounded-full flex items-center justify-center font-bold text-emerald-800">
+                            FK</div>
+                        <div>
+                            <div class="font-semibold text-slate-800 text-sm">Fajar Kurniawan</div>
+                            <div class="text-xs text-slate-400">Founder, MarketLocal.id</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="animate-on-scroll stagger-2 bg-white rounded-2xl p-8 border border-slate-200 shadow-sm">
+                    <div class="flex text-yellow-400 mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="text-slate-600 leading-relaxed mb-6">"Fitur abandoned cart recovery BizStore meningkatkan
+                        conversion kami 18% dalam sebulan pertama. Integrasi dengan WhatsApp Business juga sangat
+                        membantu follow-up pelanggan secara personal."</p>
+                    <div class="flex items-center space-x-3">
+                        <div
+                            class="w-10 h-10 bg-teal-200 rounded-full flex items-center justify-center font-bold text-teal-800">
+                            NP</div>
+                        <div>
+                            <div class="font-semibold text-slate-800 text-sm">Nadia Putri</div>
+                            <div class="text-xs text-slate-400">CEO, Beautique Skincare Online</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-20 bg-white">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 animate-on-scroll"><span
+                    class="inline-block px-4 py-1.5 bg-emerald-100 text-emerald-700 text-sm font-semibold rounded-full mb-4">FAQ</span>
+                <h2 class="text-3xl font-extrabold text-slate-900">Pertanyaan Umum</h2>
+            </div>
+            <div class="space-y-4 animate-on-scroll">
+                <div class="faq-item border border-slate-200 rounded-2xl overflow-hidden"><button
+                        class="faq-trigger w-full flex items-center justify-between px-6 py-5 text-left font-semibold text-slate-800 hover:bg-slate-50 transition-colors"><span>Apakah
+                            BizStore bisa dijadikan marketplace multi-vendor?</span><i
+                            class="faq-icon fas fa-plus text-primary-500 flex-shrink-0 ml-4"></i></button>
+                    <div class="faq-answer px-6">
+                        <p class="text-slate-500 text-sm leading-relaxed pb-5">Ya, BizStore mendukung mode marketplace
+                            dengan banyak vendor dalam satu platform. Setiap vendor bisa mendaftar mandiri, mengelola
+                            toko dan produknya secara independen, menerima pembayaran, dan mendapat disbursement
+                            otomatis setelah dikurangi komisi platform yang Anda tentukan.</p>
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-2xl overflow-hidden"><button
+                        class="faq-trigger w-full flex items-center justify-between px-6 py-5 text-left font-semibold text-slate-800 hover:bg-slate-50 transition-colors"><span>Berapa
+                            lama waktu untuk meluncurkan toko online dengan BizStore?</span><i
+                            class="faq-icon fas fa-plus text-primary-500 flex-shrink-0 ml-4"></i></button>
+                    <div class="faq-answer px-6">
+                        <p class="text-slate-500 text-sm leading-relaxed pb-5">Untuk single-seller store, toko bisa live
+                            dalam 1-3 hari setelah konfigurasi dan pengisian produk. Untuk marketplace multi-vendor,
+                            implementasi penuh membutuhkan 1-3 minggu. Tim kami membantu setup domain, payment gateway,
+                            dan konfigurasi awal secara lengkap.</p>
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-2xl overflow-hidden"><button
+                        class="faq-trigger w-full flex items-center justify-between px-6 py-5 text-left font-semibold text-slate-800 hover:bg-slate-50 transition-colors"><span>Apakah
+                            bisa diintegrasikan dengan sistem ERP atau software akuntansi yang ada?</span><i
+                            class="faq-icon fas fa-plus text-primary-500 flex-shrink-0 ml-4"></i></button>
+                    <div class="faq-answer px-6">
+                        <p class="text-slate-500 text-sm leading-relaxed pb-5">Ya, BizStore menyediakan REST API dan
+                            webhook yang lengkap untuk integrasi dengan sistem apapun — ERP (SAP, Odoo), software
+                            akuntansi (Accurate, Jurnal), CRM, atau warehouse management system. Tim developer kami juga
+                            dapat membantu integrasi custom sesuai kebutuhan.</p>
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-2xl overflow-hidden"><button
+                        class="faq-trigger w-full flex items-center justify-between px-6 py-5 text-left font-semibold text-slate-800 hover:bg-slate-50 transition-colors"><span>Apakah
+                            tersedia versi mobile app untuk pembeli?</span><i
+                            class="faq-icon fas fa-plus text-primary-500 flex-shrink-0 ml-4"></i></button>
+                    <div class="faq-answer px-6">
+                        <p class="text-slate-500 text-sm leading-relaxed pb-5">Ya. BizStore menyediakan template
+                            Progressive Web App (PWA) yang bisa dipasang di home screen seperti app native. Jika Anda
+                            menginginkan native app di Google Play Store dan App Store, kami juga menyediakan layanan
+                            pengembangan mobile app tambahan dengan waktu pengembangan 4-8 minggu.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20 bg-slate-50">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-10 animate-on-scroll"><span
-                    class="inline-block px-4 py-1.5 bg-emerald-100 text-emerald-700 text-sm font-semibold rounded-full mb-4">Spesifikasi</span>
-                <h2 class="text-3xl font-extrabold text-slate-900">Spesifikasi Teknis</h2>
-            </div>
-            <div class="animate-on-scroll bg-white rounded-2xl border border-slate-200 overflow-hidden">
-                <table class="spec-table w-full text-sm">
-                    <tbody>
-                        <tr class="border-b border-slate-100">
-                            <td class="px-6 py-4 font-medium text-slate-800 bg-slate-50 w-1/3">Platform</td>
-                            <td class="px-6 py-4 text-slate-600">Web-based Responsive + Mobile App</td>
-                        </tr>
-                        <tr class="border-b border-slate-100">
-                            <td class="px-6 py-4 font-medium text-slate-800 bg-slate-50">Teknologi</td>
-                            <td class="px-6 py-4 text-slate-600">Next.js, Node.js, MongoDB, Redis</td>
-                        </tr>
-                        <tr class="border-b border-slate-100">
-                            <td class="px-6 py-4 font-medium text-slate-800 bg-slate-50">Payment Gateway</td>
-                            <td class="px-6 py-4 text-slate-600">Midtrans, Xendit, DOKU, Transfer Bank</td>
-                        </tr>
-                        <tr class="border-b border-slate-100">
-                            <td class="px-6 py-4 font-medium text-slate-800 bg-slate-50">Pengiriman</td>
-                            <td class="px-6 py-4 text-slate-600">RajaOngkir API (JNE, J&T, SiCepat, Pos, dll)</td>
-                        </tr>
-                        <tr class="border-b border-slate-100">
-                            <td class="px-6 py-4 font-medium text-slate-800 bg-slate-50">Kapasitas Produk</td>
-                            <td class="px-6 py-4 text-slate-600">Unlimited produk dan kategori</td>
-                        </tr>
-                        <tr class="border-b border-slate-100">
-                            <td class="px-6 py-4 font-medium text-slate-800 bg-slate-50">Keamanan</td>
-                            <td class="px-6 py-4 text-slate-600">SSL, PCI DSS Compliant, DDoS Protection</td>
-                        </tr>
-                        <tr>
-                            <td class="px-6 py-4 font-medium text-slate-800 bg-slate-50">CDN & Hosting</td>
-                            <td class="px-6 py-4 text-slate-600">Cloudflare CDN, AWS/GCP Cloud Hosting</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-16 bg-white">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div
-                class="animate-on-scroll bg-gradient-to-br from-emerald-600 via-emerald-700 to-teal-800 rounded-3xl p-12 sm:p-16 relative overflow-hidden">
-                <div class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2">
+                class="animate-on-scroll bg-gradient-to-br from-emerald-600 via-emerald-700 to-teal-800 rounded-3xl p-12 sm:p-16 relative overflow-hidden text-center">
+                <div class="absolute top-0 right-0 w-80 h-80 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2">
                 </div>
                 <div class="relative z-10">
                     <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-4">Mulai Bisnis Online Anda Sekarang
                     </h2>
-                    <p class="text-emerald-100 text-lg mb-8 max-w-xl mx-auto">Bangun toko online profesional dengan
-                        BizStore. Dapatkan demo gratis dan konsultasi kebutuhan e-commerce Anda.</p>
-                    <a href="https://wa.me/6281234567890?text=Halo%20BizMate%2C%20saya%20ingin%20demo%20BizStore"
-                        target="_blank"
-                        class="inline-flex items-center justify-center px-8 py-4 bg-white text-emerald-700 font-bold rounded-2xl hover:bg-emerald-50 transition-all text-base shadow-xl"><i
-                            class="fab fa-whatsapp mr-2 text-xl"></i> Minta Demo Gratis</a>
+                    <p class="text-emerald-100 text-lg mb-8 max-w-xl mx-auto">Bergabunglah dengan 150+ toko online yang
+                        telah berkembang bersama BizStore. Demo gratis, konsultasi kebutuhan tanpa biaya.</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="https://wa.me/6281234567890?text=Halo%20BizMate%2C%20saya%20ingin%20demo%20BizStore"
+                            target="_blank"
+                            class="inline-flex items-center justify-center px-8 py-4 bg-white text-emerald-700 font-bold rounded-2xl hover:bg-emerald-50 transition-all text-base shadow-xl"><i
+                                class="fab fa-whatsapp mr-2 text-xl"></i> Minta Demo Gratis</a>
+                        <a href="/produk"
+                            class="inline-flex items-center justify-center px-8 py-4 border-2 border-white/30 text-white font-semibold rounded-2xl hover:bg-white/10 transition-all">Produk
+                            Lain <i class="fas fa-arrow-right ml-2"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-16 bg-slate-50">
+    <!-- Related -->
+    <section class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h3 class="text-xl font-bold text-slate-900 mb-8 text-center">Produk Lainnya</h3>
+            <h3 class="text-xl font-bold text-slate-900 mb-8 text-center">Produk Lainnya dari BizMate</h3>
             <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 <a href="/produk-hr"
-                    class="p-5 bg-white rounded-xl border border-slate-200 hover:border-primary-200 transition-all card-hover flex items-center space-x-4">
+                    class="p-5 bg-white rounded-xl border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all card-hover flex items-center space-x-4">
                     <div class="w-11 h-11 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0"><i
                             class="fas fa-users text-blue-600"></i></div>
                     <div>
@@ -266,7 +699,7 @@
                     </div>
                 </a>
                 <a href="/produk-fnb"
-                    class="p-5 bg-white rounded-xl border border-slate-200 hover:border-primary-200 transition-all card-hover flex items-center space-x-4">
+                    class="p-5 bg-white rounded-xl border border-slate-200 hover:border-orange-300 hover:shadow-md transition-all card-hover flex items-center space-x-4">
                     <div class="w-11 h-11 bg-orange-100 rounded-xl flex items-center justify-center flex-shrink-0"><i
                             class="fas fa-utensils text-orange-600"></i></div>
                     <div>
@@ -275,7 +708,7 @@
                     </div>
                 </a>
                 <a href="/produk-cbt"
-                    class="p-5 bg-white rounded-xl border border-slate-200 hover:border-primary-200 transition-all card-hover flex items-center space-x-4">
+                    class="p-5 bg-white rounded-xl border border-slate-200 hover:border-purple-300 hover:shadow-md transition-all card-hover flex items-center space-x-4">
                     <div class="w-11 h-11 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0"><i
                             class="fas fa-laptop-code text-purple-600"></i></div>
                     <div>
@@ -284,7 +717,7 @@
                     </div>
                 </a>
                 <a href="/produk-pos"
-                    class="p-5 bg-white rounded-xl border border-slate-200 hover:border-primary-200 transition-all card-hover flex items-center space-x-4">
+                    class="p-5 bg-white rounded-xl border border-slate-200 hover:border-rose-300 hover:shadow-md transition-all card-hover flex items-center space-x-4">
                     <div class="w-11 h-11 bg-rose-100 rounded-xl flex items-center justify-center flex-shrink-0"><i
                             class="fas fa-cash-register text-rose-600"></i></div>
                     <div>
@@ -303,9 +736,8 @@
                     <div class="flex items-center space-x-3 mb-6">
                         <div
                             class="w-10 h-10 bg-gradient-to-br from-primary-500 to-primary-700 rounded-xl flex items-center justify-center">
-                            <i class="fas fa-code text-white"></i>
-                        </div><span class="text-xl font-bold text-white">Biz<span
-                                class="text-primary-400">Mate</span></span>
+                            <i class="fas fa-code text-white"></i></div><span
+                            class="text-xl font-bold text-white">Biz<span class="text-primary-400">Mate</span></span>
                     </div>
                     <p class="text-sm leading-relaxed mb-6 text-slate-400">Mitra teknologi terpercaya untuk transformasi
                         digital bisnis Anda.</p>
@@ -315,8 +747,7 @@
                     <ul class="space-y-3 text-sm">
                         <li><a href="/produk-hr" class="text-slate-400 hover:text-primary-400">BizHR</a></li>
                         <li><a href="/produk-fnb" class="text-slate-400 hover:text-primary-400">BizResto</a></li>
-                        <li><a href="/produk-ecommerce" class="text-slate-400 hover:text-primary-400">BizStore</a>
-                        </li>
+                        <li><a href="/produk-ecommerce" class="text-slate-400 hover:text-primary-400">BizStore</a></li>
                         <li><a href="/produk-cbt" class="text-slate-400 hover:text-primary-400">BizExam</a></li>
                         <li><a href="/produk-pos" class="text-slate-400 hover:text-primary-400">BizPOS</a></li>
                     </ul>
@@ -324,8 +755,7 @@
                 <div>
                     <h4 class="text-white font-semibold mb-6">Tautan</h4>
                     <ul class="space-y-3 text-sm">
-                        <li><a href="/tentang-kami" class="text-slate-400 hover:text-primary-400">Tentang Kami</a>
-                        </li>
+                        <li><a href="/tentang-kami" class="text-slate-400 hover:text-primary-400">Tentang Kami</a></li>
                         <li><a href="/layanan" class="text-slate-400 hover:text-primary-400">Layanan</a></li>
                         <li><a href="/portofolio" class="text-slate-400 hover:text-primary-400">Portofolio</a></li>
                         <li><a href="/kontak" class="text-slate-400 hover:text-primary-400">Kontak</a></li>
@@ -336,8 +766,8 @@
                     <ul class="space-y-4 text-sm">
                         <li class="flex items-start space-x-3"><i
                                 class="fas fa-map-marker-alt text-primary-400 mt-1"></i><span class="text-slate-400">Jl.
-                                Nginden Semolo No.42 Blok B-23, Nginden Jangkungan, Kec.
-                                Sukolilo, Surabaya, Jawa Timur 60118</span></li>
+                                Nginden Semolo No.42 Blok B-23, Nginden Jangkungan, Kec. Sukolilo, Surabaya, Jawa Timur
+                                60118</span></li>
                         <li class="flex items-center space-x-3"><i class="fas fa-phone text-primary-400"></i><span
                                 class="text-slate-400">+62 21 1234 5678</span></li>
                         <li class="flex items-center space-x-3"><i class="fas fa-envelope text-primary-400"></i><span
@@ -351,7 +781,7 @@
                 class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row items-center justify-between text-sm text-slate-500">
                 <p>&copy; 2026 BizMate Digital.</p>
                 <div class="flex space-x-6 mt-4 md:mt-0"><a href="#" class="hover:text-primary-400">Kebijakan
-                        Privasi</a><a href="#" class="hover:text-primary-400">Syarat & Ketentuan</a></div>
+                        Privasi</a><a href="#" class="hover:text-primary-400">Syarat &amp; Ketentuan</a></div>
             </div>
         </div>
     </footer>
@@ -362,6 +792,7 @@
             target="_blank" rel="noopener" aria-label="Chat WhatsApp"><i class="fab fa-whatsapp"></i></a>
     </div>
     <script src="js/main.js"></script>
+    <script>document.querySelectorAll('.faq-trigger').forEach(btn => { btn.addEventListener('click', () => { const item = btn.parentElement; const isOpen = item.classList.contains('open'); document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open')); if (!isOpen) item.classList.add('open'); }); });</script>
 </body>
 
 </html>

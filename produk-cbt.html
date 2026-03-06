@@ -6,15 +6,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BizExam - Platform CBT | BizMate Digital</title>
     <meta name="description"
-        content="BizExam adalah platform ujian berbasis komputer (CBT) yang aman dan skalabel untuk institusi pendidikan dan perusahaan.">
+        content="BizExam adalah platform ujian berbasis komputer (CBT) yang aman, andal, dan skalabel untuk institusi pendidikan, pelatihan profesional, dan seleksi karyawan.">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'] }, colors: { primary: { 50: '#eef2ff', 100: '#e0e7ff', 200: '#c7d2fe', 300: '#a5b4fc', 400: '#818cf8', 500: '#6366f1', 600: '#4f46e5', 700: '#4338ca', 800: '#3730a3', 900: '#312e81' } } } } }</script>
+    <script>tailwind.config = { theme: { extend: { fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'] }, colors: { primary: { 50: '#eef2ff', 100: '#e0e7ff', 200: '#c7d2fe', 300: '#a5b4fc', 400: '#818cf8', 500: '#6366f1', 600: '#4f46e5', 700: '#4338ca', 800: '#3730a3', 900: '#312e81' } } } } }</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/custom.css">
+    <style>
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 300px;
+        }
+
+        .faq-item.open .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-icon {
+            transition: transform 0.3s;
+        }
+
+        .stat-number {
+            background: linear-gradient(135deg, #7c3aed, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .module-card:hover .module-icon {
+            transform: scale(1.1) rotate(-5deg);
+        }
+
+        .module-icon {
+            transition: transform 0.3s;
+        }
+
+        .gradient-cbt {
+            background: linear-gradient(135deg, #5b21b6 0%, #7c3aed 50%, #9333ea 100%);
+        }
+    </style>
 </head>
 
 <body class="font-sans antialiased bg-white text-slate-700">
@@ -25,9 +62,8 @@
                 <a href="/" class="flex items-center space-x-3">
                     <div
                         class="w-10 h-10 bg-gradient-to-br from-primary-600 to-primary-800 rounded-xl flex items-center justify-center shadow-lg shadow-primary-500/20">
-                        <i class="fas fa-code text-white text-lg"></i>
-                    </div><span class="text-xl font-bold text-slate-800">Biz<span
-                            class="text-primary-600">Mate</span></span>
+                        <i class="fas fa-code text-white text-lg"></i></div><span
+                        class="text-xl font-bold text-slate-800">Biz<span class="text-primary-600">Mate</span></span>
                 </a>
                 <div class="hidden lg:flex items-center space-x-1">
                     <a href="/"
@@ -92,28 +128,45 @@
                     class="block px-4 py-3 rounded-xl text-sm text-primary-600 bg-primary-50 pl-8">BizExam</a><a
                     href="/kontak"
                     class="block px-4 py-3 rounded-xl text-sm font-medium text-slate-600 hover:bg-slate-50">Kontak</a>
-            </div><a href="https://wa.me/6281234567890?text=Halo%20BizMate%2C%20saya%20tertarik%20dengan%20BizExam"
+            </div>
+            <a href="https://wa.me/6281234567890?text=Halo%20BizMate%2C%20saya%20tertarik%20dengan%20BizExam"
                 target="_blank" class="block text-center px-5 py-3 btn-primary text-sm font-semibold rounded-xl mt-2"><i
                     class="fab fa-whatsapp mr-2"></i> Hubungi Kami</a>
         </div>
     </nav>
 
-    <section class="pt-28 pb-14 bg-gradient-to-br from-purple-50 via-violet-50 to-white relative overflow-hidden">
-        <div class="absolute top-20 right-0 w-96 h-96 bg-purple-200/20 rounded-full blur-3xl"></div>
+    <!-- HERO -->
+    <section class="pt-28 pb-16 bg-gradient-to-br from-purple-50 via-violet-50 to-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-purple-200/25 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-10 w-72 h-72 bg-violet-200/20 rounded-full blur-3xl"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div class="grid lg:grid-cols-2 gap-14 items-center">
                 <div class="animate-on-scroll">
-                    <div class="flex items-center space-x-3 mb-4">
-                        <div class="w-12 h-12 bg-purple-100 rounded-2xl flex items-center justify-center"><i
-                                class="fas fa-laptop-code text-purple-600 text-xl"></i></div>
-                        <span class="text-sm font-semibold text-purple-600 uppercase tracking-wider">Computer Based
+                    <div class="flex items-center space-x-2 mb-5">
+                        <div class="w-10 h-10 bg-purple-100 rounded-xl flex items-center justify-center"><i
+                                class="fas fa-laptop-code text-purple-600"></i></div><span
+                            class="text-sm font-semibold text-purple-600 uppercase tracking-wider">Computer Based
                             Test</span>
                     </div>
-                    <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 mb-6">Biz<span
+                    <h1 class="text-5xl sm:text-6xl font-extrabold text-slate-900 mb-5 leading-tight">Biz<span
                             class="text-purple-600">Exam</span></h1>
-                    <p class="text-lg text-slate-500 leading-relaxed mb-8">Platform ujian berbasis komputer yang aman,
-                        andal, dan skalabel. Ideal untuk institusi pendidikan, pelatihan profesional, dan proses seleksi
-                        karyawan dengan fitur anti-kecurangan canggih.</p>
+                    <p class="text-xl text-slate-500 leading-relaxed mb-6">Platform ujian berbasis komputer yang aman,
+                        andal, dan skalabel. Cocok untuk institusi pendidikan, lembaga pelatihan, sertifikasi profesi,
+                        dan proses seleksi karyawan dengan fitur anti-kecurangan canggih.</p>
+                    <div class="flex flex-wrap gap-3 mb-8">
+                        <span
+                            class="inline-flex items-center px-3 py-1.5 bg-purple-100 text-purple-700 text-sm font-medium rounded-full"><i
+                                class="fas fa-check-circle mr-1.5 text-purple-500"></i>Anti-Cheating Canggih</span>
+                        <span
+                            class="inline-flex items-center px-3 py-1.5 bg-red-100 text-red-700 text-sm font-medium rounded-full"><i
+                                class="fas fa-check-circle mr-1.5 text-red-500"></i>Auto-Grading</span>
+                        <span
+                            class="inline-flex items-center px-3 py-1.5 bg-blue-100 text-blue-700 text-sm font-medium rounded-full"><i
+                                class="fas fa-check-circle mr-1.5 text-blue-500"></i>Sertifikat Digital</span>
+                        <span
+                            class="inline-flex items-center px-3 py-1.5 bg-green-100 text-green-700 text-sm font-medium rounded-full"><i
+                                class="fas fa-check-circle mr-1.5 text-green-500"></i>50.000 Peserta Serentak</span>
+                    </div>
                     <div class="flex flex-col sm:flex-row gap-4">
                         <a href="https://wa.me/6281234567890?text=Halo%20BizMate%2C%20saya%20ingin%20demo%20BizExam"
                             target="_blank"
@@ -122,141 +175,490 @@
                         <a href="https://wa.me/6281234567890?text=Halo%20BizMate%2C%20saya%20ingin%20info%20harga%20BizExam"
                             target="_blank"
                             class="inline-flex items-center justify-center px-8 py-4 btn-outline text-base font-semibold rounded-2xl">Info
-                            Harga</a>
+                            Harga <i class="fas fa-arrow-right ml-2"></i></a>
+                    </div>
+                    <div class="mt-8 flex items-center space-x-4">
+                        <div class="flex -space-x-2">
+                            <div
+                                class="w-8 h-8 rounded-full bg-purple-400 border-2 border-white flex items-center justify-center text-white text-xs font-bold">
+                                U</div>
+                            <div
+                                class="w-8 h-8 rounded-full bg-violet-400 border-2 border-white flex items-center justify-center text-white text-xs font-bold">
+                                S</div>
+                            <div
+                                class="w-8 h-8 rounded-full bg-indigo-400 border-2 border-white flex items-center justify-center text-white text-xs font-bold">
+                                M</div>
+                        </div>
+                        <p class="text-sm text-slate-500"><span class="font-semibold text-slate-700">500+
+                                institusi</span> telah menggunakan BizExam</p>
                     </div>
                 </div>
-                <div class="animate-on-scroll stagger-2">
-                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=700&h=500&fit=crop"
-                        alt="BizExam CBT Platform" class="rounded-3xl shadow-2xl w-full object-cover">
+                <div class="animate-on-scroll stagger-2 relative">
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=700&h=500&fit=crop"
+                            alt="BizExam CBT Platform" class="w-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-purple-900/30 to-transparent"></div>
+                    </div>
+                    <div
+                        class="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl p-4 flex items-center space-x-3 border border-slate-100">
+                        <div class="w-10 h-10 bg-purple-100 rounded-xl flex items-center justify-center"><i
+                                class="fas fa-shield-halved text-purple-600"></i></div>
+                        <div>
+                            <div class="text-xs text-slate-500">Anti-Cheat System</div>
+                            <div class="text-lg font-extrabold text-slate-800">Level Tinggi</div>
+                        </div>
+                    </div>
+                    <div class="absolute -top-4 -right-4 bg-white rounded-2xl shadow-xl p-4 border border-slate-100">
+                        <div class="text-xs text-slate-500 mb-1">Peserta Serentak</div>
+                        <div class="text-2xl font-extrabold text-purple-600">50K+</div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-16 bg-white">
+    <!-- STATS -->
+    <section class="py-10 bg-white border-b border-slate-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-10 animate-on-scroll"><span
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="animate-on-scroll stagger-1">
+                    <div class="text-4xl font-extrabold stat-number mb-1">50K+</div>
+                    <div class="text-sm text-slate-500 font-medium">Peserta Ujian Serentak</div>
+                </div>
+                <div class="animate-on-scroll stagger-2">
+                    <div class="text-4xl font-extrabold stat-number mb-1">99.9%</div>
+                    <div class="text-sm text-slate-500 font-medium">Uptime Platform</div>
+                </div>
+                <div class="animate-on-scroll stagger-3">
+                    <div class="text-4xl font-extrabold stat-number mb-1">500+</div>
+                    <div class="text-sm text-slate-500 font-medium">Institusi Pengguna</div>
+                </div>
+                <div class="animate-on-scroll stagger-4">
+                    <div class="text-4xl font-extrabold stat-number mb-1">5 Juta+</div>
+                    <div class="text-sm text-slate-500 font-medium">Soal Tersimpan di Bank Soal</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-14 animate-on-scroll">
+                <span
                     class="inline-block px-4 py-1.5 bg-purple-100 text-purple-700 text-sm font-semibold rounded-full mb-4">Fitur
-                    Utama</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4">Ujian Digital yang Aman dan Mudah
-                </h2>
+                    Lengkap</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4">Platform Ujian Digital yang Aman dan
+                    Komprehensif</h2>
+                <p class="text-lg text-slate-500 max-w-2xl mx-auto">Dari pembuatan soal, pelaksanaan ujian, hingga
+                    pelaporan hasil — semua terotomasi dengan keamanan tingkat tinggi.</p>
             </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="animate-on-scroll stagger-1 p-6 rounded-2xl border border-slate-200 card-hover">
-                    <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-4"><i
-                            class="fas fa-database text-purple-600"></i></div>
-                    <h3 class="font-bold text-slate-800 mb-2">Bank Soal Terstruktur</h3>
-                    <p class="text-sm text-slate-500">Kelola ribuan soal berdasarkan mata pelajaran, tingkat kesulitan,
-                        dan tipe soal. Mendukung pilihan ganda, esai, dan matching.</p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div
+                    class="module-card animate-on-scroll stagger-1 p-6 rounded-2xl border border-slate-200 card-hover bg-gradient-to-br from-purple-50/50 to-white">
+                    <div class="module-icon w-14 h-14 bg-purple-100 rounded-2xl flex items-center justify-center mb-5">
+                        <i class="fas fa-database text-purple-600 text-xl"></i></div>
+                    <h3 class="font-bold text-slate-800 text-lg mb-2">Bank Soal Terstruktur</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed mb-4">Kelola jutaan soal secara terorganisir
+                        berdasarkan mata pelajaran, kompetensi, tingkat kesulitan, dan tag. Soal dapat dibuat, diimpor
+                        dari Word/Excel, atau dibagikan antar pengguna.</p>
+                    <ul class="space-y-1.5">
+                        <li class="flex items-center text-xs text-slate-500"><i
+                                class="fas fa-circle-check text-purple-400 mr-2"></i>Mendukung 7 tipe soal (PG, esai,
+                            matching, dll.)</li>
+                        <li class="flex items-center text-xs text-slate-500"><i
+                                class="fas fa-circle-check text-purple-400 mr-2"></i>Embed gambar, audio, video dalam
+                            soal</li>
+                        <li class="flex items-center text-xs text-slate-500"><i
+                                class="fas fa-circle-check text-purple-400 mr-2"></i>Editor LaTeX untuk soal matematika
+                            & sains</li>
+                    </ul>
                 </div>
-                <div class="animate-on-scroll stagger-2 p-6 rounded-2xl border border-slate-200 card-hover">
-                    <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mb-4"><i
-                            class="fas fa-robot text-green-600"></i></div>
-                    <h3 class="font-bold text-slate-800 mb-2">Auto-Grading</h3>
-                    <p class="text-sm text-slate-500">Koreksi otomatis untuk soal objektif. Skor langsung tersedia
-                        setelah ujian selesai dengan detail analisis per soal.</p>
+                <div
+                    class="module-card animate-on-scroll stagger-2 p-6 rounded-2xl border border-slate-200 card-hover bg-gradient-to-br from-green-50/50 to-white">
+                    <div class="module-icon w-14 h-14 bg-green-100 rounded-2xl flex items-center justify-center mb-5"><i
+                            class="fas fa-robot text-green-600 text-xl"></i></div>
+                    <h3 class="font-bold text-slate-800 text-lg mb-2">Auto-Grading & Analitik</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed mb-4">Koreksi otomatis untuk soal objektif selesai
+                        dalam detik. Skor tersedia langsung setelah ujian. Analisis butir soal mendalam: tingkat
+                        kesulitan, daya beda, efektivitas pengecoh.</p>
+                    <ul class="space-y-1.5">
+                        <li class="flex items-center text-xs text-slate-500"><i
+                                class="fas fa-circle-check text-green-400 mr-2"></i>Laporan nilai per peserta, per
+                            kelompok, per soal</li>
+                        <li class="flex items-center text-xs text-slate-500"><i
+                                class="fas fa-circle-check text-green-400 mr-2"></i>Distribusi nilai (histogram,
+                            statistik)</li>
+                        <li class="flex items-center text-xs text-slate-500"><i
+                                class="fas fa-circle-check text-green-400 mr-2"></i>Review jawaban esai dengan komentar
+                            pengajar</li>
+                    </ul>
                 </div>
-                <div class="animate-on-scroll stagger-3 p-6 rounded-2xl border border-slate-200 card-hover">
-                    <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-4"><i
-                            class="fas fa-shield-halved text-red-600"></i></div>
-                    <h3 class="font-bold text-slate-800 mb-2">Anti-Cheating</h3>
-                    <p class="text-sm text-slate-500">Lockdown browser, deteksi tab switching, randomisasi soal dan
-                        jawaban, webcam proctoring, dan screenshot berkala.</p>
+                <div
+                    class="module-card animate-on-scroll stagger-3 p-6 rounded-2xl border border-slate-200 card-hover bg-gradient-to-br from-red-50/50 to-white">
+                    <div class="module-icon w-14 h-14 bg-red-100 rounded-2xl flex items-center justify-center mb-5"><i
+                            class="fas fa-shield-halved text-red-600 text-xl"></i></div>
+                    <h3 class="font-bold text-slate-800 text-lg mb-2">Anti-Kecurangan Multilapis</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed mb-4">Sistem anti-cheating paling komprehensif:
+                        lockdown browser mencegah akses aplikasi lain, deteksi perpindahan tab, randomisasi soal &
+                        jawaban, webcam proctoring AI, screenshot berkala, dan deteksi wajah ganda.</p>
+                    <ul class="space-y-1.5">
+                        <li class="flex items-center text-xs text-slate-500"><i
+                                class="fas fa-circle-check text-red-400 mr-2"></i>Lockdown browser yang tidak bisa
+                            di-bypass</li>
+                        <li class="flex items-center text-xs text-slate-500"><i
+                                class="fas fa-circle-check text-red-400 mr-2"></i>AI face recognition & liveness check
+                        </li>
+                        <li class="flex items-center text-xs text-slate-500"><i
+                                class="fas fa-circle-check text-red-400 mr-2"></i>Log aktivitas mencurigakan untuk
+                            review pengawas</li>
+                    </ul>
                 </div>
-                <div class="animate-on-scroll stagger-4 p-6 rounded-2xl border border-slate-200 card-hover">
-                    <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4"><i
-                            class="fas fa-chart-column text-blue-600"></i></div>
-                    <h3 class="font-bold text-slate-800 mb-2">Analitik Hasil</h3>
-                    <p class="text-sm text-slate-500">Dashboard hasil ujian lengkap: distribusi nilai, analisis butir
-                        soal, perbandingan kelas, dan tren performa peserta.</p>
+                <div
+                    class="module-card animate-on-scroll stagger-4 p-6 rounded-2xl border border-slate-200 card-hover bg-gradient-to-br from-blue-50/50 to-white">
+                    <div class="module-icon w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center mb-5"><i
+                            class="fas fa-clock text-blue-600 text-xl"></i></div>
+                    <h3 class="font-bold text-slate-800 text-lg mb-2">Manajemen Sesi Ujian</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed mb-4">Jadwalkan ujian dengan fleksibel: ujian
+                        terjadwal sekali, ujian berulang, atau ujian mandiri kapan saja dalam window waktu tertentu.
+                        Kelola multiple sesi dengan kode akses berbeda untuk tiap kelompok.</p>
+                    <ul class="space-y-1.5">
+                        <li class="flex items-center text-xs text-slate-500"><i
+                                class="fas fa-circle-check text-blue-400 mr-2"></i>Timer per soal atau per sesi
+                            keseluruhan</li>
+                        <li class="flex items-center text-xs text-slate-500"><i
+                                class="fas fa-circle-check text-blue-400 mr-2"></i>Resume ujian jika koneksi terputus
+                        </li>
+                        <li class="flex items-center text-xs text-slate-500"><i
+                                class="fas fa-circle-check text-blue-400 mr-2"></i>Notifikasi peserta via email &
+                            WhatsApp</li>
+                    </ul>
                 </div>
-                <div class="animate-on-scroll stagger-5 p-6 rounded-2xl border border-slate-200 card-hover">
-                    <div class="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center mb-4"><i
-                            class="fas fa-clock text-amber-600"></i></div>
-                    <h3 class="font-bold text-slate-800 mb-2">Multi-Sesi Ujian</h3>
-                    <p class="text-sm text-slate-500">Atur beberapa sesi ujian dengan waktu berbeda. Dukungan ujian
-                        terjadwal, fleksibel, dan take-home assignment.</p>
+                <div
+                    class="module-card animate-on-scroll stagger-5 p-6 rounded-2xl border border-slate-200 card-hover bg-gradient-to-br from-teal-50/50 to-white">
+                    <div class="module-icon w-14 h-14 bg-teal-100 rounded-2xl flex items-center justify-center mb-5"><i
+                            class="fas fa-certificate text-teal-600 text-xl"></i></div>
+                    <h3 class="font-bold text-slate-800 text-lg mb-2">Sertifikat Digital Otomatis</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed mb-4">Generate sertifikat digital berformat PDF
+                        secara otomatis untuk peserta yang lulus. Template sertifikat yang dapat dikustomisasi dengan
+                        logo, tanda tangan digital, dan QR code verifikasi keaslian.</p>
+                    <ul class="space-y-1.5">
+                        <li class="flex items-center text-xs text-slate-500"><i
+                                class="fas fa-circle-check text-teal-400 mr-2"></i>Verifikasi sertifikat publik via QR
+                            code/link</li>
+                        <li class="flex items-center text-xs text-slate-500"><i
+                                class="fas fa-circle-check text-teal-400 mr-2"></i>Template drag-and-drop yang mudah
+                            dikustom</li>
+                        <li class="flex items-center text-xs text-slate-500"><i
+                                class="fas fa-circle-check text-teal-400 mr-2"></i>Kirim sertifikat otomatis via email
+                        </li>
+                    </ul>
                 </div>
-                <div class="animate-on-scroll stagger-6 p-6 rounded-2xl border border-slate-200 card-hover">
-                    <div class="w-12 h-12 bg-teal-100 rounded-xl flex items-center justify-center mb-4"><i
-                            class="fas fa-certificate text-teal-600"></i></div>
-                    <h3 class="font-bold text-slate-800 mb-2">Sertifikat Digital</h3>
-                    <p class="text-sm text-slate-500">Generate sertifikat digital otomatis dengan template kustom, QR
-                        code verifikasi, dan integrasi tanda tangan digital.</p>
+                <div
+                    class="module-card animate-on-scroll stagger-6 p-6 rounded-2xl border border-slate-200 card-hover bg-gradient-to-br from-amber-50/50 to-white">
+                    <div class="module-icon w-14 h-14 bg-amber-100 rounded-2xl flex items-center justify-center mb-5"><i
+                            class="fas fa-users-gear text-amber-600 text-xl"></i></div>
+                    <h3 class="font-bold text-slate-800 text-lg mb-2">Manajemen Peserta & Kelas</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed mb-4">Import peserta massal dari Excel/CSV, kelola
+                        kelas/grup, atur akses per kelompok, dan buat laporan kinerja komprehensif per kelas. Cocok
+                        untuk sekolah, universitas, atau lembaga sertifikasi besar.</p>
+                    <ul class="space-y-1.5">
+                        <li class="flex items-center text-xs text-slate-500"><i
+                                class="fas fa-circle-check text-amber-400 mr-2"></i>Import 10.000+ peserta dalam sekali
+                            klik</li>
+                        <li class="flex items-center text-xs text-slate-500"><i
+                                class="fas fa-circle-check text-amber-400 mr-2"></i>Dashboard peserta dengan riwayat
+                            ujian lengkap</li>
+                        <li class="flex items-center text-xs text-slate-500"><i
+                                class="fas fa-circle-check text-amber-400 mr-2"></i>Integrasi SSO, LMS, dan Google
+                            Classroom</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-16 bg-slate-50">
+    <!-- USE CASES -->
+    <section class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-14 animate-on-scroll">
+                <span
+                    class="inline-block px-4 py-1.5 bg-purple-100 text-purple-700 text-sm font-semibold rounded-full mb-4">Siapa
+                    yang Menggunakan BizExam?</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4">Solusi untuk Berbagai Kebutuhan
+                    Evaluasi</h2>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="animate-on-scroll stagger-1 bg-white rounded-2xl p-6 border border-slate-200 text-center">
+                    <div class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4"><i
+                            class="fas fa-school text-blue-600 text-xl"></i></div>
+                    <h4 class="font-bold text-slate-800 mb-2">Sekolah & Universitas</h4>
+                    <p class="text-sm text-slate-500">UTS, UAS, tryout, seleksi masuk, dan ujian akhir program. Cocok
+                        untuk SD hingga perguruan tinggi.</p>
+                </div>
+                <div class="animate-on-scroll stagger-2 bg-white rounded-2xl p-6 border border-slate-200 text-center">
+                    <div class="w-14 h-14 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-4"><i
+                            class="fas fa-medal text-purple-600 text-xl"></i></div>
+                    <h4 class="font-bold text-slate-800 mb-2">Lembaga Sertifikasi</h4>
+                    <p class="text-sm text-slate-500">Ujian sertifikasi profesi, kompetensi, dan lisensi dengan standar
+                        keamanan tinggi dan sertifikat ter-verifikasi.</p>
+                </div>
+                <div class="animate-on-scroll stagger-3 bg-white rounded-2xl p-6 border border-slate-200 text-center">
+                    <div class="w-14 h-14 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-4"><i
+                            class="fas fa-building text-green-600 text-xl"></i></div>
+                    <h4 class="font-bold text-slate-800 mb-2">Perusahaan & HRD</h4>
+                    <p class="text-sm text-slate-500">Seleksi karyawan baru, tes psikologi, uji kompetensi, dan evaluasi
+                        training karyawan secara efisien.</p>
+                </div>
+                <div class="animate-on-scroll stagger-4 bg-white rounded-2xl p-6 border border-slate-200 text-center">
+                    <div class="w-14 h-14 bg-orange-100 rounded-2xl flex items-center justify-center mx-auto mb-4"><i
+                            class="fas fa-chalkboard-user text-orange-600 text-xl"></i></div>
+                    <h4 class="font-bold text-slate-800 mb-2">Lembaga Kursus & Training</h4>
+                    <p class="text-sm text-slate-500">Pre-test, post-test, kuis mingguan, dan ujian akhir program kursus
+                        dengan analitik kemajuan peserta.</p>
+                </div>
+                <div class="animate-on-scroll stagger-5 bg-white rounded-2xl p-6 border border-slate-200 text-center">
+                    <div class="w-14 h-14 bg-red-100 rounded-2xl flex items-center justify-center mx-auto mb-4"><i
+                            class="fas fa-landmark text-red-600 text-xl"></i></div>
+                    <h4 class="font-bold text-slate-800 mb-2">Instansi Pemerintah</h4>
+                    <p class="text-sm text-slate-500">Seleksi CPNS, ujian dinas, kenaikan pangkat, dan evaluasi
+                        kompetensi ASN dengan keamanan data terjamin.</p>
+                </div>
+                <div class="animate-on-scroll stagger-6 bg-white rounded-2xl p-6 border border-slate-200 text-center">
+                    <div class="w-14 h-14 bg-teal-100 rounded-2xl flex items-center justify-center mx-auto mb-4"><i
+                            class="fas fa-globe text-teal-600 text-xl"></i></div>
+                    <h4 class="font-bold text-slate-800 mb-2">Platform E-Learning</h4>
+                    <p class="text-sm text-slate-500">Integrasi via API ke platform LMS Anda. Tambahkan kapabilitas
+                        ujian profesional ke ekosistem belajar digital Anda.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TECH SPECS -->
+    <section class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 animate-on-scroll">
+                <span
+                    class="inline-block px-4 py-1.5 bg-purple-100 text-purple-700 text-sm font-semibold rounded-full mb-4">Spesifikasi
+                    Teknis</span>
+                <h2 class="text-3xl font-extrabold text-slate-900">Infrastruktur Kelas Enterprise</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="animate-on-scroll stagger-1 space-y-4">
+                    <div class="flex items-start space-x-4 p-4 rounded-xl border border-slate-100 bg-slate-50/60">
+                        <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-server text-purple-600 text-sm"></i></div>
+                        <div>
+                            <div class="font-semibold text-slate-800 text-sm">Platform</div>
+                            <div class="text-slate-500 text-sm">Web-based + Lockdown Browser App (Windows, Mac, Linux,
+                                Android, iOS)</div>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4 p-4 rounded-xl border border-slate-100 bg-slate-50/60">
+                        <div class="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-code text-indigo-600 text-sm"></i></div>
+                        <div>
+                            <div class="font-semibold text-slate-800 text-sm">Teknologi</div>
+                            <div class="text-slate-500 text-sm">React.js, Python/Django, PostgreSQL, Kubernetes, CDN
+                                global</div>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4 p-4 rounded-xl border border-slate-100 bg-slate-50/60">
+                        <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0"><i
+                                class="fas fa-users text-green-600 text-sm"></i></div>
+                        <div>
+                            <div class="font-semibold text-slate-800 text-sm">Kapasitas Peserta</div>
+                            <div class="text-slate-500 text-sm">Hingga 50.000 peserta bersamaan per sesi ujian tunggal
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4 p-4 rounded-xl border border-slate-100 bg-slate-50/60">
+                        <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0"><i
+                                class="fas fa-list-check text-blue-600 text-sm"></i></div>
+                        <div>
+                            <div class="font-semibold text-slate-800 text-sm">Tipe Soal</div>
+                            <div class="text-slate-500 text-sm">PG, Esai, Matching, True/False, Fill in Blank, Drag &
+                                Drop, Hotspot</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="animate-on-scroll stagger-2 space-y-4">
+                    <div class="flex items-start space-x-4 p-4 rounded-xl border border-slate-100 bg-slate-50/60">
+                        <div class="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center flex-shrink-0"><i
+                                class="fas fa-shield-halved text-red-600 text-sm"></i></div>
+                        <div>
+                            <div class="font-semibold text-slate-800 text-sm">Keamanan Ujian</div>
+                            <div class="text-slate-500 text-sm">Browser lock, tab detection, webcam proctoring AI,
+                                randomisasi soal & jawaban</div>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4 p-4 rounded-xl border border-slate-100 bg-slate-50/60">
+                        <div class="w-10 h-10 bg-teal-100 rounded-lg flex items-center justify-center flex-shrink-0"><i
+                                class="fas fa-plug text-teal-600 text-sm"></i></div>
+                        <div>
+                            <div class="font-semibold text-slate-800 text-sm">Integrasi</div>
+                            <div class="text-slate-500 text-sm">SSO, Moodle, Canvas, Google Classroom, REST API untuk
+                                custom LMS</div>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4 p-4 rounded-xl border border-slate-100 bg-slate-50/60">
+                        <div class="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center flex-shrink-0"><i
+                                class="fas fa-clock text-amber-600 text-sm"></i></div>
+                        <div>
+                            <div class="font-semibold text-slate-800 text-sm">Uptime & Support</div>
+                            <div class="text-slate-500 text-sm">99.9% SLA Uptime, dukungan 24/7, tim dedicated saat hari
+                                ujian berlangsung</div>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4 p-4 rounded-xl border border-slate-100 bg-slate-50/60">
+                        <div class="w-10 h-10 bg-rose-100 rounded-lg flex items-center justify-center flex-shrink-0"><i
+                                class="fas fa-database text-rose-600 text-sm"></i></div>
+                        <div>
+                            <div class="font-semibold text-slate-800 text-sm">Data & Privasi</div>
+                            <div class="text-slate-500 text-sm">Server di Indonesia, enkripsi AES-256, GDPR compliant,
+                                backup real-time</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIAL -->
+    <section class="py-20 bg-slate-50">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 animate-on-scroll"><span
+                    class="inline-block px-4 py-1.5 bg-purple-100 text-purple-700 text-sm font-semibold rounded-full mb-4">Testimoni</span>
+                <h2 class="text-3xl font-extrabold text-slate-900">Dipercaya Institusi Pendidikan & Korporat</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="animate-on-scroll stagger-1 bg-white rounded-2xl p-8 border border-slate-200 shadow-sm">
+                    <div class="flex text-yellow-400 mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="text-slate-600 leading-relaxed mb-6">"BizExam berhasil mengakomodasi ujian nasional kami
+                        dengan 8.000 peserta serentak tanpa hambatan. Sistem anti-cheat-nya sangat andal, dan laporan
+                        analitik butir soalnya membantu kami terus meningkatkan kualitas soal."</p>
+                    <div class="flex items-center space-x-3">
+                        <div
+                            class="w-10 h-10 bg-purple-200 rounded-full flex items-center justify-center font-bold text-purple-800">
+                            BP</div>
+                        <div>
+                            <div class="font-semibold text-slate-800 text-sm">Budi Prasetyo, M.Pd.</div>
+                            <div class="text-xs text-slate-400">Kepala Bidang Akademik, Universitas Nusantara</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="animate-on-scroll stagger-2 bg-white rounded-2xl p-8 border border-slate-200 shadow-sm">
+                    <div class="flex text-yellow-400 mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="text-slate-600 leading-relaxed mb-6">"Seleksi karyawan baru kami kini jauh lebih efisien.
+                        Dengan BizExam, tes bisa dilakukan dari rumah kandidat dengan pengawasan webcam. Hasilnya
+                        instan, dan sertifikat digital langsung dikirim otomatis."</p>
+                    <div class="flex items-center space-x-3">
+                        <div
+                            class="w-10 h-10 bg-indigo-200 rounded-full flex items-center justify-center font-bold text-indigo-800">
+                            WR</div>
+                        <div>
+                            <div class="font-semibold text-slate-800 text-sm">Wulandari Rahayu</div>
+                            <div class="text-xs text-slate-400">HRD Manager, PT Karya Mandiri Indonesia</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-20 bg-white">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 animate-on-scroll"><span
+                    class="inline-block px-4 py-1.5 bg-purple-100 text-purple-700 text-sm font-semibold rounded-full mb-4">FAQ</span>
+                <h2 class="text-3xl font-extrabold text-slate-900">Pertanyaan Umum</h2>
+            </div>
+            <div class="space-y-4 animate-on-scroll">
+                <div class="faq-item border border-slate-200 rounded-2xl overflow-hidden"><button
+                        class="faq-trigger w-full flex items-center justify-between px-6 py-5 text-left font-semibold text-slate-800 hover:bg-slate-50 transition-colors"><span>Apakah
+                            peserta bisa mengerjakan ujian dari rumah dengan aman?</span><i
+                            class="faq-icon fas fa-plus text-primary-500 flex-shrink-0 ml-4"></i></button>
+                    <div class="faq-answer px-6">
+                        <p class="text-slate-500 text-sm leading-relaxed pb-5">Ya. BizExam menyediakan solusi remote
+                            proctoring lengkap: lockdown browser mencegah akses ke aplikasi lain, webcam AI memantau
+                            peserta secara real-time, dan screenshot berkala tersimpan untuk direview pengawas. Keamanan
+                            setara dengan ujian tatap muka.</p>
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-2xl overflow-hidden"><button
+                        class="faq-trigger w-full flex items-center justify-between px-6 py-5 text-left font-semibold text-slate-800 hover:bg-slate-50 transition-colors"><span>Apakah
+                            ujian bisa dilanjutkan jika koneksi internet terputus?</span><i
+                            class="faq-icon fas fa-plus text-primary-500 flex-shrink-0 ml-4"></i></button>
+                    <div class="faq-answer px-6">
+                        <p class="text-slate-500 text-sm leading-relaxed pb-5">Ya, jawaban tersimpan secara lokal setiap
+                            beberapa detik. Jika koneksi terputus, peserta bisa melanjutkan dari posisi terakhir saat
+                            internet kembali. Waktu ujian tetap berjalan sesuai batas yang ditetapkan.</p>
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-2xl overflow-hidden"><button
+                        class="faq-trigger w-full flex items-center justify-between px-6 py-5 text-left font-semibold text-slate-800 hover:bg-slate-50 transition-colors"><span>Berapa
+                            lama hasil ujian tersedia setelah selesai?</span><i
+                            class="faq-icon fas fa-plus text-primary-500 flex-shrink-0 ml-4"></i></button>
+                    <div class="faq-answer px-6">
+                        <p class="text-slate-500 text-sm leading-relaxed pb-5">Untuk soal objektif, hasil tersedia dalam
+                            hitungan detik setelah peserta submit. Untuk soal esai yang memerlukan penilaian manual,
+                            pengajar dapat memberikan skor dan feedback langsung di sistem, dan nilai final akan
+                            tersedia setelah semua soal dinilai.</p>
+                    </div>
+                </div>
+                <div class="faq-item border border-slate-200 rounded-2xl overflow-hidden"><button
+                        class="faq-trigger w-full flex items-center justify-between px-6 py-5 text-left font-semibold text-slate-800 hover:bg-slate-50 transition-colors"><span>Apakah
+                            BizExam bisa diintegrasikan dengan LMS yang sudah ada?</span><i
+                            class="faq-icon fas fa-plus text-primary-500 flex-shrink-0 ml-4"></i></button>
+                    <div class="faq-answer px-6">
+                        <p class="text-slate-500 text-sm leading-relaxed pb-5">Ya. BizExam menyediakan REST API lengkap
+                            dan juga mendukung standar integrasi LTI (Learning Tools Interoperability) yang kompatibel
+                            dengan Moodle, Canvas, Blackboard, Google Classroom, dan platform LMS lainnya.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20 bg-slate-50">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-10 animate-on-scroll"><span
-                    class="inline-block px-4 py-1.5 bg-purple-100 text-purple-700 text-sm font-semibold rounded-full mb-4">Spesifikasi</span>
-                <h2 class="text-3xl font-extrabold text-slate-900">Spesifikasi Teknis</h2>
-            </div>
-            <div class="animate-on-scroll bg-white rounded-2xl border border-slate-200 overflow-hidden">
-                <table class="spec-table w-full text-sm">
-                    <tbody>
-                        <tr class="border-b border-slate-100">
-                            <td class="px-6 py-4 font-medium text-slate-800 bg-slate-50 w-1/3">Platform</td>
-                            <td class="px-6 py-4 text-slate-600">Web-based + Lockdown Browser App</td>
-                        </tr>
-                        <tr class="border-b border-slate-100">
-                            <td class="px-6 py-4 font-medium text-slate-800 bg-slate-50">Teknologi</td>
-                            <td class="px-6 py-4 text-slate-600">React.js, Python/Django, PostgreSQL</td>
-                        </tr>
-                        <tr class="border-b border-slate-100">
-                            <td class="px-6 py-4 font-medium text-slate-800 bg-slate-50">Peserta Serentak</td>
-                            <td class="px-6 py-4 text-slate-600">Hingga 50.000 peserta bersamaan</td>
-                        </tr>
-                        <tr class="border-b border-slate-100">
-                            <td class="px-6 py-4 font-medium text-slate-800 bg-slate-50">Tipe Soal</td>
-                            <td class="px-6 py-4 text-slate-600">PG, Esai, Matching, True/False, Fill in Blank</td>
-                        </tr>
-                        <tr class="border-b border-slate-100">
-                            <td class="px-6 py-4 font-medium text-slate-800 bg-slate-50">Anti-Cheat</td>
-                            <td class="px-6 py-4 text-slate-600">Browser lock, tab detection, webcam, randomisasi</td>
-                        </tr>
-                        <tr class="border-b border-slate-100">
-                            <td class="px-6 py-4 font-medium text-slate-800 bg-slate-50">Integrasi</td>
-                            <td class="px-6 py-4 text-slate-600">SSO, LMS, API, Google Classroom</td>
-                        </tr>
-                        <tr>
-                            <td class="px-6 py-4 font-medium text-slate-800 bg-slate-50">Support</td>
-                            <td class="px-6 py-4 text-slate-600">24/7 dengan tim dedicated saat ujian</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-16 bg-white">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div
-                class="animate-on-scroll bg-gradient-to-br from-purple-600 via-purple-700 to-violet-900 rounded-3xl p-12 sm:p-16 relative overflow-hidden">
-                <div class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2">
+                class="animate-on-scroll bg-gradient-to-br from-purple-600 via-violet-700 to-indigo-900 rounded-3xl p-12 sm:p-16 relative overflow-hidden text-center">
+                <div class="absolute top-0 right-0 w-80 h-80 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2">
+                </div>
+                <div
+                    class="absolute bottom-0 left-0 w-64 h-64 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2">
                 </div>
                 <div class="relative z-10">
                     <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-4">Beralih ke Ujian Digital Sekarang
                     </h2>
-                    <p class="text-purple-100 text-lg mb-8 max-w-xl mx-auto">Tingkatkan efisiensi evaluasi dengan
-                        BizExam. Dapatkan demo gratis dan lihat bagaimana platform kami bekerja.</p>
-                    <a href="https://wa.me/6281234567890?text=Halo%20BizMate%2C%20saya%20ingin%20demo%20BizExam%20untuk%20institusi%20kami"
-                        target="_blank"
-                        class="inline-flex items-center justify-center px-8 py-4 bg-white text-purple-700 font-bold rounded-2xl hover:bg-purple-50 transition-all text-base shadow-xl"><i
-                            class="fab fa-whatsapp mr-2 text-xl"></i> Minta Demo Gratis</a>
+                    <p class="text-purple-100 text-lg mb-8 max-w-xl mx-auto">Tingkatkan efisiensi dan integritas
+                        evaluasi Anda dengan BizExam. Demo gratis, setup dalam 1 hari.</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="https://wa.me/6281234567890?text=Halo%20BizMate%2C%20saya%20ingin%20demo%20BizExam%20untuk%20institusi%20kami"
+                            target="_blank"
+                            class="inline-flex items-center justify-center px-8 py-4 bg-white text-purple-700 font-bold rounded-2xl hover:bg-purple-50 transition-all text-base shadow-xl"><i
+                                class="fab fa-whatsapp mr-2 text-xl"></i> Minta Demo Gratis</a>
+                        <a href="/produk"
+                            class="inline-flex items-center justify-center px-8 py-4 border-2 border-white/30 text-white font-semibold rounded-2xl hover:bg-white/10 transition-all">Produk
+                            Lain <i class="fas fa-arrow-right ml-2"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-16 bg-slate-50">
+    <!-- Related -->
+    <section class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h3 class="text-xl font-bold text-slate-900 mb-8 text-center">Produk Lainnya</h3>
+            <h3 class="text-xl font-bold text-slate-900 mb-8 text-center">Produk Lainnya dari BizMate</h3>
             <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 <a href="/produk-hr"
-                    class="p-5 bg-white rounded-xl border border-slate-200 hover:border-primary-200 transition-all card-hover flex items-center space-x-4">
+                    class="p-5 bg-white rounded-xl border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all card-hover flex items-center space-x-4">
                     <div class="w-11 h-11 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0"><i
                             class="fas fa-users text-blue-600"></i></div>
                     <div>
@@ -265,7 +667,7 @@
                     </div>
                 </a>
                 <a href="/produk-fnb"
-                    class="p-5 bg-white rounded-xl border border-slate-200 hover:border-primary-200 transition-all card-hover flex items-center space-x-4">
+                    class="p-5 bg-white rounded-xl border border-slate-200 hover:border-orange-300 hover:shadow-md transition-all card-hover flex items-center space-x-4">
                     <div class="w-11 h-11 bg-orange-100 rounded-xl flex items-center justify-center flex-shrink-0"><i
                             class="fas fa-utensils text-orange-600"></i></div>
                     <div>
@@ -274,7 +676,7 @@
                     </div>
                 </a>
                 <a href="/produk-ecommerce"
-                    class="p-5 bg-white rounded-xl border border-slate-200 hover:border-primary-200 transition-all card-hover flex items-center space-x-4">
+                    class="p-5 bg-white rounded-xl border border-slate-200 hover:border-emerald-300 hover:shadow-md transition-all card-hover flex items-center space-x-4">
                     <div class="w-11 h-11 bg-emerald-100 rounded-xl flex items-center justify-center flex-shrink-0"><i
                             class="fas fa-shopping-cart text-emerald-600"></i></div>
                     <div>
@@ -283,7 +685,7 @@
                     </div>
                 </a>
                 <a href="/produk-pos"
-                    class="p-5 bg-white rounded-xl border border-slate-200 hover:border-primary-200 transition-all card-hover flex items-center space-x-4">
+                    class="p-5 bg-white rounded-xl border border-slate-200 hover:border-rose-300 hover:shadow-md transition-all card-hover flex items-center space-x-4">
                     <div class="w-11 h-11 bg-rose-100 rounded-xl flex items-center justify-center flex-shrink-0"><i
                             class="fas fa-cash-register text-rose-600"></i></div>
                     <div>
@@ -302,9 +704,8 @@
                     <div class="flex items-center space-x-3 mb-6">
                         <div
                             class="w-10 h-10 bg-gradient-to-br from-primary-500 to-primary-700 rounded-xl flex items-center justify-center">
-                            <i class="fas fa-code text-white"></i>
-                        </div><span class="text-xl font-bold text-white">Biz<span
-                                class="text-primary-400">Mate</span></span>
+                            <i class="fas fa-code text-white"></i></div><span
+                            class="text-xl font-bold text-white">Biz<span class="text-primary-400">Mate</span></span>
                     </div>
                     <p class="text-sm leading-relaxed mb-6 text-slate-400">Mitra teknologi terpercaya untuk transformasi
                         digital bisnis Anda.</p>
@@ -314,8 +715,7 @@
                     <ul class="space-y-3 text-sm">
                         <li><a href="/produk-hr" class="text-slate-400 hover:text-primary-400">BizHR</a></li>
                         <li><a href="/produk-fnb" class="text-slate-400 hover:text-primary-400">BizResto</a></li>
-                        <li><a href="/produk-ecommerce" class="text-slate-400 hover:text-primary-400">BizStore</a>
-                        </li>
+                        <li><a href="/produk-ecommerce" class="text-slate-400 hover:text-primary-400">BizStore</a></li>
                         <li><a href="/produk-cbt" class="text-slate-400 hover:text-primary-400">BizExam</a></li>
                         <li><a href="/produk-pos" class="text-slate-400 hover:text-primary-400">BizPOS</a></li>
                     </ul>
@@ -323,8 +723,7 @@
                 <div>
                     <h4 class="text-white font-semibold mb-6">Tautan</h4>
                     <ul class="space-y-3 text-sm">
-                        <li><a href="/tentang-kami" class="text-slate-400 hover:text-primary-400">Tentang Kami</a>
-                        </li>
+                        <li><a href="/tentang-kami" class="text-slate-400 hover:text-primary-400">Tentang Kami</a></li>
                         <li><a href="/layanan" class="text-slate-400 hover:text-primary-400">Layanan</a></li>
                         <li><a href="/portofolio" class="text-slate-400 hover:text-primary-400">Portofolio</a></li>
                         <li><a href="/kontak" class="text-slate-400 hover:text-primary-400">Kontak</a></li>
@@ -335,8 +734,8 @@
                     <ul class="space-y-4 text-sm">
                         <li class="flex items-start space-x-3"><i
                                 class="fas fa-map-marker-alt text-primary-400 mt-1"></i><span class="text-slate-400">Jl.
-                                Nginden Semolo No.42 Blok B-23, Nginden Jangkungan, Kec.
-                                Sukolilo, Surabaya, Jawa Timur 60118</span></li>
+                                Nginden Semolo No.42 Blok B-23, Nginden Jangkungan, Kec. Sukolilo, Surabaya, Jawa Timur
+                                60118</span></li>
                         <li class="flex items-center space-x-3"><i class="fas fa-phone text-primary-400"></i><span
                                 class="text-slate-400">+62 21 1234 5678</span></li>
                         <li class="flex items-center space-x-3"><i class="fas fa-envelope text-primary-400"></i><span
@@ -350,7 +749,7 @@
                 class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row items-center justify-between text-sm text-slate-500">
                 <p>&copy; 2026 BizMate Digital.</p>
                 <div class="flex space-x-6 mt-4 md:mt-0"><a href="#" class="hover:text-primary-400">Kebijakan
-                        Privasi</a><a href="#" class="hover:text-primary-400">Syarat & Ketentuan</a></div>
+                        Privasi</a><a href="#" class="hover:text-primary-400">Syarat &amp; Ketentuan</a></div>
             </div>
         </div>
     </footer>
@@ -361,6 +760,7 @@
             target="_blank" rel="noopener" aria-label="Chat WhatsApp"><i class="fab fa-whatsapp"></i></a>
     </div>
     <script src="js/main.js"></script>
+    <script>document.querySelectorAll('.faq-trigger').forEach(btn => { btn.addEventListener('click', () => { const item = btn.parentElement; const isOpen = item.classList.contains('open'); document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open')); if (!isOpen) item.classList.add('open'); }); });</script>
 </body>
 
 </html>
