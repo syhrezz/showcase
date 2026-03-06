@@ -9,10 +9,9 @@
         content="BizHR adalah sistem manajemen SDM terintegrasi untuk penggajian, absensi, cuti, rekrutmen, dan evaluasi kinerja karyawan. Kelola seluruh siklus hidup karyawan dalam satu platform.">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>tailwind.config = { theme: { extend: { fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'] }, colors: { primary: { 50: '#eef2ff', 100: '#e0e7ff', 200: '#c7d2fe', 300: '#a5b4fc', 400: '#818cf8', 500: '#6366f1', 600: '#4f46e5', 700: '#4338ca', 800: '#3730a3', 900: '#312e81' } } } } }</script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/custom.css">
     <style>
@@ -73,82 +72,59 @@
 
 <body class="font-sans antialiased bg-white text-slate-700">
     <div class="scroll-progress"></div>
-    <nav class="navbar fixed w-full top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/60">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                <a href="/" class="flex items-center space-x-3">
-                    <div
-                        class="w-10 h-10 bg-gradient-to-br from-primary-600 to-primary-800 rounded-xl flex items-center justify-center shadow-lg shadow-primary-500/20">
-                        <i class="fas fa-code text-white text-lg"></i></div><span
-                        class="text-xl font-bold text-slate-800">Biz<span class="text-primary-600">Mate</span></span>
-                </a>
-                <div class="hidden lg:flex items-center space-x-1">
-                    <a href="/"
-                        class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-primary-600 hover:bg-primary-50 transition-all">Beranda</a>
-                    <a href="/tentang-kami"
-                        class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-primary-600 hover:bg-primary-50 transition-all">Tentang
-                        Kami</a>
-                    <div class="dropdown relative"><button
-                            class="nav-link active px-4 py-2 rounded-lg text-sm font-medium transition-all flex items-center">Produk
-                            <i class="fas fa-chevron-down ml-1.5 text-[10px]"></i></button>
-                        <div
-                            class="dropdown-menu absolute top-full left-0 mt-1 w-72 bg-white rounded-2xl shadow-2xl border border-slate-100 p-2">
-                            <a href="/produk"
-                                class="flex items-center space-x-3 px-4 py-3 rounded-xl hover:bg-primary-50">
-                                <div class="w-9 h-9 bg-primary-100 rounded-lg flex items-center justify-center"><i
-                                        class="fas fa-th-large text-primary-600 text-sm"></i></div>
-                                <div>
-                                    <div class="text-sm font-semibold text-slate-800">Semua Produk</div>
-                                </div>
-                            </a>
-                            <hr class="my-1.5 border-slate-100"><a href="/produk-hr"
-                                class="flex items-center space-x-3 px-4 py-2.5 rounded-xl bg-primary-50"><i
-                                    class="fas fa-users text-primary-600 w-5 text-center"></i><span
-                                    class="text-sm font-medium text-primary-700">BizHR</span></a><a href="/produk-fnb"
-                                class="flex items-center space-x-3 px-4 py-2.5 rounded-xl hover:bg-primary-50"><i
-                                    class="fas fa-utensils text-primary-500 w-5 text-center"></i><span
-                                    class="text-sm text-slate-600">BizResto</span></a><a href="/produk-ecommerce"
-                                class="flex items-center space-x-3 px-4 py-2.5 rounded-xl hover:bg-primary-50"><i
-                                    class="fas fa-shopping-cart text-primary-500 w-5 text-center"></i><span
-                                    class="text-sm text-slate-600">BizStore</span></a><a href="/produk-cbt"
-                                class="flex items-center space-x-3 px-4 py-2.5 rounded-xl hover:bg-primary-50"><i
-                                    class="fas fa-laptop-code text-primary-500 w-5 text-center"></i><span
-                                    class="text-sm text-slate-600">BizExam</span></a><a href="/produk-pos"
-                                class="flex items-center space-x-3 px-4 py-2.5 rounded-xl hover:bg-primary-50"><i
-                                    class="fas fa-cash-register text-primary-500 w-5 text-center"></i><span
-                                    class="text-sm text-slate-600">BizPOS</span></a>
-                        </div>
+        <nav id="nav">
+        <div class="nav-inner">
+            <a href="/" class="logo-text">Biz<span>Mate</span></a>
+            <div class="nav-links hidden lg:flex items-center gap-1">
+                <a href="/" class="">Beranda</a>
+                <a href="/tentang-kami" class="">Tentang Kami</a>
+                <div class="dd-wrap">
+                    <a href="#" class="flex items-center gap-1 active">Produk <i class="fas fa-chevron-down text-[9px]"></i></a>
+                    <div class="dd-menu">
+                        <a href="/produk" class="dd-item">
+                            <div class="dd-icon" style="background:#eef2ff"><i class="fas fa-th-large text-indigo-500 text-xs"></i></div>
+                            <div>
+                                <div class="font-semibold text-xs text-gray-800">Semua Produk</div>
+                                <div class="text-xs text-gray-400">Lihat seluruh solusi kami</div>
+                            </div>
+                        </a>
+                        <hr class="my-1 border-gray-100">
+                        <a href="/produk-hr" class="dd-item">
+                            <div class="dd-icon" style="background:#eff6ff"><i class="fas fa-users text-blue-500 text-xs"></i></div><span>BizMateHR — HR Management</span>
+                        </a>
+                        <a href="/produk-fnb" class="dd-item">
+                            <div class="dd-icon" style="background:#fff7ed"><i class="fas fa-utensils text-orange-500 text-xs"></i></div><span>BizMateResto — FnB</span>
+                        </a>
+                        <a href="/produk-ecommerce" class="dd-item">
+                            <div class="dd-icon" style="background:#f0fdf4"><i class="fas fa-shopping-bag text-green-500 text-xs"></i></div><span>BizMateStore — eCommerce</span>
+                        </a>
+                        <a href="/produk-cbt" class="dd-item">
+                            <div class="dd-icon" style="background:#faf5ff"><i class="fas fa-laptop-code text-purple-500 text-xs"></i></div><span>BizMateExam — CBT</span>
+                        </a>
+                        <a href="/produk-pos" class="dd-item">
+                            <div class="dd-icon" style="background:#fff1f2"><i class="fas fa-cash-register text-rose-500 text-xs"></i></div><span>BizMatePOS — Point of Sale</span>
+                        </a>
                     </div>
-                    <a href="/layanan"
-                        class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-primary-600 hover:bg-primary-50 transition-all">Layanan</a>
-                    <a href="/portofolio"
-                        class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-primary-600 hover:bg-primary-50 transition-all">Portofolio</a>
-                    <a href="/kontak"
-                        class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-primary-600 hover:bg-primary-50 transition-all">Kontak</a>
                 </div>
-                <div class="flex items-center space-x-4">
-                    <a href="https://wa.me/6281234567890?text=Halo%20BizMate%2C%20saya%20tertarik%20dengan%20BizHR"
-                        target="_blank"
-                        class="hidden lg:inline-flex items-center px-5 py-2.5 btn-primary text-sm font-semibold rounded-xl"><i
-                            class="fab fa-whatsapp mr-2 text-lg"></i> Hubungi Kami</a>
-                    <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg hover:bg-slate-100"><i
-                            class="fas fa-bars text-slate-600 text-xl"></i></button>
-                </div>
+                <a href="/layanan" class="">Layanan</a>
+                <a href="/portofolio" class="">Portofolio</a>
+                <a href="/kontak" class="">Kontak</a>
+            </div>
+            <div class="flex items-center gap-3">
+                <a href="https://wa.me/6281234567890?text=Halo%20BizMate" target="_blank" class="btn-cta hidden lg:inline-flex items-center gap-2"><i class="fab fa-whatsapp"></i> Hubungi Kami</a>
+                <button id="mob-btn" class="lg:hidden p-2 rounded-lg hover:bg-gray-100" onclick="document.getElementById('mob-menu').classList.toggle('open')"><i class="fas fa-bars text-gray-600"></i></button>
             </div>
         </div>
-        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-100 px-4 pb-6">
-            <div class="py-3 space-y-1"><a href="/"
-                    class="block px-4 py-3 rounded-xl text-sm font-medium text-slate-600 hover:bg-slate-50">Beranda</a><a
-                    href="/produk"
-                    class="block px-4 py-3 rounded-xl text-sm font-medium text-slate-600 hover:bg-slate-50">Produk</a><a
-                    href="/produk-hr"
-                    class="block px-4 py-3 rounded-xl text-sm text-primary-600 bg-primary-50 pl-8">BizHR</a><a
-                    href="/kontak"
-                    class="block px-4 py-3 rounded-xl text-sm font-medium text-slate-600 hover:bg-slate-50">Kontak</a>
+        <div id="mob-menu">
+            <div class="px-4 py-3 space-y-1 max-w-7xl mx-auto">
+                <a href="/" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-gray-600 hover:bg-gray-50">Beranda</a>
+                <a href="/tentang-kami" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-gray-600 hover:bg-gray-50">Tentang Kami</a>
+                <a href="/produk" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-indigo-600 bg-indigo-50">Semua Produk</a>
+                <a href="/layanan" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-gray-600 hover:bg-gray-50">Layanan</a>
+                <a href="/portofolio" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-gray-600 hover:bg-gray-50">Portofolio</a>
+                <a href="/kontak" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-gray-600 hover:bg-gray-50">Kontak</a>
+                <a href="https://wa.me/6281234567890" target="_blank" class="btn-cta flex items-center justify-center gap-2 mt-2 text-center"><i class="fab fa-whatsapp"></i> Hubungi via WhatsApp</a>
             </div>
-            <a href="https://wa.me/6281234567890?text=Halo%20BizMate%2C%20saya%20tertarik%20dengan%20BizHR"
-                target="_blank" class="block text-center px-5 py-3 btn-primary text-sm font-semibold rounded-xl mt-2"><i
-                    class="fab fa-whatsapp mr-2"></i> Hubungi Kami</a>
         </div>
     </nav>
 

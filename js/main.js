@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /* ---- Navbar Scroll Effect ---- */
 function initNavbarScroll() {
-  const navbar = document.querySelector('.navbar');
+  const navbar = document.querySelector('.navbar') || document.querySelector('#nav');
   if (!navbar) return;
 
   function checkScroll() {

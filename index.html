@@ -8,10 +8,9 @@
     <meta name="description"
         content="BizMate Digital menghadirkan solusi perangkat lunak inovatif — HR, FnB, eCommerce, CBT, dan POS — untuk bisnis Indonesia yang ingin tumbuh lebih cepat.">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
-        rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/custom.css">
     <style>
@@ -32,143 +31,6 @@
             color: #1e1b4b;
             background: #fff;
             overflow-x: hidden
-        }
-
-        /* Navbar */
-        #nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 100;
-            transition: all .35s ease
-        }
-
-        #nav.scrolled {
-            background: rgba(255, 255, 255, .95);
-            backdrop-filter: blur(20px);
-            box-shadow: 0 1px 0 rgba(0, 0, 0, .07)
-        }
-
-        .nav-inner {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            height: 72px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between
-        }
-
-        .logo-text {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.35rem;
-            font-weight: 700;
-            color: #0f0e17;
-            letter-spacing: -.02em
-        }
-
-        .logo-text span {
-            color: var(--indigo)
-        }
-
-        .nav-links a {
-            font-size: .875rem;
-            font-weight: 500;
-            color: #4b5563;
-            padding: .5rem .9rem;
-            border-radius: .5rem;
-            transition: all .2s
-        }
-
-        .nav-links a:hover,
-        .nav-links a.active {
-            color: var(--indigo);
-            background: #eef2ff
-        }
-
-        .btn-cta {
-            background: linear-gradient(135deg, var(--indigo), var(--violet));
-            color: #fff;
-            padding: .6rem 1.4rem;
-            border-radius: .75rem;
-            font-size: .875rem;
-            font-weight: 600;
-            transition: all .3s;
-            box-shadow: 0 4px 14px rgba(79, 70, 229, .3)
-        }
-
-        .btn-cta:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(79, 70, 229, .4)
-        }
-
-        /* Dropdown */
-        .dd-wrap {
-            position: relative
-        }
-
-        .dd-menu {
-            position: absolute;
-            top: calc(100% + 8px);
-            left: 0;
-            width: 280px;
-            background: #fff;
-            border-radius: 1rem;
-            box-shadow: 0 24px 48px rgba(0, 0, 0, .12);
-            border: 1px solid #f1f5f9;
-            padding: .5rem;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(6px);
-            transition: all .25s ease;
-            pointer-events: none
-        }
-
-        .dd-wrap:hover .dd-menu {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-            pointer-events: auto
-        }
-
-        .dd-item {
-            display: flex;
-            align-items: center;
-            gap: .75rem;
-            padding: .65rem 1rem;
-            border-radius: .75rem;
-            transition: background .2s;
-            font-size: .85rem;
-            color: #374151
-        }
-
-        .dd-item:hover {
-            background: #eef2ff;
-            color: var(--indigo)
-        }
-
-        .dd-icon {
-            width: 32px;
-            height: 32px;
-            border-radius: .5rem;
-            background: #f1f5f9;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: .8rem;
-            flex-shrink: 0
-        }
-
-        /* Mobile menu */
-        #mob-menu {
-            display: none;
-            background: #fff;
-            border-top: 1px solid #f1f5f9
-        }
-
-        #mob-menu.open {
-            display: block
         }
 
         /* Hero */
@@ -721,19 +583,17 @@
     <div class="scroll-progress" id="sp"></div>
 
     <!-- Navbar -->
-    <nav id="nav">
+        <nav id="nav">
         <div class="nav-inner">
             <a href="/" class="logo-text">Biz<span>Mate</span></a>
             <div class="nav-links hidden lg:flex items-center gap-1">
                 <a href="/" class="active">Beranda</a>
-                <a href="/tentang-kami">Tentang Kami</a>
+                <a href="/tentang-kami" class="">Tentang Kami</a>
                 <div class="dd-wrap">
-                    <a href="#" class="flex items-center gap-1">Produk <i
-                            class="fas fa-chevron-down text-[9px]"></i></a>
+                    <a href="#" class="flex items-center gap-1 ">Produk <i class="fas fa-chevron-down text-[9px]"></i></a>
                     <div class="dd-menu">
                         <a href="/produk" class="dd-item">
-                            <div class="dd-icon" style="background:#eef2ff"><i
-                                    class="fas fa-th-large text-indigo-500 text-xs"></i></div>
+                            <div class="dd-icon" style="background:#eef2ff"><i class="fas fa-th-large text-indigo-500 text-xs"></i></div>
                             <div>
                                 <div class="font-semibold text-xs text-gray-800">Semua Produk</div>
                                 <div class="text-xs text-gray-400">Lihat seluruh solusi kami</div>
@@ -741,64 +601,40 @@
                         </a>
                         <hr class="my-1 border-gray-100">
                         <a href="/produk-hr" class="dd-item">
-                            <div class="dd-icon" style="background:#eff6ff"><i
-                                    class="fas fa-users text-blue-500 text-xs"></i></div><span>BizMateHR — HR
-                                Management</span>
+                            <div class="dd-icon" style="background:#eff6ff"><i class="fas fa-users text-blue-500 text-xs"></i></div><span>BizMateHR — HR Management</span>
                         </a>
                         <a href="/produk-fnb" class="dd-item">
-                            <div class="dd-icon" style="background:#fff7ed"><i
-                                    class="fas fa-utensils text-orange-500 text-xs"></i></div><span>BizMateResto —
-                                FnB</span>
+                            <div class="dd-icon" style="background:#fff7ed"><i class="fas fa-utensils text-orange-500 text-xs"></i></div><span>BizMateResto — FnB</span>
                         </a>
                         <a href="/produk-ecommerce" class="dd-item">
-                            <div class="dd-icon" style="background:#f0fdf4"><i
-                                    class="fas fa-shopping-bag text-green-500 text-xs"></i></div><span>BizMateStore —
-                                eCommerce</span>
+                            <div class="dd-icon" style="background:#f0fdf4"><i class="fas fa-shopping-bag text-green-500 text-xs"></i></div><span>BizMateStore — eCommerce</span>
                         </a>
                         <a href="/produk-cbt" class="dd-item">
-                            <div class="dd-icon" style="background:#faf5ff"><i
-                                    class="fas fa-laptop-code text-purple-500 text-xs"></i></div><span>BizMateExam —
-                                CBT</span>
+                            <div class="dd-icon" style="background:#faf5ff"><i class="fas fa-laptop-code text-purple-500 text-xs"></i></div><span>BizMateExam — CBT</span>
                         </a>
                         <a href="/produk-pos" class="dd-item">
-                            <div class="dd-icon" style="background:#fff1f2"><i
-                                    class="fas fa-cash-register text-rose-500 text-xs"></i></div><span>BizMatePOS —
-                                Point of Sale</span>
+                            <div class="dd-icon" style="background:#fff1f2"><i class="fas fa-cash-register text-rose-500 text-xs"></i></div><span>BizMatePOS — Point of Sale</span>
                         </a>
                     </div>
                 </div>
-                <a href="/layanan">Layanan</a>
-                <a href="/portofolio">Portofolio</a>
-                <a href="/kontak">Kontak</a>
+                <a href="/layanan" class="">Layanan</a>
+                <a href="/portofolio" class="">Portofolio</a>
+                <a href="/kontak" class="">Kontak</a>
             </div>
             <div class="flex items-center gap-3">
-                <a href="https://wa.me/6281234567890?text=Halo%20BizMate" target="_blank"
-                    class="btn-cta hidden lg:inline-flex items-center gap-2"><i class="fab fa-whatsapp"></i> Hubungi
-                    Kami</a>
-                <button id="mob-btn" class="lg:hidden p-2 rounded-lg hover:bg-gray-100"
-                    onclick="document.getElementById('mob-menu').classList.toggle('open')"><i
-                        class="fas fa-bars text-gray-600"></i></button>
+                <a href="https://wa.me/6281234567890?text=Halo%20BizMate" target="_blank" class="btn-cta hidden lg:inline-flex items-center gap-2"><i class="fab fa-whatsapp"></i> Hubungi Kami</a>
+                <button id="mob-btn" class="lg:hidden p-2 rounded-lg hover:bg-gray-100" onclick="document.getElementById('mob-menu').classList.toggle('open')"><i class="fas fa-bars text-gray-600"></i></button>
             </div>
         </div>
         <div id="mob-menu">
             <div class="px-4 py-3 space-y-1 max-w-7xl mx-auto">
-                <a href="/"
-                    class="block px-4 py-2.5 rounded-xl text-sm font-medium text-indigo-600 bg-indigo-50">Beranda</a>
-                <a href="/tentang-kami"
-                    class="block px-4 py-2.5 rounded-xl text-sm font-medium text-gray-600 hover:bg-gray-50">Tentang
-                    Kami</a>
-                <a href="/produk"
-                    class="block px-4 py-2.5 rounded-xl text-sm font-medium text-gray-600 hover:bg-gray-50">Semua
-                    Produk</a>
-                <a href="/layanan"
-                    class="block px-4 py-2.5 rounded-xl text-sm font-medium text-gray-600 hover:bg-gray-50">Layanan</a>
-                <a href="/portofolio"
-                    class="block px-4 py-2.5 rounded-xl text-sm font-medium text-gray-600 hover:bg-gray-50">Portofolio</a>
-                <a href="/kontak"
-                    class="block px-4 py-2.5 rounded-xl text-sm font-medium text-gray-600 hover:bg-gray-50">Kontak</a>
-                <a href="https://wa.me/6281234567890" target="_blank"
-                    class="btn-cta flex items-center justify-center gap-2 mt-2 text-center"><i
-                        class="fab fa-whatsapp"></i> Hubungi via WhatsApp</a>
+                <a href="/" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-indigo-600 bg-indigo-50">Beranda</a>
+                <a href="/tentang-kami" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-gray-600 hover:bg-gray-50">Tentang Kami</a>
+                <a href="/produk" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-gray-600 hover:bg-gray-50">Semua Produk</a>
+                <a href="/layanan" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-gray-600 hover:bg-gray-50">Layanan</a>
+                <a href="/portofolio" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-gray-600 hover:bg-gray-50">Portofolio</a>
+                <a href="/kontak" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-gray-600 hover:bg-gray-50">Kontak</a>
+                <a href="https://wa.me/6281234567890" target="_blank" class="btn-cta flex items-center justify-center gap-2 mt-2 text-center"><i class="fab fa-whatsapp"></i> Hubungi via WhatsApp</a>
             </div>
         </div>
     </nav>
