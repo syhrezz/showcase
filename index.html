@@ -4,235 +4,877 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BizMate Digital | Solusi Perangkat Lunak Terdepan untuk Bisnis Anda</title>
+    <title>BizMate Digital — Perangkat Lunak untuk Bisnis yang Lebih Cerdas</title>
     <meta name="description"
-        content="BizMate Digital adalah software house terpercaya yang menghadirkan solusi digital inovatif untuk HR, F&B, eCommerce, CBT, dan POS. Transformasi bisnis Anda bersama kami.">
+        content="BizMate Digital menghadirkan solusi perangkat lunak inovatif — HR, FnB, eCommerce, CBT, dan POS — untuk bisnis Indonesia yang ingin tumbuh lebih cepat.">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'] },
-                    colors: {
-                        primary: { 50: '#eef2ff', 100: '#e0e7ff', 200: '#c7d2fe', 300: '#a5b4fc', 400: '#818cf8', 500: '#6366f1', 600: '#4f46e5', 700: '#4338ca', 800: '#3730a3', 900: '#312e81' }
-                    }
-                }
-            }
-        }
-    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/custom.css">
+    <style>
+        :root {
+            --indigo: #4f46e5;
+            --violet: #7c3aed;
+            --ink: #0f0e17;
+            --off: #f5f4fb;
+            --muted: #6b7280
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: #1e1b4b;
+            background: #fff;
+            overflow-x: hidden
+        }
+
+        /* Navbar */
+        #nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            transition: all .35s ease
+        }
+
+        #nav.scrolled {
+            background: rgba(255, 255, 255, .95);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 1px 0 rgba(0, 0, 0, .07)
+        }
+
+        .nav-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between
+        }
+
+        .logo-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #0f0e17;
+            letter-spacing: -.02em
+        }
+
+        .logo-text span {
+            color: var(--indigo)
+        }
+
+        .nav-links a {
+            font-size: .875rem;
+            font-weight: 500;
+            color: #4b5563;
+            padding: .5rem .9rem;
+            border-radius: .5rem;
+            transition: all .2s
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--indigo);
+            background: #eef2ff
+        }
+
+        .btn-cta {
+            background: linear-gradient(135deg, var(--indigo), var(--violet));
+            color: #fff;
+            padding: .6rem 1.4rem;
+            border-radius: .75rem;
+            font-size: .875rem;
+            font-weight: 600;
+            transition: all .3s;
+            box-shadow: 0 4px 14px rgba(79, 70, 229, .3)
+        }
+
+        .btn-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(79, 70, 229, .4)
+        }
+
+        /* Dropdown */
+        .dd-wrap {
+            position: relative
+        }
+
+        .dd-menu {
+            position: absolute;
+            top: calc(100% + 8px);
+            left: 0;
+            width: 280px;
+            background: #fff;
+            border-radius: 1rem;
+            box-shadow: 0 24px 48px rgba(0, 0, 0, .12);
+            border: 1px solid #f1f5f9;
+            padding: .5rem;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(6px);
+            transition: all .25s ease;
+            pointer-events: none
+        }
+
+        .dd-wrap:hover .dd-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+            pointer-events: auto
+        }
+
+        .dd-item {
+            display: flex;
+            align-items: center;
+            gap: .75rem;
+            padding: .65rem 1rem;
+            border-radius: .75rem;
+            transition: background .2s;
+            font-size: .85rem;
+            color: #374151
+        }
+
+        .dd-item:hover {
+            background: #eef2ff;
+            color: var(--indigo)
+        }
+
+        .dd-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: .5rem;
+            background: #f1f5f9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: .8rem;
+            flex-shrink: 0
+        }
+
+        /* Mobile menu */
+        #mob-menu {
+            display: none;
+            background: #fff;
+            border-top: 1px solid #f1f5f9
+        }
+
+        #mob-menu.open {
+            display: block
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 100svh;
+            display: flex;
+            align-items: center;
+            padding-top: 72px;
+            background: #fafaf9;
+            position: relative;
+            overflow: hidden
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            pointer-events: none
+        }
+
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: .45
+        }
+
+        .blob-1 {
+            width: 560px;
+            height: 560px;
+            background: radial-gradient(circle, #c7d2fe, #a5b4fc);
+            top: -120px;
+            right: -80px
+        }
+
+        .blob-2 {
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, #ede9fe, #ddd6fe);
+            bottom: -80px;
+            left: -60px
+        }
+
+        .geo-ring {
+            position: absolute;
+            border-radius: 50%;
+            border: 1px solid rgba(79, 70, 229, .12)
+        }
+
+        .geo-ring.r1 {
+            width: 600px;
+            height: 600px;
+            top: -200px;
+            right: -200px
+        }
+
+        .geo-ring.r2 {
+            width: 800px;
+            height: 800px;
+            top: -300px;
+            right: -300px
+        }
+
+        .geo-ring.r3 {
+            width: 340px;
+            height: 340px;
+            bottom: 80px;
+            left: 5%
+        }
+
+        .geo-line {
+            position: absolute;
+            background: linear-gradient(90deg, transparent, rgba(79, 70, 229, .15), transparent);
+            height: 1px
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            padding: .35rem 1rem .35rem .6rem;
+            background: #eef2ff;
+            border: 1px solid #c7d2fe;
+            border-radius: 99px;
+            font-size: .8rem;
+            font-weight: 600;
+            color: var(--indigo);
+            margin-bottom: 1.5rem
+        }
+
+        .hero-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--indigo);
+            border-radius: 50%;
+            animation: pulse 2s infinite
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1)
+            }
+
+            50% {
+                opacity: .5;
+                transform: scale(.8)
+            }
+        }
+
+        .hero-h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2.8rem, 5.5vw, 4.5rem);
+            font-weight: 700;
+            color: #0f0e17;
+            line-height: 1.08;
+            letter-spacing: -.03em;
+            margin-bottom: 1.5rem
+        }
+
+        .hero-h1 em {
+            font-style: normal;
+            background: linear-gradient(135deg, var(--indigo), var(--violet), #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text
+        }
+
+        .hero-sub {
+            font-size: 1.05rem;
+            color: #6b7280;
+            line-height: 1.75;
+            max-width: 520px;
+            margin-bottom: 2.5rem
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            padding: .875rem 2rem;
+            background: linear-gradient(135deg, var(--indigo), var(--violet));
+            color: #fff;
+            border-radius: 1rem;
+            font-weight: 600;
+            font-size: .95rem;
+            transition: all .3s;
+            box-shadow: 0 4px 20px rgba(79, 70, 229, .35)
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(79, 70, 229, .45)
+        }
+
+        .btn-ghost {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            padding: .875rem 2rem;
+            border: 1.5px solid #d1d5db;
+            color: #374151;
+            border-radius: 1rem;
+            font-weight: 600;
+            font-size: .95rem;
+            transition: all .3s
+        }
+
+        .btn-ghost:hover {
+            border-color: var(--indigo);
+            color: var(--indigo);
+            background: #eef2ff
+        }
+
+        .stat-pill {
+            display: flex;
+            align-items: center;
+            gap: .75rem;
+            padding: .75rem 1.25rem;
+            background: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: .875rem;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, .06)
+        }
+
+        .stat-pill-num {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #0f0e17
+        }
+
+        .stat-pill-label {
+            font-size: .75rem;
+            color: #9ca3af
+        }
+
+        /* Hero visual */
+        .hero-visual {
+            position: relative
+        }
+
+        .ui-card {
+            background: #fff;
+            border-radius: 1.25rem;
+            padding: 1.25rem 1.5rem;
+            box-shadow: 0 16px 40px rgba(0, 0, 0, .1);
+            border: 1px solid #f1f5f9;
+            position: absolute
+        }
+
+        .ui-card.c1 {
+            bottom: -24px;
+            left: -32px;
+            display: flex;
+            align-items: center;
+            gap: .75rem;
+            min-width: 200px
+        }
+
+        .ui-card.c2 {
+            top: -16px;
+            right: -24px;
+            display: flex;
+            align-items: center;
+            gap: .75rem;
+            min-width: 180px
+        }
+
+        .ui-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: .875rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem
+        }
+
+        .hero-img {
+            width: 100%;
+            border-radius: 2rem;
+            object-fit: cover;
+            box-shadow: 0 32px 64px rgba(0, 0, 0, .12)
+        }
+
+        /* Dot grid decoration */
+        .dot-grid {
+            position: absolute;
+            background-image: radial-gradient(circle, rgba(79, 70, 229, .18) 1px, transparent 0);
+            background-size: 28px 28px
+        }
+
+        /* Marquee */
+        .marquee-section {
+            padding: 2.5rem 0;
+            background: #0f0e17;
+            overflow: hidden
+        }
+
+        .marquee-track {
+            display: flex;
+            gap: 4rem;
+            animation: marquee 28s linear infinite;
+            width: max-content
+        }
+
+        .marquee-track:hover {
+            animation-play-state: paused
+        }
+
+        @keyframes marquee {
+            from {
+                transform: translateX(0)
+            }
+
+            to {
+                transform: translateX(-50%)
+            }
+        }
+
+        .marquee-item {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, .35);
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: .75rem
+        }
+
+        .marquee-item span {
+            color: rgba(255, 255, 255, .12);
+            font-size: .7rem
+        }
+
+        /* Products */
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            font-size: .8rem;
+            font-weight: 700;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: var(--indigo);
+            background: #eef2ff;
+            padding: .35rem 1rem;
+            border-radius: 99px;
+            margin-bottom: 1rem
+        }
+
+        .section-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2rem, 3.5vw, 3rem);
+            font-weight: 700;
+            color: #0f0e17;
+            line-height: 1.15;
+            letter-spacing: -.025em
+        }
+
+        .prod-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem
+        }
+
+        .prod-grid.three {
+            grid-template-columns: 1fr 1fr 1fr
+        }
+
+        .prod-card {
+            background: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: 1.5rem;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+            transition: all .4s cubic-bezier(.16, 1, .3, 1);
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+            color: inherit
+        }
+
+        .prod-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, var(--c1, #eef2ff), var(--c2, #e0e7ff));
+            opacity: 0;
+            transition: opacity .4s
+        }
+
+        .prod-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 24px 48px rgba(0, 0, 0, .1);
+            border-color: transparent
+        }
+
+        .prod-card:hover::before {
+            opacity: 1
+        }
+
+        .prod-card>* {
+            position: relative;
+            z-index: 1
+        }
+
+        .prod-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            margin-bottom: 1.25rem;
+            transition: transform .4s
+        }
+
+        .prod-card:hover .prod-icon {
+            transform: scale(1.1) rotate(-8deg)
+        }
+
+        .prod-name {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #0f0e17;
+            margin-bottom: .5rem
+        }
+
+        .prod-desc {
+            font-size: .875rem;
+            color: #6b7280;
+            line-height: 1.7;
+            margin-bottom: 1.25rem
+        }
+
+        .prod-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .5rem;
+            margin-bottom: 1.5rem
+        }
+
+        .prod-tag {
+            font-size: .72rem;
+            font-weight: 600;
+            padding: .2rem .7rem;
+            border-radius: 99px;
+            background: #f8fafc;
+            color: #64748b;
+            border: 1px solid #e2e8f0
+        }
+
+        .prod-link {
+            font-size: .85rem;
+            font-weight: 600;
+            color: var(--indigo);
+            display: inline-flex;
+            align-items: center;
+            gap: .4rem
+        }
+
+        .prod-link i {
+            transition: transform .3s
+        }
+
+        .prod-card:hover .prod-link i {
+            transform: translateX(4px)
+        }
+
+        /* Featured product card */
+        .prod-card.featured {
+            grid-column: span 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0f0e17, #1e1b4b)
+        }
+
+        .prod-card.featured::before {
+            display: none
+        }
+
+        .feat-content {
+            padding: 2.5rem;
+            color: #fff
+        }
+
+        .feat-content .prod-name {
+            color: #fff;
+            font-size: 1.5rem
+        }
+
+        .feat-content .prod-desc {
+            color: rgba(255, 255, 255, .65)
+        }
+
+        .feat-content .prod-tag {
+            background: rgba(255, 255, 255, .1);
+            color: rgba(255, 255, 255, .7);
+            border-color: rgba(255, 255, 255, .15)
+        }
+
+        .feat-content .prod-link {
+            color: #a5b4fc
+        }
+
+        .feat-visual {
+            background: linear-gradient(135deg, rgba(79, 70, 229, .3), rgba(124, 58, 237, .2));
+            border-radius: 0 1.5rem 1.5rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden
+        }
+
+        .feat-visual svg {
+            opacity: .15;
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%
+        }
+
+        .feat-visual .feat-icon-big {
+            font-size: 5rem;
+            color: rgba(255, 255, 255, .2);
+            position: relative;
+            z-index: 1
+        }
+
+        /* CTA card inside grid */
+        .prod-card.cta-card {
+            background: linear-gradient(135deg, #eef2ff, #ede9fe);
+            border: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start
+        }
+
+        /* Stats strip */
+        .stats-strip {
+            background: #0f0e17;
+            padding: 5rem 0;
+            position: relative;
+            overflow: hidden
+        }
+
+        .stats-strip::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle, rgba(79, 70, 229, .12) 1px, transparent 0);
+            background-size: 40px 40px
+        }
+
+        .stat-num {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: -.04em;
+            line-height: 1
+        }
+
+        .stat-label {
+            font-size: .875rem;
+            color: rgba(255, 255, 255, .45);
+            margin-top: .5rem
+        }
+
+        .stat-divider {
+            width: 1px;
+            background: rgba(255, 255, 255, .08);
+            align-self: stretch
+        }
+    </style>
 </head>
 
-<body class="font-sans antialiased bg-white text-slate-700">
-
-    <!-- Scroll Progress -->
-    <div class="scroll-progress"></div>
+<body class="antialiased">
+    <div class="scroll-progress" id="sp"></div>
 
     <!-- Navbar -->
-    <nav class="navbar fixed w-full top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/60">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                <a href="/" class="flex items-center space-x-3">
-                    <div
-                        class="w-10 h-10 bg-gradient-to-br from-primary-600 to-primary-800 rounded-xl flex items-center justify-center shadow-lg shadow-primary-500/20">
-                        <i class="fas fa-code text-white text-lg"></i>
+    <nav id="nav">
+        <div class="nav-inner">
+            <a href="/" class="logo-text">Biz<span>Mate</span></a>
+            <div class="nav-links hidden lg:flex items-center gap-1">
+                <a href="/" class="active">Beranda</a>
+                <a href="/tentang-kami">Tentang Kami</a>
+                <div class="dd-wrap">
+                    <a href="#" class="flex items-center gap-1">Produk <i
+                            class="fas fa-chevron-down text-[9px]"></i></a>
+                    <div class="dd-menu">
+                        <a href="/produk" class="dd-item">
+                            <div class="dd-icon" style="background:#eef2ff"><i
+                                    class="fas fa-th-large text-indigo-500 text-xs"></i></div>
+                            <div>
+                                <div class="font-semibold text-xs text-gray-800">Semua Produk</div>
+                                <div class="text-xs text-gray-400">Lihat seluruh solusi kami</div>
+                            </div>
+                        </a>
+                        <hr class="my-1 border-gray-100">
+                        <a href="/produk-hr" class="dd-item">
+                            <div class="dd-icon" style="background:#eff6ff"><i
+                                    class="fas fa-users text-blue-500 text-xs"></i></div><span>BizMateHR — HR
+                                Management</span>
+                        </a>
+                        <a href="/produk-fnb" class="dd-item">
+                            <div class="dd-icon" style="background:#fff7ed"><i
+                                    class="fas fa-utensils text-orange-500 text-xs"></i></div><span>BizMateResto —
+                                FnB</span>
+                        </a>
+                        <a href="/produk-ecommerce" class="dd-item">
+                            <div class="dd-icon" style="background:#f0fdf4"><i
+                                    class="fas fa-shopping-bag text-green-500 text-xs"></i></div><span>BizMateStore —
+                                eCommerce</span>
+                        </a>
+                        <a href="/produk-cbt" class="dd-item">
+                            <div class="dd-icon" style="background:#faf5ff"><i
+                                    class="fas fa-laptop-code text-purple-500 text-xs"></i></div><span>BizMateExam —
+                                CBT</span>
+                        </a>
+                        <a href="/produk-pos" class="dd-item">
+                            <div class="dd-icon" style="background:#fff1f2"><i
+                                    class="fas fa-cash-register text-rose-500 text-xs"></i></div><span>BizMatePOS —
+                                Point of Sale</span>
+                        </a>
                     </div>
-                    <span class="text-xl font-bold text-slate-800">Biz<span class="text-primary-600">Mate</span></span>
-                </a>
-
-                <div class="hidden lg:flex items-center space-x-1">
-                    <a href="/"
-                        class="nav-link active px-4 py-2 rounded-lg text-sm font-medium transition-all">Beranda</a>
-                    <a href="/tentang-kami"
-                        class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-primary-600 hover:bg-primary-50 transition-all">Tentang
-                        Kami</a>
-                    <div class="dropdown relative">
-                        <button
-                            class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-primary-600 hover:bg-primary-50 transition-all flex items-center">
-                            Produk <i class="fas fa-chevron-down ml-1.5 text-[10px]"></i>
-                        </button>
-                        <div
-                            class="dropdown-menu absolute top-full left-0 mt-1 w-72 bg-white rounded-2xl shadow-2xl border border-slate-100 p-2">
-                            <a href="/produk"
-                                class="flex items-center space-x-3 px-4 py-3 rounded-xl hover:bg-primary-50 transition-all group">
-                                <div
-                                    class="w-9 h-9 bg-primary-100 rounded-lg flex items-center justify-center group-hover:bg-primary-200 transition-all">
-                                    <i class="fas fa-th-large text-primary-600 text-sm"></i>
-                                </div>
-                                <div>
-                                    <div class="text-sm font-semibold text-slate-800">Semua Produk</div>
-                                    <div class="text-xs text-slate-400">Lihat semua solusi kami</div>
-                                </div>
-                            </a>
-                            <hr class="my-1.5 border-slate-100">
-                            <a href="/produk-hr"
-                                class="flex items-center space-x-3 px-4 py-2.5 rounded-xl hover:bg-primary-50 transition-all">
-                                <i class="fas fa-users text-primary-500 w-5 text-center"></i>
-                                <span class="text-sm text-slate-600">BizMateHR &mdash; HR Management</span>
-                            </a>
-                            <a href="/produk-fnb"
-                                class="flex items-center space-x-3 px-4 py-2.5 rounded-xl hover:bg-primary-50 transition-all">
-                                <i class="fas fa-utensils text-primary-500 w-5 text-center"></i>
-                                <span class="text-sm text-slate-600">BizMateResto &mdash; F&B Management</span>
-                            </a>
-                            <a href="/produk-ecommerce"
-                                class="flex items-center space-x-3 px-4 py-2.5 rounded-xl hover:bg-primary-50 transition-all">
-                                <i class="fas fa-shopping-cart text-primary-500 w-5 text-center"></i>
-                                <span class="text-sm text-slate-600">BizMateStore &mdash; eCommerce</span>
-                            </a>
-                            <a href="/produk-cbt"
-                                class="flex items-center space-x-3 px-4 py-2.5 rounded-xl hover:bg-primary-50 transition-all">
-                                <i class="fas fa-laptop-code text-primary-500 w-5 text-center"></i>
-                                <span class="text-sm text-slate-600">BizMateExam &mdash; CBT Platform</span>
-                            </a>
-                            <a href="/produk-pos"
-                                class="flex items-center space-x-3 px-4 py-2.5 rounded-xl hover:bg-primary-50 transition-all">
-                                <i class="fas fa-cash-register text-primary-500 w-5 text-center"></i>
-                                <span class="text-sm text-slate-600">BizMatePOS &mdash; Point of Sale</span>
-                            </a>
-                        </div>
-                    </div>
-                    <a href="/layanan"
-                        class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-primary-600 hover:bg-primary-50 transition-all">Layanan</a>
-                    <a href="/portofolio"
-                        class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-primary-600 hover:bg-primary-50 transition-all">Portofolio</a>
-                    <a href="/kontak"
-                        class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-primary-600 hover:bg-primary-50 transition-all">Kontak</a>
                 </div>
-
-                <div class="flex items-center space-x-4">
-                    <a href="https://wa.me/6281234567890?text=Halo%20BizMate%2C%20saya%20tertarik%20dengan%20produk%20Anda"
-                        target="_blank"
-                        class="hidden lg:inline-flex items-center px-5 py-2.5 btn-primary text-sm font-semibold rounded-xl">
-                        <i class="fab fa-whatsapp mr-2 text-lg"></i> Hubungi Kami
-                    </a>
-                    <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg hover:bg-slate-100 transition-all">
-                        <i class="fas fa-bars text-slate-600 text-xl"></i>
-                    </button>
-                </div>
+                <a href="/layanan">Layanan</a>
+                <a href="/portofolio">Portofolio</a>
+                <a href="/kontak">Kontak</a>
+            </div>
+            <div class="flex items-center gap-3">
+                <a href="https://wa.me/6281234567890?text=Halo%20BizMate" target="_blank"
+                    class="btn-cta hidden lg:inline-flex items-center gap-2"><i class="fab fa-whatsapp"></i> Hubungi
+                    Kami</a>
+                <button id="mob-btn" class="lg:hidden p-2 rounded-lg hover:bg-gray-100"
+                    onclick="document.getElementById('mob-menu').classList.toggle('open')"><i
+                        class="fas fa-bars text-gray-600"></i></button>
             </div>
         </div>
-
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-100 px-4 pb-6">
-            <div class="py-3 space-y-1">
+        <div id="mob-menu">
+            <div class="px-4 py-3 space-y-1 max-w-7xl mx-auto">
                 <a href="/"
-                    class="block px-4 py-3 rounded-xl text-sm font-medium text-primary-600 bg-primary-50">Beranda</a>
+                    class="block px-4 py-2.5 rounded-xl text-sm font-medium text-indigo-600 bg-indigo-50">Beranda</a>
                 <a href="/tentang-kami"
-                    class="block px-4 py-3 rounded-xl text-sm font-medium text-slate-600 hover:bg-slate-50">Tentang
+                    class="block px-4 py-2.5 rounded-xl text-sm font-medium text-gray-600 hover:bg-gray-50">Tentang
                     Kami</a>
                 <a href="/produk"
-                    class="block px-4 py-3 rounded-xl text-sm font-medium text-slate-600 hover:bg-slate-50">Semua
+                    class="block px-4 py-2.5 rounded-xl text-sm font-medium text-gray-600 hover:bg-gray-50">Semua
                     Produk</a>
-                <a href="/produk-hr"
-                    class="block px-4 py-3 rounded-xl text-sm text-slate-500 hover:bg-slate-50 pl-8">BizHR</a>
-                <a href="/produk-fnb"
-                    class="block px-4 py-3 rounded-xl text-sm text-slate-500 hover:bg-slate-50 pl-8">BizResto</a>
-                <a href="/produk-ecommerce"
-                    class="block px-4 py-3 rounded-xl text-sm text-slate-500 hover:bg-slate-50 pl-8">BizStore</a>
-                <a href="/produk-cbt"
-                    class="block px-4 py-3 rounded-xl text-sm text-slate-500 hover:bg-slate-50 pl-8">BizExam</a>
-                <a href="/produk-pos"
-                    class="block px-4 py-3 rounded-xl text-sm text-slate-500 hover:bg-slate-50 pl-8">BizPOS</a>
                 <a href="/layanan"
-                    class="block px-4 py-3 rounded-xl text-sm font-medium text-slate-600 hover:bg-slate-50">Layanan</a>
+                    class="block px-4 py-2.5 rounded-xl text-sm font-medium text-gray-600 hover:bg-gray-50">Layanan</a>
                 <a href="/portofolio"
-                    class="block px-4 py-3 rounded-xl text-sm font-medium text-slate-600 hover:bg-slate-50">Portofolio</a>
+                    class="block px-4 py-2.5 rounded-xl text-sm font-medium text-gray-600 hover:bg-gray-50">Portofolio</a>
                 <a href="/kontak"
-                    class="block px-4 py-3 rounded-xl text-sm font-medium text-slate-600 hover:bg-slate-50">Kontak</a>
+                    class="block px-4 py-2.5 rounded-xl text-sm font-medium text-gray-600 hover:bg-gray-50">Kontak</a>
+                <a href="https://wa.me/6281234567890" target="_blank"
+                    class="btn-cta flex items-center justify-center gap-2 mt-2 text-center"><i
+                        class="fab fa-whatsapp"></i> Hubungi via WhatsApp</a>
             </div>
-            <a href="https://wa.me/6281234567890?text=Halo%20BizMate%2C%20saya%20tertarik%20dengan%20produk%20Anda"
-                target="_blank" class="block text-center px-5 py-3 btn-primary text-sm font-semibold rounded-xl mt-2">
-                <i class="fab fa-whatsapp mr-2"></i> Hubungi Kami via WhatsApp
-            </a>
         </div>
     </nav>
 
-    <!-- ===== HERO SECTION ===== -->
-    <section class="hero-gradient hero-pattern relative min-h-screen flex items-center pt-20 overflow-hidden">
-        <div class="absolute top-20 right-0 w-96 h-96 bg-primary-200/30 rounded-full blur-3xl"></div>
-        <div class="absolute bottom-20 left-0 w-80 h-80 bg-purple-200/30 rounded-full blur-3xl"></div>
-
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 relative z-10">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-bg">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+            <div class="geo-ring r1"></div>
+            <div class="geo-ring r2"></div>
+            <div class="geo-ring r3"></div>
+            <div class="dot-grid" style="width:260px;height:260px;top:15%;left:52%;opacity:.5"></div>
+            <!-- SVG grid lines -->
+            <svg style="position:absolute;bottom:0;left:0;right:0;width:100%;opacity:.04" height="200"
+                viewBox="0 0 1440 200" preserveAspectRatio="none">
+                <path d="M0 100 Q360 20 720 100 Q1080 180 1440 100" stroke="#4f46e5" fill="none" stroke-width="2">
+                </path>
+            </svg>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 py-8 w-full relative z-10">
+            <div class="grid lg:grid-cols-[1fr_0.9fr] gap-16 items-center">
                 <div class="animate-on-scroll">
-                    <div class="inline-flex items-center px-4 py-2 bg-primary-100 rounded-full mb-6">
-                        <div class="w-2 h-2 bg-primary-500 rounded-full mr-2 animate-pulse"></div>
-                        <span class="text-sm font-medium text-primary-700">Software House Terpercaya di Indonesia</span>
+                    <div class="hero-tag">
+                        <div class="hero-dot"></div>Software House Terpercaya · Surabaya, Indonesia
                     </div>
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight mb-6">
-                        Solusi Digital untuk
-                        <span class="gradient-text">Pertumbuhan Bisnis</span>
-                        Anda
-                    </h1>
-                    <p class="text-lg text-slate-500 leading-relaxed mb-10 max-w-xl">
-                        Kami mengembangkan perangkat lunak berkualitas tinggi yang dirancang khusus untuk menjawab
-                        kebutuhan bisnis Anda. Dari manajemen SDM hingga platform e-commerce, semuanya dalam satu
-                        ekosistem terintegrasi.
+                    <h1 class="hero-h1">Solusi Digital Pertumbuhan Bisnis Anda<br></h1>
+                    <p class="hero-sub">Kami merancang perangkat lunak bukan sekadar untuk berjalan — tapi untuk
+                        <strong>membawa bisnis Anda ke level berikutnya</strong>. Dari SDM hingga kasir, dari restoran
+                        hingga ujian digital.
                     </p>
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="/produk"
-                            class="inline-flex items-center justify-center px-8 py-4 btn-primary text-base font-semibold rounded-2xl">
-                            Jelajahi Produk Kami
-                            <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
-                        <a href="https://wa.me/6281234567890?text=Halo%20BizMate%2C%20saya%20ingin%20konsultasi%20mengenai%20solusi%20digital"
-                            target="_blank"
-                            class="inline-flex items-center justify-center px-8 py-4 btn-outline text-base font-semibold rounded-2xl">
-                            <i class="fab fa-whatsapp mr-2 text-lg"></i> Konsultasi Gratis
-                        </a>
+                    <div class="flex flex-wrap gap-4 mb-10">
+                        <a href="/produk" class="btn-primary">Jelajahi Produk <i
+                                class="fas fa-arrow-right text-sm"></i></a>
+                        <a href="https://wa.me/6281234567890?text=Halo%20BizMate%2C%20saya%20ingin%20konsultasi"
+                            target="_blank" class="btn-ghost"><i class="fab fa-whatsapp text-green-500"></i> Konsultasi
+                            Gratis</a>
                     </div>
-                    <div class="flex items-center gap-8 mt-12">
-                        <div class="flex -space-x-3">
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face"
-                                class="w-10 h-10 rounded-full border-2 border-white object-cover" alt="Client">
-                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face"
-                                class="w-10 h-10 rounded-full border-2 border-white object-cover" alt="Client">
-                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face"
-                                class="w-10 h-10 rounded-full border-2 border-white object-cover" alt="Client">
-                            <div
-                                class="w-10 h-10 rounded-full border-2 border-white bg-primary-100 flex items-center justify-center text-xs font-bold text-primary-600">
-                                99+</div>
+                    <div class="flex flex-wrap gap-3">
+                        <div class="stat-pill">
+                            <div>
+                                <div class="stat-pill-num">200<span style="color:var(--indigo)">+</span></div>
+                                <div class="stat-pill-label">Proyek Selesai</div>
+                            </div>
+                        </div>
+                        <div class="stat-pill">
+                            <div>
+                                <div class="stat-pill-num">150<span style="color:var(--indigo)">+</span></div>
+                                <div class="stat-pill-label">Klien Aktif</div>
+                            </div>
+                        </div>
+                        <div class="stat-pill">
+                            <div>
+                                <div class="stat-pill-num">98<span style="color:var(--indigo)">%</span></div>
+                                <div class="stat-pill-label">Kepuasan Klien</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="animate-on-scroll stagger-2 hero-visual hidden lg:block">
+                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=640&fit=crop"
+                        alt="Tim BizMate Digital" class="hero-img">
+                    <div class="ui-card c1">
+                        <div class="ui-icon" style="background:#dcfce7"><i class="fas fa-chart-line text-green-600"></i>
                         </div>
                         <div>
-                            <div class="text-sm font-semibold text-slate-800">100+ Klien Puas</div>
-                            <div class="text-xs text-slate-400">Dipercaya berbagai industri</div>
+                            <div style="font-weight:700;font-size:.9rem;color:#0f0e17">98% Kepuasan</div>
+                            <div style="font-size:.72rem;color:#9ca3af">Rating Klien Aktif</div>
                         </div>
                     </div>
-                </div>
-
-                <div class="animate-on-scroll stagger-2 relative">
-                    <div class="relative">
-                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=600&fit=crop"
-                            alt="Tim BizMate Digital sedang bekerja" class="rounded-3xl shadow-2xl w-full object-cover">
-                        <div
-                            class="absolute -bottom-6 -left-6 bg-white rounded-2xl p-4 shadow-xl border border-slate-100">
-                            <div class="flex items-center space-x-3">
-                                <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
-                                    <i class="fas fa-chart-line text-green-600 text-xl"></i>
-                                </div>
-                                <div>
-                                    <div class="text-sm font-bold text-slate-800">98% Kepuasan</div>
-                                    <div class="text-xs text-slate-400">Rating Klien</div>
-                                </div>
-                            </div>
+                    <div class="ui-card c2">
+                        <div class="ui-icon" style="background:#eef2ff"><i class="fas fa-rocket text-indigo-600"></i>
                         </div>
-                        <div
-                            class="absolute -top-4 -right-4 bg-white rounded-2xl p-4 shadow-xl border border-slate-100">
-                            <div class="flex items-center space-x-3">
-                                <div class="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center">
-                                    <i class="fas fa-rocket text-primary-600 text-xl"></i>
-                                </div>
-                                <div>
-                                    <div class="text-sm font-bold text-slate-800">5+ Produk</div>
-                                    <div class="text-xs text-slate-400">Siap Pakai</div>
-                                </div>
-                            </div>
+                        <div>
+                            <div style="font-weight:700;font-size:.9rem;color:#0f0e17">5 Produk</div>
+                            <div style="font-size:.72rem;color:#9ca3af">Siap Implementasi</div>
                         </div>
                     </div>
                 </div>
@@ -240,254 +882,260 @@
         </div>
     </section>
 
-    <!-- ===== TRUSTED BY ===== -->
-    <section class="py-16 bg-slate-50/50 border-y border-slate-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <p class="text-center text-sm font-medium text-slate-400 mb-8 uppercase tracking-wider">Dipercaya oleh
-                Perusahaan Terkemuka</p>
-            <div class="flex flex-wrap items-center justify-center gap-x-12 gap-y-6 opacity-50 grayscale">
-                <div class="text-2xl font-bold text-slate-400">TechCorp</div>
-                <div class="text-2xl font-bold text-slate-400">MegaGroup</div>
-                <div class="text-2xl font-bold text-slate-400">GlobalStar</div>
-                <div class="text-2xl font-bold text-slate-400">InnovateCo</div>
-                <div class="text-2xl font-bold text-slate-400">DigitalFirst</div>
-                <div class="text-2xl font-bold text-slate-400">SmartBiz</div>
+    <!-- Marquee Band -->
+    <div class="marquee-section">
+        <div class="marquee-track">
+            <div class="marquee-item"><i class="fas fa-circle text-indigo-600 text-[6px]"></i> TechCorp Indonesia
+                <span>✦</span>
+            </div>
+            <div class="marquee-item"><i class="fas fa-circle text-indigo-600 text-[6px]"></i> MegaGroup Nusantara
+                <span>✦</span>
+            </div>
+            <div class="marquee-item"><i class="fas fa-circle text-indigo-600 text-[6px]"></i> GlobalStar Tbk
+                <span>✦</span>
+            </div>
+            <div class="marquee-item"><i class="fas fa-circle text-indigo-600 text-[6px]"></i> InnovateCo <span>✦</span>
+            </div>
+            <div class="marquee-item"><i class="fas fa-circle text-indigo-600 text-[6px]"></i> DigitalFirst Group
+                <span>✦</span>
+            </div>
+            <div class="marquee-item"><i class="fas fa-circle text-indigo-600 text-[6px]"></i> SmartBiz Solutions
+                <span>✦</span>
+            </div>
+            <div class="marquee-item"><i class="fas fa-circle text-indigo-600 text-[6px]"></i> Nusantara Raya
+                <span>✦</span>
+            </div>
+            <!-- duplicate for loop -->
+            <div class="marquee-item"><i class="fas fa-circle text-indigo-600 text-[6px]"></i> TechCorp Indonesia
+                <span>✦</span>
+            </div>
+            <div class="marquee-item"><i class="fas fa-circle text-indigo-600 text-[6px]"></i> MegaGroup Nusantara
+                <span>✦</span>
+            </div>
+            <div class="marquee-item"><i class="fas fa-circle text-indigo-600 text-[6px]"></i> GlobalStar Tbk
+                <span>✦</span>
+            </div>
+            <div class="marquee-item"><i class="fas fa-circle text-indigo-600 text-[6px]"></i> InnovateCo <span>✦</span>
+            </div>
+            <div class="marquee-item"><i class="fas fa-circle text-indigo-600 text-[6px]"></i> DigitalFirst Group
+                <span>✦</span>
+            </div>
+            <div class="marquee-item"><i class="fas fa-circle text-indigo-600 text-[6px]"></i> SmartBiz Solutions
+                <span>✦</span>
+            </div>
+            <div class="marquee-item"><i class="fas fa-circle text-indigo-600 text-[6px]"></i> Nusantara Raya
+                <span>✦</span>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- ===== PRODUCTS SECTION ===== -->
-    <section class="py-16 bg-white" id="produk">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-10 animate-on-scroll">
-                <span
-                    class="inline-block px-4 py-1.5 bg-primary-100 text-primary-700 text-sm font-semibold rounded-full mb-4">Produk
-                    Unggulan</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4">Solusi Lengkap untuk Setiap
-                    Kebutuhan</h2>
-                <p class="text-lg text-slate-500 max-w-2xl mx-auto">Setiap produk kami dirancang dengan standar industri
-                    terbaik, dilengkapi fitur lengkap dan dukungan teknis profesional.</p>
+    <!-- Products -->
+    <section id="produk" class="py-24 bg-white relative overflow-hidden">
+        <div class="dot-grid" style="position:absolute;width:300px;height:300px;bottom:-50px;right:-50px;opacity:.3">
+        </div>
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-14 animate-on-scroll">
+                <div>
+                    <div class="section-label"><i class="fas fa-layer-group text-[10px]"></i> Portofolio Produk</div>
+                    <h2 class="section-title">Satu Ekosistem,<br>Lima Solusi Kuat</h2>
+                </div>
+                <p class="text-gray-500 max-w-md text-sm leading-relaxed lg:text-right">Setiap produk dibangun di atas
+                    fondasi teknologi modern, diujicoba dalam kondisi nyata, dan terus berkembang bersama bisnis klien
+                    kami.</p>
             </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- BizHR -->
-                <a href="/produk-hr"
-                    class="product-card animate-on-scroll stagger-1 bg-white rounded-2xl border border-slate-200 hover:border-primary-200 p-8 group">
-                    <div class="product-icon w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-6">
-                        <i class="fas fa-users text-blue-600 text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-800 mb-3 group-hover:text-primary-600 transition-colors">
-                        BizHR</h3>
-                    <p class="text-sm text-slate-500 leading-relaxed mb-6">Sistem manajemen SDM terintegrasi untuk
-                        pengelolaan karyawan, penggajian, absensi, cuti, dan rekrutmen dalam satu platform.</p>
-                    <div class="flex flex-wrap gap-2 mb-6">
-                        <span class="px-3 py-1 bg-slate-100 text-slate-500 text-xs rounded-full">Payroll</span>
-                        <span class="px-3 py-1 bg-slate-100 text-slate-500 text-xs rounded-full">Absensi</span>
-                        <span class="px-3 py-1 bg-slate-100 text-slate-500 text-xs rounded-full">Rekrutmen</span>
-                    </div>
-                    <span class="inline-flex items-center text-sm font-semibold text-primary-600">
-                        Pelajari Selengkapnya <i
-                            class="fas fa-arrow-right ml-2 text-xs group-hover:translate-x-1 transition-transform"></i>
-                    </span>
-                </a>
-
-                <!-- BizResto -->
-                <a href="/produk-fnb"
-                    class="product-card animate-on-scroll stagger-2 bg-white rounded-2xl border border-slate-200 hover:border-primary-200 p-8 group">
-                    <div class="product-icon w-16 h-16 bg-orange-100 rounded-2xl flex items-center justify-center mb-6">
-                        <i class="fas fa-utensils text-orange-600 text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-800 mb-3 group-hover:text-primary-600 transition-colors">
-                        BizResto</h3>
-                    <p class="text-sm text-slate-500 leading-relaxed mb-6">Kelola seluruh operasional restoran dan kafe
-                        Anda mulai dari pemesanan, dapur, inventaris, hingga laporan keuangan secara real-time.</p>
-                    <div class="flex flex-wrap gap-2 mb-6">
-                        <span class="px-3 py-1 bg-slate-100 text-slate-500 text-xs rounded-full">Order</span>
-                        <span class="px-3 py-1 bg-slate-100 text-slate-500 text-xs rounded-full">Dapur</span>
-                        <span class="px-3 py-1 bg-slate-100 text-slate-500 text-xs rounded-full">Inventaris</span>
-                    </div>
-                    <span class="inline-flex items-center text-sm font-semibold text-primary-600">
-                        Pelajari Selengkapnya <i
-                            class="fas fa-arrow-right ml-2 text-xs group-hover:translate-x-1 transition-transform"></i>
-                    </span>
-                </a>
-
-                <!-- BizStore -->
-                <a href="/produk-ecommerce"
-                    class="product-card animate-on-scroll stagger-3 bg-white rounded-2xl border border-slate-200 hover:border-primary-200 p-8 group">
-                    <div
-                        class="product-icon w-16 h-16 bg-emerald-100 rounded-2xl flex items-center justify-center mb-6">
-                        <i class="fas fa-shopping-cart text-emerald-600 text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-800 mb-3 group-hover:text-primary-600 transition-colors">
-                        BizStore</h3>
-                    <p class="text-sm text-slate-500 leading-relaxed mb-6">Platform e-commerce yang kuat dan fleksibel
-                        untuk membangun toko online Anda, lengkap dengan manajemen produk dan pelacakan pesanan.</p>
-                    <div class="flex flex-wrap gap-2 mb-6">
-                        <span class="px-3 py-1 bg-slate-100 text-slate-500 text-xs rounded-full">Marketplace</span>
-                        <span class="px-3 py-1 bg-slate-100 text-slate-500 text-xs rounded-full">Katalog</span>
-                        <span class="px-3 py-1 bg-slate-100 text-slate-500 text-xs rounded-full">Analitik</span>
-                    </div>
-                    <span class="inline-flex items-center text-sm font-semibold text-primary-600">
-                        Pelajari Selengkapnya <i
-                            class="fas fa-arrow-right ml-2 text-xs group-hover:translate-x-1 transition-transform"></i>
-                    </span>
-                </a>
-
-                <!-- BizExam -->
-                <a href="/produk-cbt"
-                    class="product-card animate-on-scroll stagger-4 bg-white rounded-2xl border border-slate-200 hover:border-primary-200 p-8 group">
-                    <div class="product-icon w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mb-6">
-                        <i class="fas fa-laptop-code text-purple-600 text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-800 mb-3 group-hover:text-primary-600 transition-colors">
-                        BizExam</h3>
-                    <p class="text-sm text-slate-500 leading-relaxed mb-6">Solusi ujian berbasis komputer yang aman dan
-                        andal. Buat, kelola, dan evaluasi ujian secara otomatis dengan fitur anti-kecurangan.</p>
-                    <div class="flex flex-wrap gap-2 mb-6">
-                        <span class="px-3 py-1 bg-slate-100 text-slate-500 text-xs rounded-full">Bank Soal</span>
-                        <span class="px-3 py-1 bg-slate-100 text-slate-500 text-xs rounded-full">Auto-Grading</span>
-                        <span class="px-3 py-1 bg-slate-100 text-slate-500 text-xs rounded-full">Proctor</span>
-                    </div>
-                    <span class="inline-flex items-center text-sm font-semibold text-primary-600">
-                        Pelajari Selengkapnya <i
-                            class="fas fa-arrow-right ml-2 text-xs group-hover:translate-x-1 transition-transform"></i>
-                    </span>
-                </a>
-
-                <!-- BizPOS -->
-                <a href="/produk-pos"
-                    class="product-card animate-on-scroll stagger-5 bg-white rounded-2xl border border-slate-200 hover:border-primary-200 p-8 group">
-                    <div class="product-icon w-16 h-16 bg-rose-100 rounded-2xl flex items-center justify-center mb-6">
-                        <i class="fas fa-cash-register text-rose-600 text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-800 mb-3 group-hover:text-primary-600 transition-colors">
-                        BizPOS</h3>
-                    <p class="text-sm text-slate-500 leading-relaxed mb-6">Sistem kasir modern yang mempercepat
-                        transaksi, mengelola stok barang, dan menyajikan laporan penjualan secara real-time di semua
-                        outlet.</p>
-                    <div class="flex flex-wrap gap-2 mb-6">
-                        <span class="px-3 py-1 bg-slate-100 text-slate-500 text-xs rounded-full">Transaksi</span>
-                        <span class="px-3 py-1 bg-slate-100 text-slate-500 text-xs rounded-full">Stok</span>
-                        <span class="px-3 py-1 bg-slate-100 text-slate-500 text-xs rounded-full">Multi-Outlet</span>
-                    </div>
-                    <span class="inline-flex items-center text-sm font-semibold text-primary-600">
-                        Pelajari Selengkapnya <i
-                            class="fas fa-arrow-right ml-2 text-xs group-hover:translate-x-1 transition-transform"></i>
-                    </span>
-                </a>
-
-                <!-- CTA Card -->
-                <div
-                    class="animate-on-scroll stagger-6 bg-gradient-to-br from-primary-600 to-primary-800 rounded-2xl p-8 flex flex-col justify-center text-white">
-                    <h3 class="text-2xl font-bold mb-4">Butuh Solusi Khusus?</h3>
-                    <p class="text-primary-100 text-sm leading-relaxed mb-6">Tim kami siap membantu mengembangkan
-                        perangkat lunak yang disesuaikan dengan kebutuhan unik bisnis Anda.</p>
-                    <a href="https://wa.me/6281234567890?text=Halo%20BizMate%2C%20saya%20ingin%20konsultasi%20mengenai%20solusi%20custom"
-                        target="_blank"
-                        class="inline-flex items-center justify-center px-6 py-3 bg-white text-primary-700 font-semibold rounded-xl hover:bg-primary-50 transition-all text-sm">
-                        <i class="fab fa-whatsapp mr-2 text-lg"></i> Konsultasi Sekarang
+            <div class="space-y-6">
+                <!-- Row 1: Featured + 1 -->
+                <div class="grid lg:grid-cols-3 gap-6">
+                    <a href="/produk-hr" class="prod-card lg:col-span-2 animate-on-scroll stagger-1"
+                        style="--c1:#eff6ff;--c2:#dbeafe">
+                        <div class="prod-icon" style="background:#dbeafe;color:#1d4ed8"><i class="fas fa-users"></i>
+                        </div>
+                        <div class="prod-name">BizMateHR</div>
+                        <div class="prod-desc">Kelola seluruh siklus SDM — dari rekrutmen, absensi, penggajian, hingga
+                            evaluasi kinerja — dalam satu dashboard yang intuitif dan efisien.</div>
+                        <div class="prod-tags"><span class="prod-tag">Payroll Otomatis</span><span
+                                class="prod-tag">Absensi Biometrik</span><span class="prod-tag">Rekrutmen</span></div>
+                        <span class="prod-link">Pelajari Selengkapnya <i class="fas fa-arrow-right text-xs"></i></span>
+                    </a>
+                    <a href="/produk-fnb" class="prod-card animate-on-scroll stagger-2"
+                        style="--c1:#fff7ed;--c2:#fed7aa">
+                        <div class="prod-icon" style="background:#fed7aa;color:#c2410c"><i class="fas fa-utensils"></i>
+                        </div>
+                        <div class="prod-name">BizMateResto</div>
+                        <div class="prod-desc">Dari antrian order hingga laporan laba restoran Anda — semua terkelola
+                            dalam hitungan klik.</div>
+                        <div class="prod-tags"><span class="prod-tag">Order Digital</span><span
+                                class="prod-tag">Manajemen Dapur</span><span class="prod-tag">Inventaris</span></div>
+                        <span class="prod-link">Pelajari Selengkapnya <i class="fas fa-arrow-right text-xs"></i></span>
+                    </a>
+                </div>
+                <!-- Row 2: 3 cards -->
+                <div class="grid md:grid-cols-3 gap-6">
+                    <a href="/produk-ecommerce" class="prod-card animate-on-scroll stagger-1"
+                        style="--c1:#f0fdf4;--c2:#bbf7d0">
+                        <div class="prod-icon" style="background:#bbf7d0;color:#15803d"><i
+                                class="fas fa-shopping-bag"></i></div>
+                        <div class="prod-name">BizMateStore</div>
+                        <div class="prod-desc">Platform e-commerce kuat yang siap membawa toko Anda ke ribuan pelanggan
+                            baru.</div>
+                        <div class="prod-tags"><span class="prod-tag">Multi-Katalog</span><span
+                                class="prod-tag">Analitik</span></div>
+                        <span class="prod-link">Pelajari Selengkapnya <i class="fas fa-arrow-right text-xs"></i></span>
+                    </a>
+                    <a href="/produk-cbt" class="prod-card animate-on-scroll stagger-2"
+                        style="--c1:#faf5ff;--c2:#e9d5ff">
+                        <div class="prod-icon" style="background:#e9d5ff;color:#7c3aed"><i
+                                class="fas fa-laptop-code"></i></div>
+                        <div class="prod-name">BizMateExam</div>
+                        <div class="prod-desc">Ujian berbasis komputer yang aman, adil, dan terautomasi lengkap dengan
+                            fitur anti-kecurangan.</div>
+                        <div class="prod-tags"><span class="prod-tag">Bank Soal</span><span
+                                class="prod-tag">Auto-Grading</span></div>
+                        <span class="prod-link">Pelajari Selengkapnya <i class="fas fa-arrow-right text-xs"></i></span>
+                    </a>
+                    <a href="/produk-pos" class="prod-card animate-on-scroll stagger-3"
+                        style="--c1:#fff1f2;--c2:#fecdd3">
+                        <div class="prod-icon" style="background:#fecdd3;color:#be123c"><i
+                                class="fas fa-cash-register"></i></div>
+                        <div class="prod-name">BizMatePOS</div>
+                        <div class="prod-desc">Sistem kasir modern, cepat, dan handal untuk semua jenis retail dan
+                            multi-outlet.</div>
+                        <div class="prod-tags"><span class="prod-tag">Transaksi Cepat</span><span
+                                class="prod-tag">Multi-Outlet</span></div>
+                        <span class="prod-link">Pelajari Selengkapnya <i class="fas fa-arrow-right text-xs"></i></span>
                     </a>
                 </div>
             </div>
+            <div class="mt-8 text-center animate-on-scroll">
+                <a href="/produk" class="btn-primary inline-flex">Lihat Semua Produk <i
+                        class="fas fa-arrow-right text-sm"></i></a>
+            </div>
         </div>
     </section>
 
-    <!-- ===== STATS SECTION ===== -->
-    <section
-        class="counter-section py-14 bg-gradient-to-br from-primary-600 via-primary-700 to-primary-900 relative overflow-hidden">
-        <div
-            class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSA2MCAwIEwgMCAwIDAgNjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-30">
-        </div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-                <div class="text-center animate-on-scroll stagger-1">
-                    <div class="text-4xl sm:text-5xl font-extrabold text-white counter mb-2" data-counter="200"
-                        data-suffix="+">0</div>
-                    <div class="text-primary-200 text-sm font-medium">Proyek Selesai</div>
+    <!-- Stats -->
+    <section class="stats-strip">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-8 text-center sm:text-left">
+                <div class="animate-on-scroll stagger-1">
+                    <div class="stat-num counter" data-counter="200" data-suffix="+">0</div>
+                    <div class="stat-label">Proyek Berhasil Diselesaikan</div>
                 </div>
-                <div class="text-center animate-on-scroll stagger-2">
-                    <div class="text-4xl sm:text-5xl font-extrabold text-white counter mb-2" data-counter="150"
-                        data-suffix="+">0</div>
-                    <div class="text-primary-200 text-sm font-medium">Klien Aktif</div>
+                <div class="stat-divider hidden sm:block"></div>
+                <div class="animate-on-scroll stagger-2">
+                    <div class="stat-num counter" data-counter="150" data-suffix="+">0</div>
+                    <div class="stat-label">Klien Aktif di Seluruh Indonesia</div>
                 </div>
-                <div class="text-center animate-on-scroll stagger-3">
-                    <div class="text-4xl sm:text-5xl font-extrabold text-white counter mb-2" data-counter="50"
-                        data-suffix="+">0</div>
-                    <div class="text-primary-200 text-sm font-medium">Tenaga Ahli</div>
+                <div class="stat-divider hidden sm:block"></div>
+                <div class="animate-on-scroll stagger-3">
+                    <div class="stat-num counter" data-counter="50" data-suffix="+">0</div>
+                    <div class="stat-label">Tenaga Ahli Berpengalaman</div>
                 </div>
-                <div class="text-center animate-on-scroll stagger-4">
-                    <div class="text-4xl sm:text-5xl font-extrabold text-white counter mb-2" data-counter="98"
-                        data-suffix="%">0</div>
-                    <div class="text-primary-200 text-sm font-medium">Kepuasan Klien</div>
+                <div class="stat-divider hidden sm:block"></div>
+                <div class="animate-on-scroll stagger-4">
+                    <div class="stat-num counter" data-counter="5" data-suffix=" Tahun">0</div>
+                    <div class="stat-label">Menemani Pertumbuhan Bisnis</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== WHY US SECTION ===== -->
-    <section class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div class="animate-on-scroll slide-left">
-                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=700&h=500&fit=crop"
-                        alt="Tim BizMate berkolaborasi" class="rounded-3xl shadow-xl w-full object-cover">
+    <!-- Why Us -->
+    <section class="py-24 bg-gray-50 relative overflow-hidden">
+        <svg style="position:absolute;top:0;left:0;width:100%;height:100%;opacity:.03;pointer-events:none"
+            viewBox="0 0 100 100" preserveAspectRatio="none">
+            <polygon points="0,0 100,0 100,100" fill="#4f46e5" />
+        </svg>
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="animate-on-scroll slide-left order-2 lg:order-1">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=700&h=520&fit=crop"
+                            alt="Tim BizMate berkolaborasi" class="rounded-3xl shadow-2xl w-full object-cover">
+                        <div
+                            style="position:absolute;bottom:-20px;right:-20px;background:#fff;border-radius:1.25rem;padding:1.25rem 1.5rem;box-shadow:0 16px 40px rgba(0,0,0,.1);display:flex;gap:.75rem;align-items:center;border:1px solid #f1f5f9">
+                            <div
+                                style="width:44px;height:44px;background:#eef2ff;border-radius:.875rem;display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:#4f46e5">
+                                <i class="fas fa-shield-halved"></i>
+                            </div>
+                            <div>
+                                <div style="font-weight:700;font-size:.9rem;color:#0f0e17">ISO 27001</div>
+                                <div style="font-size:.72rem;color:#9ca3af">Keamanan Terstandar</div>
+                            </div>
+                        </div>
+                        <!-- Decorative dots -->
+                        <div class="dot-grid"
+                            style="position:absolute;width:120px;height:120px;top:-20px;left:-20px;border-radius:.5rem;opacity:.5">
+                        </div>
+                    </div>
                 </div>
-                <div>
+                <div class="order-1 lg:order-2">
                     <div class="animate-on-scroll">
-                        <span
-                            class="inline-block px-4 py-1.5 bg-primary-100 text-primary-700 text-sm font-semibold rounded-full mb-4">Mengapa
-                            BizMate?</span>
-                        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-6">Mitra Teknologi yang Anda
-                            Percaya</h2>
-                        <p class="text-slate-500 leading-relaxed mb-10">Kami bukan sekadar vendor perangkat lunak. Kami
-                            adalah mitra strategis yang memahami tantangan bisnis Anda dan menyediakan solusi teknologi
-                            yang tepat sasaran.</p>
+                        <div class="section-label"><i class="fas fa-award text-[10px]"></i> Keunggulan Kami</div>
+                        <h2 class="section-title mb-4">Bukan Sekadar<br>Vendor — Kami<br>Mitra Strategis</h2>
+                        <p class="text-gray-500 text-sm leading-relaxed mb-10">Kami memahami bahwa teknologi tanpa
+                            konteks bisnis hanyalah alat yang sia-sia. Itulah mengapa setiap solusi yang kami bangun
+                            berakar dari pemahaman mendalam terhadap tantangan industri Anda.</p>
                     </div>
-
-                    <div class="space-y-6">
-                        <div class="animate-on-scroll stagger-1 flex items-start space-x-4 feature-item p-4 rounded-xl">
+                    <div class="space-y-5">
+                        <div class="animate-on-scroll stagger-1"
+                            style="display:flex;gap:1rem;padding:1.25rem;border-radius:1rem;border:1px solid #f1f5f9;background:#fff;transition:all .3s"
+                            onmouseenter="this.style.borderColor='#c7d2fe';this.style.transform='translateX(6px)'"
+                            onmouseleave="this.style.borderColor='#f1f5f9';this.style.transform='translateX(0)'">
                             <div
-                                class="flex-shrink-0 w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center">
-                                <i class="fas fa-shield-halved text-primary-600 text-lg"></i>
+                                style="flex-shrink:0;width:48px;height:48px;background:#eef2ff;border-radius:.875rem;display:flex;align-items:center;justify-content:center;color:#4f46e5">
+                                <i class="fas fa-shield-halved text-lg"></i>
                             </div>
                             <div>
-                                <h4 class="text-base font-bold text-slate-800 mb-1">Keamanan Terjamin</h4>
-                                <p class="text-sm text-slate-500">Setiap produk dibangun dengan standar keamanan terbaik
-                                    dan enkripsi data tingkat enterprise.</p>
+                                <div style="font-weight:700;font-size:.95rem;color:#0f0e17;margin-bottom:.25rem">
+                                    Keamanan Enterprise-Grade</div>
+                                <div style="font-size:.85rem;color:#6b7280;line-height:1.6">Enkripsi data dan proteksi
+                                    berlapis memastikan informasi bisnis Anda selalu aman.</div>
                             </div>
                         </div>
-                        <div class="animate-on-scroll stagger-2 flex items-start space-x-4 feature-item p-4 rounded-xl">
+                        <div class="animate-on-scroll stagger-2"
+                            style="display:flex;gap:1rem;padding:1.25rem;border-radius:1rem;border:1px solid #f1f5f9;background:#fff;transition:all .3s"
+                            onmouseenter="this.style.borderColor='#bbf7d0';this.style.transform='translateX(6px)'"
+                            onmouseleave="this.style.borderColor='#f1f5f9';this.style.transform='translateX(0)'">
                             <div
-                                class="flex-shrink-0 w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
-                                <i class="fas fa-headset text-green-600 text-lg"></i>
+                                style="flex-shrink:0;width:48px;height:48px;background:#f0fdf4;border-radius:.875rem;display:flex;align-items:center;justify-content:center;color:#16a34a">
+                                <i class="fas fa-headset text-lg"></i>
                             </div>
                             <div>
-                                <h4 class="text-base font-bold text-slate-800 mb-1">Dukungan 24/7</h4>
-                                <p class="text-sm text-slate-500">Tim support kami siap membantu kapan pun Anda
-                                    membutuhkan dengan respons cepat dan solutif.</p>
+                                <div style="font-weight:700;font-size:.95rem;color:#0f0e17;margin-bottom:.25rem">
+                                    Dukungan 24/7 Responsif</div>
+                                <div style="font-size:.85rem;color:#6b7280;line-height:1.6">Tim support berpengalaman
+                                    kami siap membantu kapan pun kebutuhan muncul.</div>
                             </div>
                         </div>
-                        <div class="animate-on-scroll stagger-3 flex items-start space-x-4 feature-item p-4 rounded-xl">
+                        <div class="animate-on-scroll stagger-3"
+                            style="display:flex;gap:1rem;padding:1.25rem;border-radius:1rem;border:1px solid #f1f5f9;background:#fff;transition:all .3s"
+                            onmouseenter="this.style.borderColor='#fed7aa';this.style.transform='translateX(6px)'"
+                            onmouseleave="this.style.borderColor='#f1f5f9';this.style.transform='translateX(0)'">
                             <div
-                                class="flex-shrink-0 w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center">
-                                <i class="fas fa-bolt text-amber-600 text-lg"></i>
+                                style="flex-shrink:0;width:48px;height:48px;background:#fff7ed;border-radius:.875rem;display:flex;align-items:center;justify-content:center;color:#d97706">
+                                <i class="fas fa-bolt text-lg"></i>
                             </div>
                             <div>
-                                <h4 class="text-base font-bold text-slate-800 mb-1">Implementasi Cepat</h4>
-                                <p class="text-sm text-slate-500">Proses deployment yang terstruktur dan efisien dengan
-                                    minimal gangguan operasional bisnis Anda.</p>
+                                <div style="font-weight:700;font-size:.95rem;color:#0f0e17;margin-bottom:.25rem">
+                                    Implementasi Cepat & Tepat</div>
+                                <div style="font-size:.85rem;color:#6b7280;line-height:1.6">Metodologi deployment
+                                    terstruktur — bisnis Anda bergerak tanpa gangguan operasional.</div>
                             </div>
                         </div>
-                        <div class="animate-on-scroll stagger-4 flex items-start space-x-4 feature-item p-4 rounded-xl">
+                        <div class="animate-on-scroll stagger-4"
+                            style="display:flex;gap:1rem;padding:1.25rem;border-radius:1rem;border:1px solid #f1f5f9;background:#fff;transition:all .3s"
+                            onmouseenter="this.style.borderColor='#e9d5ff';this.style.transform='translateX(6px)'"
+                            onmouseleave="this.style.borderColor='#f1f5f9';this.style.transform='translateX(0)'">
                             <div
-                                class="flex-shrink-0 w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center">
-                                <i class="fas fa-arrows-rotate text-purple-600 text-lg"></i>
+                                style="flex-shrink:0;width:48px;height:48px;background:#faf5ff;border-radius:.875rem;display:flex;align-items:center;justify-content:middle;color:#7c3aed;display:flex;justify-content:center;align-items:center">
+                                <i class="fas fa-cubes text-lg"></i>
                             </div>
                             <div>
-                                <h4 class="text-base font-bold text-slate-800 mb-1">Skalabilitas Tinggi</h4>
-                                <p class="text-sm text-slate-500">Arsitektur modern yang siap berkembang seiring
-                                    pertumbuhan bisnis Anda tanpa perombakan sistem.</p>
+                                <div style="font-weight:700;font-size:.95rem;color:#0f0e17;margin-bottom:.25rem">
+                                    Arsitektur Skalabel</div>
+                                <div style="font-size:.85rem;color:#6b7280;line-height:1.6">Dibangun untuk tumbuh — dari
+                                    puluhan hingga jutaan transaksi tanpa ganti sistem.</div>
                             </div>
                         </div>
                     </div>
@@ -496,229 +1144,238 @@
         </div>
     </section>
 
-    <!-- ===== TESTIMONIALS ===== -->
-    <section class="py-16 bg-slate-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-10 animate-on-scroll">
-                <span
-                    class="inline-block px-4 py-1.5 bg-primary-100 text-primary-700 text-sm font-semibold rounded-full mb-4">Testimoni</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4">Apa Kata Klien Kami</h2>
-                <p class="text-lg text-slate-500 max-w-2xl mx-auto">Kepuasan klien adalah prioritas utama kami.
-                    Dengarkan pengalaman mereka bersama BizMate Digital.</p>
+    <!-- Testimonials -->
+    <section class="py-24 bg-white relative overflow-hidden">
+        <div
+            style="position:absolute;top:0;right:0;width:500px;height:500px;background:radial-gradient(circle,#eef2ff,transparent);border-radius:50%;transform:translate(40%,-40%);pointer-events:none">
+        </div>
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-14 animate-on-scroll">
+                <div class="section-label mx-auto inline-flex"><i class="fas fa-quote-left text-[10px]"></i> Suara Klien
+                </div>
+                <h2 class="section-title mt-2">Kata Mereka yang<br>Telah Merasakan</h2>
             </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <div
-                    class="animate-on-scroll stagger-1 testimonial-card bg-white rounded-2xl p-8 border border-slate-200">
-                    <div class="flex gap-1 mb-4">
-                        <i class="fas fa-star text-amber-400 text-sm"></i>
-                        <i class="fas fa-star text-amber-400 text-sm"></i>
-                        <i class="fas fa-star text-amber-400 text-sm"></i>
-                        <i class="fas fa-star text-amber-400 text-sm"></i>
-                        <i class="fas fa-star text-amber-400 text-sm"></i>
-                    </div>
-                    <p class="text-slate-600 text-sm leading-relaxed mb-6">"BizHR telah mengubah cara kami mengelola SDM
-                        secara drastis. Proses penggajian yang dulunya memakan waktu berhari-hari kini selesai dalam
-                        hitungan jam. Sangat direkomendasikan!"</p>
-                    <div class="flex items-center space-x-3">
-                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100&h=100&fit=crop&crop=face"
-                            alt="Ahmad Fauzi" class="w-11 h-11 rounded-full object-cover">
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="animate-on-scroll stagger-1"
+                    style="background:#fff;border:1px solid #e5e7eb;border-radius:1.5rem;padding:2rem;position:relative;transition:all .4s;cursor:default"
+                    onmouseenter="this.style.transform='translateY(-8px)';this.style.boxShadow='0 24px 48px rgba(0,0,0,.09)';this.style.borderColor='#c7d2fe'"
+                    onmouseleave="this.style.transform='';this.style.boxShadow='';this.style.borderColor='#e5e7eb'">
+                    <div style="color:#f59e0b;font-size:.8rem;margin-bottom:1rem">★★★★★</div>
+                    <p style="font-size:.9rem;color:#374151;line-height:1.8;margin-bottom:1.5rem;font-style:italic">
+                        "BizHR mengubah cara kami mengelola 300+ karyawan. Penggajian yang butuh 3 hari kini selesai
+                        dalam 2 jam. Ini bukan efisiensi biasa — ini transformasi nyata."</p>
+                    <div style="display:flex;align-items:center;gap:.75rem">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=80&h=80&fit=crop&crop=face"
+                            style="width:44px;height:44px;border-radius:50%;object-fit:cover" alt="Ahmad Fauzi">
                         <div>
-                            <div class="text-sm font-semibold text-slate-800">Ahmad Fauzi</div>
-                            <div class="text-xs text-slate-400">HRD Manager, PT Maju Bersama</div>
+                            <div style="font-weight:700;font-size:.875rem;color:#0f0e17">Ahmad Fauzi</div>
+                            <div style="font-size:.75rem;color:#9ca3af">HRD Manager · PT Maju Bersama</div>
                         </div>
                     </div>
+                    <div
+                        style="position:absolute;top:1.5rem;right:1.5rem;font-size:2.5rem;color:#eef2ff;font-family:Georgia,serif;line-height:1">
+                        "</div>
                 </div>
-
-                <div
-                    class="animate-on-scroll stagger-2 testimonial-card bg-white rounded-2xl p-8 border border-slate-200">
-                    <div class="flex gap-1 mb-4">
-                        <i class="fas fa-star text-amber-400 text-sm"></i>
-                        <i class="fas fa-star text-amber-400 text-sm"></i>
-                        <i class="fas fa-star text-amber-400 text-sm"></i>
-                        <i class="fas fa-star text-amber-400 text-sm"></i>
-                        <i class="fas fa-star text-amber-400 text-sm"></i>
-                    </div>
-                    <p class="text-slate-600 text-sm leading-relaxed mb-6">"Sejak menggunakan BizResto, operasional
-                        restoran kami jauh lebih efisien. Pesanan langsung masuk ke dapur tanpa delay, dan laporan
-                        keuangan bisa diakses kapan saja."</p>
-                    <div class="flex items-center space-x-3">
-                        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=100&h=100&fit=crop&crop=face"
-                            alt="Sari Dewi" class="w-11 h-11 rounded-full object-cover">
+                <div class="animate-on-scroll stagger-2"
+                    style="background:#fff;border:1px solid #e5e7eb;border-radius:1.5rem;padding:2rem;position:relative;transition:all .4s;cursor:default;margin-top:2rem"
+                    onmouseenter="this.style.transform='translateY(-8px)';this.style.boxShadow='0 24px 48px rgba(0,0,0,.09)';this.style.borderColor='#c7d2fe'"
+                    onmouseleave="this.style.transform='';this.style.boxShadow='';this.style.borderColor='#e5e7eb'">
+                    <div style="color:#f59e0b;font-size:.8rem;margin-bottom:1rem">★★★★★</div>
+                    <p style="font-size:.9rem;color:#374151;line-height:1.8;margin-bottom:1.5rem;font-style:italic">
+                        "Sejak pakai BizResto, meja makan kami berputar 30% lebih cepat. Sistem ordernya sangat smooth
+                        dan tim dapur akhirnya bisa fokus masak, bukan tulis pesanan."</p>
+                    <div style="display:flex;align-items:center;gap:.75rem">
+                        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=80&h=80&fit=crop&crop=face"
+                            style="width:44px;height:44px;border-radius:50%;object-fit:cover" alt="Sari Dewi">
                         <div>
-                            <div class="text-sm font-semibold text-slate-800">Sari Dewi</div>
-                            <div class="text-xs text-slate-400">Owner, Restoran Nusantara</div>
+                            <div style="font-weight:700;font-size:.875rem;color:#0f0e17">Sari Dewi</div>
+                            <div style="font-size:.75rem;color:#9ca3af">Owner · Restoran Nusantara</div>
                         </div>
                     </div>
+                    <div
+                        style="position:absolute;top:1.5rem;right:1.5rem;font-size:2.5rem;color:#fff7ed;font-family:Georgia,serif;line-height:1">
+                        "</div>
                 </div>
-
-                <div
-                    class="animate-on-scroll stagger-3 testimonial-card bg-white rounded-2xl p-8 border border-slate-200">
-                    <div class="flex gap-1 mb-4">
-                        <i class="fas fa-star text-amber-400 text-sm"></i>
-                        <i class="fas fa-star text-amber-400 text-sm"></i>
-                        <i class="fas fa-star text-amber-400 text-sm"></i>
-                        <i class="fas fa-star text-amber-400 text-sm"></i>
-                        <i class="fas fa-star text-amber-400 text-sm"></i>
-                    </div>
-                    <p class="text-slate-600 text-sm leading-relaxed mb-6">"BizStore membantu kami membangun toko online
-                        yang profesional dalam waktu singkat. Fitur marketplace-nya sangat lengkap dan mudah dikelola
-                        oleh tim kami."</p>
-                    <div class="flex items-center space-x-3">
-                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face"
-                            alt="Budi Santoso" class="w-11 h-11 rounded-full object-cover">
+                <div class="animate-on-scroll stagger-3"
+                    style="background:#fff;border:1px solid #e5e7eb;border-radius:1.5rem;padding:2rem;position:relative;transition:all .4s;cursor:default"
+                    onmouseenter="this.style.transform='translateY(-8px)';this.style.boxShadow='0 24px 48px rgba(0,0,0,.09)';this.style.borderColor='#c7d2fe'"
+                    onmouseleave="this.style.transform='';this.style.boxShadow='';this.style.borderColor='#e5e7eb'">
+                    <div style="color:#f59e0b;font-size:.8rem;margin-bottom:1rem">★★★★★</div>
+                    <p style="font-size:.9rem;color:#374151;line-height:1.8;margin-bottom:1.5rem;font-style:italic">
+                        "BizStore membantu kami launch toko online dalam 2 minggu. Sekarang omzet online sudah 40% dari
+                        total bisnis. Tim BizMate selalu ada saat kami butuh bantuan."</p>
+                    <div style="display:flex;align-items:center;gap:.75rem">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop&crop=face"
+                            style="width:44px;height:44px;border-radius:50%;object-fit:cover" alt="Budi Santoso">
                         <div>
-                            <div class="text-sm font-semibold text-slate-800">Budi Santoso</div>
-                            <div class="text-xs text-slate-400">CEO, TokoBagus Online</div>
+                            <div style="font-weight:700;font-size:.875rem;color:#0f0e17">Budi Santoso</div>
+                            <div style="font-size:.75rem;color:#9ca3af">CEO · TokoBagus Online</div>
                         </div>
                     </div>
+                    <div
+                        style="position:absolute;top:1.5rem;right:1.5rem;font-size:2.5rem;color:#f0fdf4;font-family:Georgia,serif;line-height:1">
+                        "</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== CTA SECTION ===== -->
-    <section class="py-16 bg-white">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div
-                class="animate-on-scroll bg-gradient-to-br from-primary-600 via-primary-700 to-primary-900 rounded-3xl p-12 sm:p-16 relative overflow-hidden">
-                <div class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2">
+    <!-- CTA -->
+    <section class="py-24 bg-gray-50">
+        <div class="max-w-5xl mx-auto px-6 lg:px-8">
+            <div class="animate-on-scroll"
+                style="background:linear-gradient(135deg,#0f0e17,#1e1b4b);border-radius:2rem;padding:4rem 3rem;position:relative;overflow:hidden;text-align:center">
+                <!-- Decorative shapes -->
+                <div
+                    style="position:absolute;top:-60px;right:-60px;width:240px;height:240px;border-radius:50%;border:1px solid rgba(255,255,255,.06)">
                 </div>
                 <div
-                    class="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2">
+                    style="position:absolute;bottom:-80px;left:-80px;width:300px;height:300px;border-radius:50%;border:1px solid rgba(79,70,229,.2)">
                 </div>
-                <div class="relative z-10">
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-4">Siap Bertransformasi Digital?</h2>
-                    <p class="text-primary-100 text-lg mb-8 max-w-xl mx-auto">Konsultasikan kebutuhan bisnis Anda secara
-                        gratis bersama tim ahli kami. Tanpa komitmen, tanpa biaya konsultasi.</p>
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                        <a href="https://wa.me/6281234567890?text=Halo%20BizMate%2C%20saya%20ingin%20konsultasi%20mengenai%20solusi%20digital%20untuk%20bisnis%20saya"
+                <div
+                    style="position:absolute;top:0;right:0;width:200px;height:200px;background:radial-gradient(circle,rgba(124,58,237,.3),transparent);pointer-events:none">
+                </div>
+                <div style="position:relative;z-index:10">
+                    <div
+                        style="display:inline-flex;align-items:center;gap:.5rem;padding:.35rem 1rem;background:rgba(79,70,229,.25);border:1px solid rgba(79,70,229,.4);border-radius:99px;font-size:.8rem;font-weight:600;color:#a5b4fc;margin-bottom:1.5rem">
+                        <i class="fas fa-sparkles text-[10px]"></i> Mulai Sekarang — Gratis Konsultasi
+                    </div>
+                    <h2
+                        style="font-family:'Space Grotesk',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;color:#fff;line-height:1.1;letter-spacing:-.025em;margin-bottom:1rem">
+                        Siap Membawa Bisnis<br>Anda ke Level Berikutnya?</h2>
+                    <p
+                        style="font-size:1rem;color:rgba(255,255,255,.55);max-width:480px;margin:0 auto 2.5rem;line-height:1.7">
+                        Satu percakapan bisa mengubah arah bisnis Anda. Ceritakan tantangan Anda — kami siap menyediakan
+                        solusi yang tepat.</p>
+                    <div style="display:flex;flex-wrap:wrap;gap:1rem;justify-content:center">
+                        <a href="https://wa.me/6281234567890?text=Halo%20BizMate%2C%20saya%20ingin%20konsultasi%20gratis"
                             target="_blank"
-                            class="inline-flex items-center justify-center px-8 py-4 bg-white text-primary-700 font-bold rounded-2xl hover:bg-primary-50 transition-all text-base shadow-xl">
-                            <i class="fab fa-whatsapp mr-2 text-xl"></i> Chat via WhatsApp
-                        </a>
+                            style="display:inline-flex;align-items:center;gap:.6rem;padding:.9rem 2rem;background:#fff;color:#1e1b4b;border-radius:1rem;font-weight:700;font-size:.95rem;transition:all .3s;box-shadow:0 4px 20px rgba(0,0,0,.2)"
+                            onmouseenter="this.style.transform='translateY(-3px)';this.style.boxShadow='0 10px 30px rgba(0,0,0,.3)'"
+                            onmouseleave="this.style.transform='';this.style.boxShadow='0 4px 20px rgba(0,0,0,.2)'"><i
+                                class="fab fa-whatsapp text-green-600 text-xl"></i> Chat via WhatsApp</a>
                         <a href="/kontak"
-                            class="inline-flex items-center justify-center px-8 py-4 border-2 border-white/30 text-white font-semibold rounded-2xl hover:bg-white/10 transition-all text-base">
-                            Halaman Kontak <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
+                            style="display:inline-flex;align-items:center;gap:.6rem;padding:.9rem 2rem;border:1.5px solid rgba(255,255,255,.2);color:#fff;border-radius:1rem;font-weight:600;font-size:.95rem;transition:all .3s"
+                            onmouseenter="this.style.background='rgba(255,255,255,.08)'"
+                            onmouseleave="this.style.background='transparent'">Halaman Kontak <i
+                                class="fas fa-arrow-right text-sm"></i></a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== FOOTER ===== -->
-    <footer class="bg-slate-900 text-slate-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <!-- Footer -->
+    <footer style="background:#0f0e17;color:#9ca3af">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 py-16">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
                 <div>
-                    <div class="flex items-center space-x-3 mb-6">
-                        <div
-                            class="w-10 h-10 bg-gradient-to-br from-primary-500 to-primary-700 rounded-xl flex items-center justify-center">
-                            <i class="fas fa-code text-white"></i>
-                        </div>
-                        <span class="text-xl font-bold text-white">Biz<span class="text-primary-400">Mate</span></span>
-                    </div>
-                    <p class="text-sm leading-relaxed mb-6 text-slate-400">Mitra teknologi terpercaya untuk transformasi
-                        digital bisnis Anda. Kami hadir dengan solusi perangkat lunak inovatif dan berkualitas tinggi.
-                    </p>
-                    <div class="flex space-x-3">
+                    <div
+                        style="font-family:'Space Grotesk',sans-serif;font-size:1.35rem;font-weight:700;color:#fff;margin-bottom:1rem">
+                        Biz<span style="color:#818cf8">Mate</span></div>
+                    <p style="font-size:.85rem;line-height:1.8;margin-bottom:1.5rem">Mitra teknologi terpercaya untuk
+                        transformasi digital bisnis Indonesia — dari Surabaya untuk seluruh nusantara.</p>
+                    <div style="display:flex;gap:.6rem">
                         <a href="#"
-                            class="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-all text-slate-400 hover:text-white">
-                            <i class="fab fa-instagram"></i>
-                        </a>
+                            style="width:38px;height:38px;background:rgba(255,255,255,.06);border-radius:.625rem;display:flex;align-items:center;justify-content:center;transition:background .2s;color:#9ca3af"
+                            onmouseenter="this.style.background='#4f46e5';this.style.color='#fff'"
+                            onmouseleave="this.style.background='rgba(255,255,255,.06)';this.style.color='#9ca3af'"><i
+                                class="fab fa-instagram text-sm"></i></a>
                         <a href="#"
-                            class="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-all text-slate-400 hover:text-white">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
+                            style="width:38px;height:38px;background:rgba(255,255,255,.06);border-radius:.625rem;display:flex;align-items:center;justify-content:center;transition:background .2s;color:#9ca3af"
+                            onmouseenter="this.style.background='#4f46e5';this.style.color='#fff'"
+                            onmouseleave="this.style.background='rgba(255,255,255,.06)';this.style.color='#9ca3af'"><i
+                                class="fab fa-linkedin-in text-sm"></i></a>
                         <a href="#"
-                            class="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-all text-slate-400 hover:text-white">
-                            <i class="fab fa-youtube"></i>
-                        </a>
+                            style="width:38px;height:38px;background:rgba(255,255,255,.06);border-radius:.625rem;display:flex;align-items:center;justify-content:center;transition:background .2s;color:#9ca3af"
+                            onmouseenter="this.style.background='#4f46e5';this.style.color='#fff'"
+                            onmouseleave="this.style.background='rgba(255,255,255,.06)';this.style.color='#9ca3af'"><i
+                                class="fab fa-youtube text-sm"></i></a>
                     </div>
                 </div>
-
                 <div>
-                    <h4 class="text-white font-semibold mb-6">Produk Kami</h4>
-                    <ul class="space-y-3 text-sm">
-                        <li><a href="/produk-hr" class="text-slate-400 hover:text-primary-400 transition-colors">BizHR
-                                &mdash; HR
-                                Management</a></li>
-                        <li><a href="/produk-fnb"
-                                class="text-slate-400 hover:text-primary-400 transition-colors">BizResto &mdash; F&B
-                                Management</a></li>
-                        <li><a href="/produk-ecommerce"
-                                class="text-slate-400 hover:text-primary-400 transition-colors">BizStore &mdash;
-                                eCommerce</a></li>
-                        <li><a href="/produk-cbt"
-                                class="text-slate-400 hover:text-primary-400 transition-colors">BizExam &mdash; CBT
-                                Platform</a></li>
-                        <li><a href="/produk-pos" class="text-slate-400 hover:text-primary-400 transition-colors">BizPOS
-                                &mdash; Point of
-                                Sale</a></li>
+                    <h4 style="color:#fff;font-weight:600;font-size:.875rem;margin-bottom:1.25rem">Produk Kami</h4>
+                    <ul style="space-y:0;display:flex;flex-direction:column;gap:.75rem;font-size:.85rem">
+                        <li><a href="/produk-hr" style="color:#9ca3af;transition:color .2s"
+                                onmouseenter="this.style.color='#a5b4fc'"
+                                onmouseleave="this.style.color='#9ca3af'">BizMateHR — HR Management</a></li>
+                        <li><a href="/produk-fnb" style="color:#9ca3af;transition:color .2s"
+                                onmouseenter="this.style.color='#a5b4fc'"
+                                onmouseleave="this.style.color='#9ca3af'">BizMateResto — FnB Management</a></li>
+                        <li><a href="/produk-ecommerce" style="color:#9ca3af;transition:color .2s"
+                                onmouseenter="this.style.color='#a5b4fc'"
+                                onmouseleave="this.style.color='#9ca3af'">BizMateStore — eCommerce</a></li>
+                        <li><a href="/produk-cbt" style="color:#9ca3af;transition:color .2s"
+                                onmouseenter="this.style.color='#a5b4fc'"
+                                onmouseleave="this.style.color='#9ca3af'">BizMateExam — CBT Platform</a></li>
+                        <li><a href="/produk-pos" style="color:#9ca3af;transition:color .2s"
+                                onmouseenter="this.style.color='#a5b4fc'"
+                                onmouseleave="this.style.color='#9ca3af'">BizMatePOS — Point of Sale</a></li>
                     </ul>
                 </div>
-
                 <div>
-                    <h4 class="text-white font-semibold mb-6">Tautan Cepat</h4>
-                    <ul class="space-y-3 text-sm">
-                        <li><a href="/tentang-kami"
-                                class="text-slate-400 hover:text-primary-400 transition-colors">Tentang Kami</a></li>
-                        <li><a href="/layanan"
-                                class="text-slate-400 hover:text-primary-400 transition-colors">Layanan</a></li>
-                        <li><a href="/portofolio"
-                                class="text-slate-400 hover:text-primary-400 transition-colors">Portofolio</a></li>
-                        <li><a href="/kontak" class="text-slate-400 hover:text-primary-400 transition-colors">Kontak</a>
-                        </li>
+                    <h4 style="color:#fff;font-weight:600;font-size:.875rem;margin-bottom:1.25rem">Navigasi</h4>
+                    <ul style="display:flex;flex-direction:column;gap:.75rem;font-size:.85rem">
+                        <li><a href="/tentang-kami" style="color:#9ca3af;transition:color .2s"
+                                onmouseenter="this.style.color='#a5b4fc'"
+                                onmouseleave="this.style.color='#9ca3af'">Tentang Kami</a></li>
+                        <li><a href="/layanan" style="color:#9ca3af;transition:color .2s"
+                                onmouseenter="this.style.color='#a5b4fc'"
+                                onmouseleave="this.style.color='#9ca3af'">Layanan</a></li>
+                        <li><a href="/portofolio" style="color:#9ca3af;transition:color .2s"
+                                onmouseenter="this.style.color='#a5b4fc'"
+                                onmouseleave="this.style.color='#9ca3af'">Portofolio</a></li>
+                        <li><a href="/kontak" style="color:#9ca3af;transition:color .2s"
+                                onmouseenter="this.style.color='#a5b4fc'"
+                                onmouseleave="this.style.color='#9ca3af'">Kontak</a></li>
                     </ul>
                 </div>
-
                 <div>
-                    <h4 class="text-white font-semibold mb-6">Hubungi Kami</h4>
-                    <ul class="space-y-4 text-sm">
-                        <li class="flex items-start space-x-3">
-                            <i class="fas fa-map-marker-alt text-primary-400 mt-1"></i>
-                            <span class="text-slate-400">Jl. Nginden Semolo No.42 Blok B-23, Nginden Jangkungan, Kec.
-                                Sukolilo, Surabaya, Jawa Timur 60118</span>
-                        </li>
-                        <li class="flex items-center space-x-3">
-                            <i class="fas fa-phone text-primary-400"></i>
-                            <span class="text-slate-400">+62 21 1234 5678</span>
-                        </li>
-                        <li class="flex items-center space-x-3">
-                            <i class="fas fa-envelope text-primary-400"></i>
-                            <span class="text-slate-400">info@BizMate.id</span>
-                        </li>
-                        <li class="flex items-center space-x-3">
-                            <i class="fab fa-whatsapp text-primary-400"></i>
-                            <span class="text-slate-400">+62 812 3456 7890</span>
-                        </li>
+                    <h4 style="color:#fff;font-weight:600;font-size:.875rem;margin-bottom:1.25rem">Hubungi Kami</h4>
+                    <ul style="display:flex;flex-direction:column;gap:1rem;font-size:.85rem">
+                        <li style="display:flex;gap:.75rem;align-items:flex-start"><i class="fas fa-map-marker-alt"
+                                style="color:#818cf8;margin-top:.15rem;flex-shrink:0"></i><span>Jl. Nginden Semolo No.42
+                                Blok B-23, Nginden Jangkungan, Sukolilo, Surabaya 60118</span></li>
+                        <li style="display:flex;gap:.75rem;align-items:center"><i class="fas fa-phone"
+                                style="color:#818cf8;flex-shrink:0"></i><span>+62 21 1234 5678</span></li>
+                        <li style="display:flex;gap:.75rem;align-items:center"><i class="fas fa-envelope"
+                                style="color:#818cf8;flex-shrink:0"></i><span>info@bizmate.id</span></li>
+                        <li style="display:flex;gap:.75rem;align-items:center"><i class="fab fa-whatsapp"
+                                style="color:#818cf8;flex-shrink:0"></i><span>+62 812 3456 7890</span></li>
                     </ul>
                 </div>
             </div>
         </div>
-        <div class="border-t border-slate-800">
-            <div
-                class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row items-center justify-between text-sm text-slate-500">
-                <p>&copy; 2026 BizMate Digital. Seluruh hak cipta dilindungi undang-undang.</p>
-                <div class="flex space-x-6 mt-4 md:mt-0">
-                    <a href="#" class="hover:text-primary-400 transition-colors">Kebijakan Privasi</a>
-                    <a href="#" class="hover:text-primary-400 transition-colors">Syarat & Ketentuan</a>
+        <div style="border-top:1px solid rgba(255,255,255,.06)">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8 py-5"
+                style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem;font-size:.8rem;color:rgba(255,255,255,.3)">
+                <p>© 2026 BizMate Digital. Seluruh hak cipta dilindungi undang-undang.</p>
+                <div style="display:flex;gap:1.5rem">
+                    <a href="#" style="transition:color .2s" onmouseenter="this.style.color='#a5b4fc'"
+                        onmouseleave="this.style.color=''">Kebijakan Privasi</a>
+                    <a href="#" style="transition:color .2s" onmouseenter="this.style.color='#a5b4fc'"
+                        onmouseleave="this.style.color=''">Syarat &amp; Ketentuan</a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- WhatsApp Float -->
+    <!-- WA Float -->
     <div class="wa-float">
         <div class="wa-pulse"></div>
         <a href="https://wa.me/6281234567890?text=Halo%20BizMate%2C%20saya%20tertarik%20dengan%20produk%20Anda"
-            target="_blank" rel="noopener" aria-label="Chat via WhatsApp">
-            <i class="fab fa-whatsapp"></i>
-        </a>
+            target="_blank" rel="noopener" aria-label="Chat via WhatsApp"><i class="fab fa-whatsapp"></i></a>
     </div>
 
     <script src="js/main.js"></script>
+    <script>
+        const sp = document.getElementById('sp');
+        window.addEventListener('scroll', () => { const s = window.scrollY, h = document.body.scrollHeight - window.innerHeight; if (sp) sp.style.width = (s / h * 100) + '%' });
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40));
+        const obs = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('animated'); e.target.querySelectorAll('.counter').forEach(c => { const t = +c.dataset.counter, sf = c.dataset.suffix || ''; let cur = 0; const id = setInterval(() => { cur = Math.min(cur + t / 60, t); c.textContent = Math.round(cur) + sf; if (cur >= t) clearInterval(id) }, 16) }) } }) }, { threshold: .15 });
+        document.querySelectorAll('.animate-on-scroll').forEach(el => obs.observe(el));
+    </script>
 </body>
 
 </html>
